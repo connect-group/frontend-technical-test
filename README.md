@@ -18,9 +18,11 @@ The task is to pull vehicle information out the express server running at the ab
 
 * 'src/api/index.js' -> This is where you will make all your API calls from. An example ajax request has been provided for you.
 * 'src/components/VehicleList.js' -> Here is your example view file. We have provided an example on how to get data to your component.
+
 #### API URLS
 * [http://localhost:8899/api/vehicles](http://localhost:8899/api/vehicles)
 * [http://localhost:8899/api/vehicles/{id}](http://localhost:8899/api/vehicles/1)
+
 ### Testing:
 
 You have the following test libraries available through ```` gulp test ````
