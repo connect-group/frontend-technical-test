@@ -30,10 +30,4 @@ app.get('*', (req, res) => {
     res.render('index');
 });
 
-app.listen(9988, (error) => {
-    if (!error) {
-        console.log('server running...')
-    }
-});
-
 module.exports = app;

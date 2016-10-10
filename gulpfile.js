@@ -1,6 +1,7 @@
 const gulp = require('gulp');
 const browserify = require('browserify');
 const babelify = require('babelify');
+const babel = require('babel-register');
 const source = require('vinyl-source-stream');
 const sass = require('gulp-sass');
 const mocha = require('gulp-mocha');
@@ -17,20 +18,23 @@ gulp.task('js', function () {
 gulp.task('js:watch', function () {
     gulp.watch('./src/**/*.js', ['js']);
 });
- 
+
 gulp.task('sass', function () {
     return gulp.src('./src/style.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('./dist'));
 });
- 
+
 gulp.task('sass:watch', function () {
     gulp.watch('./src/**/*.scss', ['sass']);
 });
 
 gulp.task('test', () => {
     return gulp.src('./test/*.spec.js', {read: false})
-        .pipe(mocha({reporter: 'nyan'}));
+        .pipe(mocha({
+            compilers: babel,
+            require: ['./setupTest.js']
+        }));
 });
 
 gulp.task('server', function () {

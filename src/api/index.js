@@ -13,7 +13,7 @@ export const getData = (cb) => {
  			    cb(vehicles.responseText);
 		    }
 		}
-	}
+	};
 
 	vehicles.send();
-}
+};
