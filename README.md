@@ -2,6 +2,7 @@ Frontend Technical Test for Connect Group [www.connect-group.com](http://www.con
 
 #### Requirements
 * [Node.js](https://nodejs.org/en/)(6.x.x)
+* Gulp
 
 ### Setup Instructions
 Clone this repository. Then in command line type.
@@ -10,7 +11,7 @@ npm install && gulp default
 
 ````
 
-Once complete navigation to [http://localhost:8899/](http://localhost:8899/)
+Once complete navigation to [http://localhost:9988/](http://localhost:9988/)
 
 ### Task Instructions
 
@@ -20,8 +21,8 @@ The task is to pull vehicle information out the express server running at the ab
 * 'src/components/VehicleList.js' -> Here is your example view file. We have provided an example on how to get data to your component.
 
 #### API URLS
-* [http://localhost:8899/api/vehicles](http://localhost:8899/api/vehicles)
-* [http://localhost:8899/api/vehicles/{id}](http://localhost:8899/api/vehicles/1)
+* [http://localhost:9988/api/vehicles](http://localhost:9988/api/vehicles)
+* [http://localhost:9988/api/vehicles/{id}](http://localhost:9988/api/vehicles/1)
 
 ### Testing:
 
