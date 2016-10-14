@@ -38,7 +38,7 @@ gulp.task('test', () => {
 });
 
 gulp.task('server', function () {
-    server.listen( { path: './server.js' } );
+    server.listen( { path: './index.js' } );
 });
 
 gulp.task('server:watch', function () {

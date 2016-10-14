@@ -21,8 +21,8 @@ The task is to pull vehicle information out the express server running at the ab
 * 'src/components/VehicleList.js' -> Here is your example view file. We have provided an example on how to get data to your component.
 
 #### API URLS
-* [http://localhost:9988/api/vehicles](http://localhost:9988/api/vehicles)
-* [http://localhost:9988/api/vehicles/{id}](http://localhost:9988/api/vehicles/1)
+* [http://localhost:9988/api/vehicle](http://localhost:9988/api/vehicle)
+* [http://localhost:9988/api/vehicle/{id}](http://localhost:9988/api/vehicle/xe)
 
 ### Testing:
 
