@@ -3,11 +3,12 @@
  */
 const chai = require('chai');
 const chaiEnzyme = require('chai-enzyme');
-const jsdom = require('jsdom').jsdom;
+const JSDOM = require('jsdom').JSDOM;
 const exposedProperties = ['window', 'navigator', 'document'];
 
-global.document = jsdom('');
-global.window = document.defaultView;
+const dom = new JSDOM('');
+global.window = dom.window;
+global.document = dom.window.document;
 Object.keys(document.defaultView).forEach((property) => {
     if (typeof global[property] === 'undefined') {
         exposedProperties.push(property);
