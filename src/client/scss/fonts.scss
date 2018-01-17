@@ -1,0 +1,26 @@
+// Fonts
+
+
+
+
+//------------------------------------
+// $ Font Families
+//------------------------------------
+
+@font-face {
+  font-family: 'Jaguar';
+  src: url('/assets/fonts/Jaguar-Regular.woff') format('woff'),
+  url('/assets/fonts/Jaguar-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Jaguar Bold';
+  src: url('/assets/fonts/Jaguar-Bold.woff') format('woff'),
+  url('/assets/fonts/Jaguar-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Proxima';
+  src: url('/assets/fonts/ProximaNova-Regular.woff') format('woff'),
+  url('/assets/fonts/ProximaNova-Regular.ttf') format('truetype');
+}

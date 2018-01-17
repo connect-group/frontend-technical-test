@@ -1,0 +1,71 @@
+@import './box-sizing';
+@import './fonts';
+@import './typography';
+
+body {
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+%clearfix {
+  &::after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+}
+
+.c-list--unstyled {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+$vehicle-item-max-height: 90px;
+$vehicle-item-image-width: 100px;
+
+.c-vehicle-list-item {
+  @extend %clearfix;
+  border-bottom: 1px solid #ccc;
+}
+
+.c-vehicle-list-item-title {
+  font-family: 'Jaguar', sans-serif;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+}
+
+.c-vehicle-list-item-subtitle {
+  margin: 0;
+}
+
+.c-vehicle-list-item-desc {
+  margin-top: 10px;
+  margin-bottom: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.c-vehicle-list-item-image {
+  float: left;
+  width: $vehicle-item-image-width;
+  height: $vehicle-item-max-height;
+  overflow: hidden;
+
+  > img {
+    height: $vehicle-item-max-height;
+    margin-left: -50%;
+  }
+}
+
+.c-vehicle-list-item-info {
+  width: calc(100% - #{$vehicle-item-image-width});
+  float: right;
+  padding: 10px 20px;
+  height: $vehicle-item-max-height;
+  overflow: hidden;
+}

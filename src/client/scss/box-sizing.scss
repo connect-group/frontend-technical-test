@@ -1,0 +1,21 @@
+// Box Sizing
+//
+// We use border-box, end of...
+
+
+
+
+
+//------------------------------------
+// $ Box Sizing
+//------------------------------------
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}

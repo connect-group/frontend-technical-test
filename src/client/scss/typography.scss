@@ -1,0 +1,35 @@
+// Typography
+//
+// Requires: _variables.scss, _placeholders.scss
+//
+// Markup: ../../html/typography.html
+//
+// Style guide: Typography
+
+
+
+
+//------------------------------------
+// $ Variables
+//------------------------------------
+
+$typography-baseline: 1.4rem;
+$colour-dark-grey: #333;
+
+
+
+
+//------------------------------------
+// $ Base
+//------------------------------------
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Proxima', Arial, sans-serif;
+  color: $colour-dark-grey;
+  font-size: $typography-baseline;
+  line-height: 1.4;
+}

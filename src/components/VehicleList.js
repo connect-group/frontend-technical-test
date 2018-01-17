@@ -1,33 +1,21 @@
-import React, { Component } from 'react';
-import { getData } from '../api';
+import React from 'react';
+import { Vehicle } from './Vehicle';
 
-export default
-class VehicleList extends Component {
+const VehicleList = ({ vehiclesData = [] }) => (
+  <div>
+    {vehiclesData.length > 0
+      ? <ul className="c-list--unstyled">
+          {vehiclesData.map(vehicle => {
+            return (
+              <li key={vehicle.id} className="c-vehicle-list-item">
+                <Vehicle vehicleData={vehicle} />
+              </li>
+            );
+          })}
+        </ul>
+      : <p>No vehicles found</p>
+    }
+  </div>
+);
 
-	constructor(props) {
-		super(props);
-
-		this.state = {
-			data: null
-		}
-	}
-
-	componentDidMount() {
-		getData((data) => {
-			this.setState({
-				data
-			})
-		});
-	}
-
-	render() {
-		if(this.state.data) {
-			console.log(this.state.data);
-		    return (
-			    <h1>Hello World</h1>
-		    )
-	    }
-
-		return (<h1>Loading...</h1>);
-	}
-}
+export { VehicleList };
