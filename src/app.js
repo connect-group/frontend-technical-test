@@ -1,5 +1,6 @@
+import 'babel-polyfill';
 import React from 'react';
 import { render } from 'react-dom';
-import VehicleList from './components/VehicleList';
+import { Vehicles } from './components/Vehicles';
 
-render(<VehicleList />, document.getElementById('app'));
+render(<Vehicles />, document.getElementById('app'));
