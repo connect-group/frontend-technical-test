@@ -16,12 +16,12 @@ app.use((req, res, next) => {
     next();
 });
 
-app.get('/api/vehicle', (req, res) => {
+app.get('/api/vehicles', (req, res) => {
     const vehicles = require('./server_api/vehicles.js');
     res.json(vehicles);
 });
 
-app.get('/api/vehicle/:id', (req, res) => {
+app.get('/api/vehicles/:id', (req, res) => {
     const vehicle = require('./server_api/vehicle_'+ req.params.id +'.js');
     res.json(vehicle);
 });
