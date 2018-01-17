@@ -20,9 +20,15 @@ gulp.task('js:watch', function () {
 });
 
 gulp.task('sass', function () {
-    return gulp.src('./src/style.scss')
-        .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('./dist'));
+  return gulp.src('./src/client/scss/style.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('./dist'));
+});
+
+gulp.task('copy:assets', function () {
+  return gulp
+    .src('./src/client/assets/**/*')
+    .pipe(gulp.dest('./dist/assets'));
 });
 
 gulp.task('sass:watch', function () {
@@ -30,7 +36,7 @@ gulp.task('sass:watch', function () {
 });
 
 gulp.task('test', () => {
-    return gulp.src('./test/*.spec.js', {read: false})
+    return gulp.src('./test/**/*.spec.js', {read: false})
         .pipe(mocha({
             compilers: babel,
             require: ['./setupTest.js']
@@ -46,5 +52,5 @@ gulp.task('server:watch', function () {
 });
 
 gulp.task('default', function () {
-  gulp.start('sass', 'sass:watch', 'js', 'js:watch', 'server', 'server:watch');
+  gulp.start('sass', 'sass:watch', 'js', 'js:watch', 'copy:assets', 'server', 'server:watch');
 });

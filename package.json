@@ -15,6 +15,7 @@
     "enzyme": "^2.4.1",
     "gulp-babel": "^6.1.2",
     "sinon": "^1.17.6",
+    "sinon-chai": "^2.14.0",
     "xmlhttprequest": "^1.8.0"
   },
   "dependencies": {
