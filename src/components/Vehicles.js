@@ -29,25 +29,23 @@ class Vehicles extends Component {
     return nextState.isLoading !== this.state.isLoading || nextState.hasErrored !== this.state.hasErrored
   }
 
-  fetchVehicleData (vehicles = [], callback) {
+  async fetchVehicleData (vehicles = []) {
     let mergedVehicles = [];
 
-    // @NOTE: This api is not good enough for production. All the data should be in 1 call
-    vehicles.forEach((vehicle, index) =>
-      this.fetchData(vehicle.id).then(response => {
-        mergedVehicles.push(Object.assign(vehicle, response));
+    const promises = vehicles.map(vehicle =>
+      this.fetchData(vehicle.id).then(response =>
+        mergedVehicles.push(Object.assign(vehicle, response))
+    ));
 
-        if ((index + 1) === vehicles.length) {
-          this.setState({
-            vehicles: mergedVehicles,
-            isLoading: false
-          }, () => callback && callback());
-        }
-      })
-    );
+    await Promise.all(promises);
+
+    this.setState({
+      vehicles: mergedVehicles,
+      isLoading: false
+    });
   }
 
-  async fetchData (id) {
+  async fetchData (id = '') {
     try {
       const response = await this.restClient.get({ url: `${this.apiUrl}${id ? `/${id}` : ''}` })
       return response.body;

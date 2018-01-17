@@ -17,7 +17,7 @@ const fakeVehicles = [
   {id: 'xf'}
 ];
 
-describe.only('<Vehicles />', () => {
+describe('<Vehicles />', () => {
   let target;
 
   beforeEach(function () {
@@ -60,8 +60,7 @@ describe.only('<Vehicles />', () => {
     it('should call the fetchData and fakeFetchVehicleData methods', sinon.test(function () {
       const fakeResponse = { body: { vehicles: [] }};
       const instance = target.instance();
-      this.stub(instance.restClient, 'get').returns(fakeResponse);
-      const fakeFetchData = this.spy(instance, 'fetchData');
+      const fakeFetchData = this.stub(instance, 'fetchData').returns(Promise.resolve(fakeResponse));
 
       instance.componentDidMount();
 
@@ -128,7 +127,7 @@ describe.only('<Vehicles />', () => {
       this.stub(instance.restClient, 'get').returns(fakeResponse);
       const fakeFetchData = this.stub(instance, 'fetchData').returns(Promise.resolve(fakeXE));
 
-      instance.fetchVehicleData(fakeVehicles, () => {
+      instance.fetchVehicleData(fakeVehicles).then(() => {
         const state = target.state();
         expect(fakeFetchData).to.have.been.calledTwice;
         expect(state.vehicles.length).to.equal(fakeVehicles.length);
@@ -136,6 +135,43 @@ describe.only('<Vehicles />', () => {
         expect(state.vehicles[1]).to.equal(Object.assign(fakeVehicles[1], fakeXE));
         done();
       });
+    }));
+
+  });
+
+  context('when the fetchData method is called', () => {
+
+    it('should call the default api url if no id is supplied', sinon.test(function () {
+      const instance = target.instance();
+      const fakeResponse = { body: fakeXE };
+
+      const fakeRestClient = this.stub(instance.restClient, 'get').returns(fakeResponse);
+
+      instance.fetchData();
+
+      expect(fakeRestClient).to.have.been.calledWith({ url: instance.apiUrl });
+    }));
+
+    it('should call a vehicle specific api url if an id is supplied', sinon.test(function () {
+      const instance = target.instance();
+      const fakeResponse = { body: fakeXE };
+
+      const fakeRestClient = this.stub(instance.restClient, 'get').returns(fakeResponse);
+
+      instance.fetchData('xe');
+
+      expect(fakeRestClient).to.have.been.calledWith({ url: `${instance.apiUrl}/xe` });
+    }));
+
+    it('should return the correct response', sinon.test(async function () {
+      const instance = target.instance();
+      const fakeResponse = { body: fakeXE };
+
+      this.stub(instance.restClient, 'get').returns(fakeResponse);
+
+      const response = await instance.fetchData('xe');
+
+      expect(response).to.equal(fakeResponse.body);
     }));
 
   });
