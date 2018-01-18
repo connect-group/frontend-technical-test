@@ -42,10 +42,7 @@ $vehilce-list-tablet-breakpoint: 600px;
 @media (min-width: 1024px) {
   .c-vehicle-list-item {
     width: 25%;
-
-    &:nth-child(odd) {
-      border-right: 1px solid $vehicle-item-border-colour;
-    }
+    border-right: 1px solid $vehicle-item-border-colour;
   }
 }
 
@@ -118,6 +115,7 @@ $vehilce-list-tablet-breakpoint: 600px;
 .c-vehicle-list-item-subtitle {
   margin: 0;
   font-size: 1.4rem;
+  font-weight: 400;
 }
 
 @media (min-width: $vehilce-list-tablet-breakpoint) {
@@ -129,7 +127,6 @@ $vehilce-list-tablet-breakpoint: 600px;
 
 .c-vehicle-list-item-desc {
   margin-top: 10px;
-  margin-bottom: 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
