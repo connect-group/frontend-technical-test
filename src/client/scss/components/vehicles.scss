@@ -1,0 +1,136 @@
+// Vehicles
+
+
+
+
+//------------------------------------
+// $ Variables
+//------------------------------------
+
+$vehicle-item-max-height: 86px;
+$vehicle-item-image-width: 100px;
+$vehicle-item-border-colour: #eee;
+$vehilce-list-tablet-breakpoint: 600px;
+
+
+
+
+//------------------------------------
+// $ Vehicle List
+//------------------------------------
+
+.c-vehicle-list-item {
+  @extend %clearfix;
+  width: 100%;
+  border-bottom: 1px solid $vehicle-item-border-colour;
+  min-width: 320px;
+}
+
+@media (min-width: $vehilce-list-tablet-breakpoint) {
+  .c-vehicle-list-item {
+    float: left;
+    width: 50%;
+    text-align: center;
+    min-width: initial;
+
+    &:nth-child(odd) {
+      border-right: 1px solid $vehicle-item-border-colour;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .c-vehicle-list-item {
+    width: 25%;
+
+    &:nth-child(odd) {
+      border-right: 1px solid $vehicle-item-border-colour;
+    }
+  }
+}
+
+// Containers
+
+.c-vehicle-list-item-image {
+  float: left;
+  width: $vehicle-item-image-width;
+  height: $vehicle-item-max-height;
+  overflow: hidden;
+
+  > img {
+    height: $vehicle-item-max-height;
+    margin-left: -50%;
+  }
+}
+
+@media (min-width: $vehilce-list-tablet-breakpoint) {
+  .c-vehicle-list-item-image {
+    width: 100%;
+    float: none;
+    height: auto;
+
+    > img {
+      width: 100%;
+      height: auto;
+      margin-left: auto;
+    }
+  }
+}
+
+.c-vehicle-list-item-info {
+  width: calc(100% - #{$vehicle-item-image-width});
+  float: right;
+  padding: 10px 20px;
+  height: $vehicle-item-max-height;
+  overflow: hidden;
+}
+
+@media (min-width: $vehilce-list-tablet-breakpoint) {
+  .c-vehicle-list-item-info {
+    padding: 20px;
+    height: auto;
+  }
+}
+
+@media (min-width: $vehilce-list-tablet-breakpoint) {
+  .c-vehicle-list-item-info {
+    width: 100%;
+    float: none;
+  }
+}
+
+// Content
+
+.c-vehicle-list-item-title {
+  font-family: 'Jaguar', sans-serif;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: $vehilce-list-tablet-breakpoint) {
+  .c-vehicle-list-item-title {
+    font-size: 1.8rem;
+  }
+}
+
+.c-vehicle-list-item-subtitle {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+@media (min-width: $vehilce-list-tablet-breakpoint) {
+  .c-vehicle-list-item-subtitle {
+    margin-top: 10px;
+    font-size: 1.6rem;
+  }
+}
+
+.c-vehicle-list-item-desc {
+  margin-top: 10px;
+  margin-bottom: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
