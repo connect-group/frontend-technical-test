@@ -1,3 +1,4 @@
+const compression = require('compression');
 const Express = require('express');
 const path = require('path');
 const hbs = require('hbs');
@@ -8,6 +9,7 @@ app.set('view engine', 'html');
 app.engine('html', hbs.__express); // eslint-disable-line
 app.set('views', path.join(__dirname, './views'));
 
+app.use(compression());
 app.use(Express.static(path.join(__dirname, './dist')));
 
 app.use((req, res, next) => {

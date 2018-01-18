@@ -9,7 +9,7 @@ const server = require('gulp-develop-server');
 
 gulp.task('js', function () {
    return browserify({entries: './src/app.js', extensions: ['.js'], debug: true})
-        .transform('babelify', {presets: ['es2015', 'react']})
+        .transform('babelify', {presets: ['es2015', 'es2016', 'es2017', 'react']})
         .bundle()
         .pipe(source('app.js'))
         .pipe(gulp.dest('dist'));
