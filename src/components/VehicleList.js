@@ -1,4 +1,5 @@
 import React from 'react';
+import { arrayOf, string, shape, number } from 'prop-types';
 import { Vehicle } from './Vehicle';
 import { ErrorMessage } from './ErrorMessage';
 
@@ -18,5 +19,34 @@ const VehicleList = ({ vehiclesData = [] }) => (
     }
   </div>
 );
+
+export const vehiclePropTypes = {
+  id: string,
+  description: string,
+  modelYear: string,
+  price: string,
+  url: string,
+  media: arrayOf(
+    shape({
+      name: string,
+      url: string
+    })
+  ),
+  meta: shape({
+    bodystyles: arrayOf(string),
+    drivetrain: arrayOf(string),
+    emissions: shape({
+      template: string,
+      value: number
+    }),
+    passengers: number
+  })
+};
+
+VehicleList.propTypes = {
+  vehiclesData: arrayOf(
+    shape(vehiclePropTypes)
+  )
+};
 
 export { VehicleList };

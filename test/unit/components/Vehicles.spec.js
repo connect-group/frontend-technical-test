@@ -5,13 +5,12 @@ import RestClient from '../../../src/lib/RestClient';
 import { Vehicles } from '../../../src/components/Vehicles';
 import chai, { expect } from 'chai';
 import sinon from 'sinon';
-import 'sinon-as-promised';
 import sinonChai from 'sinon-chai';
 import { shallow } from 'enzyme';
 
 chai.use(sinonChai);
 
-const fakeXE = { price: 100 };
+const fakeXE = { price: '100' };
 const fakeVehicles = [
   {id: 'xe'},
   {id: 'xf'}

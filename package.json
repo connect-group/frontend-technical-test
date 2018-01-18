@@ -34,6 +34,7 @@
     "gulp-sass": "^2.3.2",
     "hbs": "^4.0.0",
     "jsdom": "^10.1.0",
+    "prop-types": "^15.6.0",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
     "superagent": "^3.8.2",

@@ -3,7 +3,6 @@ import React from 'react';
 import { ErrorMessage } from '../../../src/components/ErrorMessage';
 import chai, { expect } from 'chai';
 import sinon from 'sinon';
-import 'sinon-as-promised';
 import sinonChai from 'sinon-chai';
 import { shallow } from 'enzyme';
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { vehiclePropTypes } from './VehicleList';
 import { config } from '../config';
 
 const Vehicle = ({ vehicleData }) => (
@@ -23,5 +24,7 @@ const Vehicle = ({ vehicleData }) => (
     </div>
   </section>
 );
+
+Vehicle.propTypes = vehiclePropTypes;
 
 export { Vehicle };

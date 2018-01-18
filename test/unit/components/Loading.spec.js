@@ -3,7 +3,6 @@ import React from 'react';
 import { Loading } from '../../../src/components/Loading';
 import chai, { expect } from 'chai';
 import sinon from 'sinon';
-import 'sinon-as-promised';
 import sinonChai from 'sinon-chai';
 import { shallow } from 'enzyme';
 

@@ -6,8 +6,8 @@ import { Loading } from './Loading';
 import { ErrorMessage } from './ErrorMessage';
 
 class Vehicles extends Component {
-  constructor (props) {
-    super(props);
+  constructor () {
+    super();
 
     const { server, api } = config;
 

@@ -4,7 +4,6 @@ import { config } from '../../../src/config';
 import { Vehicle } from '../../../src/components/Vehicle';
 import chai, { expect } from 'chai';
 import sinon from 'sinon';
-import 'sinon-as-promised';
 import sinonChai from 'sinon-chai';
 import { shallow } from 'enzyme';
 
