@@ -6,17 +6,19 @@ const Vehicle = ({ vehicleData }) => (
     <div className="c-vehicle-list-item-image">
       <img
         src={`${config.server.assetsPrefix}${vehicleData.media[0].url}`}
-        alt={vehicleData.id}
+        alt={`Photo of a Jaguar ${vehicleData.id}`}
       />
     </div>
     <div className="c-vehicle-list-item-info">
       <header>
         <h1 className="c-vehicle-list-item-title">Jaguar {vehicleData.id}</h1>
-        <p className="c-vehicle-list-item-subtitle">From {vehicleData.price}</p>
+        <h2 className="c-vehicle-list-item-subtitle">From {vehicleData.price}</h2>
       </header>
       <p
         title={vehicleData.description}
-        className="c-vehicle-list-item-desc">{vehicleData.description}
+        className="c-vehicle-list-item-desc"
+      >
+        {vehicleData.description}
       </p>
     </div>
   </section>

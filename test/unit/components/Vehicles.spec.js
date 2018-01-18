@@ -194,15 +194,18 @@ describe('<Vehicles />', () => {
     }));
 
     it('should return <ErrorMessage /> if isLoading is false and hasErrored is true', sinon.test(function () {
+      const errorMessage = 'Please try again...';
+
       target.setState({
         isLoading: false,
-        hasErrored: true
+        hasErrored: true,
+        errorMessage
       });
 
       const ErrorMessageComponent = target.find('ErrorMessage');
 
       expect(ErrorMessageComponent).to.have.length(1);
-      expect(ErrorMessageComponent.props().message).to.equal('Please try again...');
+      expect(ErrorMessageComponent.props().message).to.equal(errorMessage);
     }));
 
     it('should return <VehicleList /> if isLoading is false and hasErrored is false', sinon.test(function () {

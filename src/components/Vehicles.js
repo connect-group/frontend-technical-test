@@ -57,15 +57,15 @@ class Vehicles extends Component {
     }
   }
 
-  render() {
-    const { isLoading, hasErrored, vehicles } = this.state;
+  render () {
+    const { isLoading, hasErrored, errorMessage, vehicles } = this.state;
 
     return (
       <div>
         {isLoading
           ? <Loading />
           : hasErrored
-            ? <ErrorMessage message="Please try again..." />
+            ? <ErrorMessage message={errorMessage} />
             : <VehicleList vehiclesData={vehicles} />
         }
       </div>

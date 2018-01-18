@@ -1,5 +1,6 @@
 import React from 'react';
 import { Vehicle } from './Vehicle';
+import { ErrorMessage } from './ErrorMessage';
 
 const VehicleList = ({ vehiclesData = [] }) => (
   <div>
@@ -13,7 +14,7 @@ const VehicleList = ({ vehiclesData = [] }) => (
             );
           })}
         </ul>
-      : <p>No vehicles found</p>
+      : <ErrorMessage message="No vehicles found" />
     }
   </div>
 );
