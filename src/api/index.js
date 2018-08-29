@@ -3,14 +3,29 @@
 * handling asynchronous data fetching
 **/
 
-export const getData = (cb) => {
+export const getVehiclesData = (callback) => {
     const vehicles = new XMLHttpRequest();
     vehicles.open('GET', 'http://localhost:9988/api/vehicle');
 
     vehicles.onreadystatechange = function() {
         if(vehicles.readyState === 4) {
  		    if(vehicles.status === 200) {
- 			    cb(vehicles.responseText);
+ 			    callback(vehicles.responseText);
+		    }
+		}
+	};
+
+	vehicles.send();
+};
+
+export const getVehicleData = (id, callback) => {
+    const vehicles = new XMLHttpRequest();
+    vehicles.open('GET', `http://localhost:9988/api/vehicle/${id}`);
+
+    vehicles.onreadystatechange = function() {
+        if(vehicles.readyState === 4) {
+ 		    if(vehicles.status === 200) {
+ 			    callback(vehicles.responseText);
 		    }
 		}
 	};

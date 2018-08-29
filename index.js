@@ -5,6 +5,6 @@ const app = require('./server');
 
 app.listen(9988, (error) => {
     if (!error) {
-        console.log('server running...')
+        console.log('Up and running...')
     }
 });

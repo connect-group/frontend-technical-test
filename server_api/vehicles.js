@@ -6,7 +6,7 @@ module.exports = {
 			url: "/api/vehicle/xe",
 			media: [
 				{
-					name: "vehicle",
+					name: "XE",
 					url: "/images/xe_k17.jpg"
 				}
 			]
@@ -17,7 +17,7 @@ module.exports = {
 			url: "/api/vehicle/xf",
 			media: [
 				{
-					name: "vehicle",
+					name: "XF",
 					url: "/images/xf_k17.jpg"
 				}
 			]
@@ -28,7 +28,7 @@ module.exports = {
 			url: "/api/vehicle/xj",
 			media: [
 				{
-					name: "vehicle",
+					name: "XJ",
 					url: "/images/xj_k16.jpg"
 				}
 			]
@@ -39,7 +39,7 @@ module.exports = {
 			url: "/api/vehicle/fpace",
 			media: [
 				{
-					name: "vehicle",
+					name: "F-pace",
 					url: "/images/fpace_k17.jpg"
 				}
 			]
@@ -50,7 +50,7 @@ module.exports = {
 			url: "/api/vehicle/ftype",
 			media: [
 				{
-					name: "vehicle",
+					name: "F-Type",
 					url: "/images/ftype_k17.jpg"
 				}
 			]
