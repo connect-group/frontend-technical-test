@@ -1,5 +1,9 @@
 $bg-colour: #ccc;
 
 body {
-	background-color: $bg-colour;
+  background-color: $bg-colour;
 }
+
+@import './components/vehicleList/VehicleList.scss';
+@import './components/vehicleList/VehicleListItem.scss';
+@import './components/vehicleList/VehicleListItemDetails.scss';

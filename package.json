@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "test": "gulp test"
+    "test": "gulp test",
+    "gulp-default": "gulp default"
   },
   "author": "",
   "license": "ISC",
@@ -27,7 +28,7 @@
     "gulp-babel": "^6.1.2",
     "gulp-develop-server": "^0.5.2",
     "gulp-mocha": "^2.2.0",
-    "gulp-sass": "^2.3.2",
+    "gulp-sass": "^4.0.2",
     "hbs": "^4.0.0",
     "jsdom": "^10.1.0",
     "react": "^15.3.0",
