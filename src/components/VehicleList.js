@@ -1,33 +1,42 @@
-import React, { Component } from 'react';
-import { getData } from '../api';
+import React from 'react';
+import VehiclesApiClient from '../api/ApiClient';
+import VehicleDetail from "./VehicleDetail";
 
-export default
-class VehicleList extends Component {
+export default class VehicleList extends React.Component {
+    constructor(props) {
+        super(props);
 
-	constructor(props) {
-		super(props);
+        this.state = {
+            vehicles: [],
+            error: null
+        };
+    }
 
-		this.state = {
-			data: null
-		}
-	}
+    componentDidMount() {
+        VehiclesApiClient.getAll()
+            .then(response => this.setState({vehicles: response.data.vehicles}))
+            .catch(error => this.setState({error}));
+    }
 
-	componentDidMount() {
-		getData((data) => {
-			this.setState({
-				data
-			})
-		});
-	}
+    renderContent() {
+        const {error, vehicles} = this.state;
 
-	render() {
-		if(this.state.data) {
-			console.log(this.state.data);
-		    return (
-			    <h1>Hello World</h1>
-		    )
-	    }
+        if (error) {
+            return <h1>Error</h1>;
+        }
 
-		return (<h1>Loading...</h1>);
-	}
+        if (!vehicles.length) {
+            return <h1>Não há veículos para exibição</h1>;
+        }
+
+        return vehicles.map(vehicle => <VehicleDetail vehicle={vehicle}/>);
+    }
+
+    render() {
+        return (
+            <div>
+                {this.renderContent()}
+            </div>
+        );
+    }
 }

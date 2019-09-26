@@ -8,7 +8,7 @@ const mocha = require('gulp-mocha');
 const server = require('gulp-develop-server');
 
 gulp.task('js', function () {
-   return browserify({entries: './src/app.js', extensions: ['.js'], debug: true})
+    return browserify({entries: './src/app.js', extensions: ['.js'], debug: true})
         .transform('babelify', {presets: ['es2015', 'react']})
         .bundle()
         .pipe(source('app.js'))
@@ -38,13 +38,13 @@ gulp.task('test', () => {
 });
 
 gulp.task('server', function () {
-    server.listen( { path: './index.js' } );
+    server.listen({path: './index.js'});
 });
 
 gulp.task('server:watch', function () {
-    gulp.watch( [ './server.js' ], server.restart );
+    gulp.watch(['./server.js'], server.restart);
 });
 
 gulp.task('default', function () {
-  gulp.start('sass', 'sass:watch', 'js', 'js:watch', 'server', 'server:watch');
+    gulp.start('sass', 'sass:watch', 'js', 'js:watch', 'server', 'server:watch');
 });

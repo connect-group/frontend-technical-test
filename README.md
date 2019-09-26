@@ -17,7 +17,7 @@ Once complete navigation to [http://localhost:9988/](http://localhost:9988/)
 
 The task is to pull vehicle information out the express server running at the above url. You will receive a list of general vehicle information. You are now required to traverse the API and make further calls to get vehicle-specific information such as price and description. Example mobile, tablet & desktop designs have been provided. You are required to produce a similar layout for your component.
 
-* 'src/api/index.js' -> This is where you will make all your API calls from. An example ajax request has been provided for you.
+* 'src/api/ApiClient.js' -> This is where you will make all your API calls from. An example ajax request has been provided for you.
 * 'src/components/VehicleList.js' -> Here is your example view file. We have provided an example on how to get data to your component.
 
 **The example app is using React. You can change this to whatever framework you feel comfortable with**
