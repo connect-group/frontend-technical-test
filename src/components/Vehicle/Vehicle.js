@@ -8,10 +8,11 @@ const Vehicle = (props) => {
 
     return (
         <VehicleContainer>
-            <img alt={vehicle.media[0].name} src={vehicle.media[0].url}/>
-            <div>
-                <span>{vehicle.media[0].name}</span>
-                <span>{vehicle.detail.description}</span>
+            <div className='cover'><img alt={vehicle.media[0].name} src={vehicle.media[0].url}/></div>
+            <div className='content'>
+                <span className='content__name'>{vehicle.media[0].name}</span>
+                <div className='content__text'>From {vehicle.detail.price}</div>
+                <div className='content__text'>{vehicle.detail.description}</div>
             </div>
         </VehicleContainer>
     );
