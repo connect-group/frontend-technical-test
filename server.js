@@ -22,7 +22,7 @@ app.get('/api/vehicles', (req, res) => {
 });
 
 app.get('/api/vehicles/:id', (req, res) => {
-    const vehicle = require('./server_api/vehicle_'+ req.params.id +'.js');
+    const vehicle = require('./server_api/vehicle_' + req.params.id + '.js');
     res.json(vehicle);
 });
 
