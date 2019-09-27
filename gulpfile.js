@@ -15,15 +15,7 @@ function styles() {
 function jsx() {
     return browserify('src/app.js')
         .transform("babelify", {
-            presets: ["@babel/preset-env", "@babel/preset-react"],
-            plugins: [
-                [
-                    "@babel/plugin-transform-runtime",
-                    {
-                        "regenerator": true
-                    }
-                ]
-            ]
+            presets: ["@babel/preset-env", "@babel/preset-react"]
         })
         .bundle()
         .pipe(source('app.js'))

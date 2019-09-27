@@ -1,30 +1,27 @@
-import { GET_VEHICLES_TYPE, GET_VEHICLES_DETAIL_TYPE } from "./types";
+import { FETCH_VEHICLES, FETCH_VEHICLES_DETAIL } from "./types";
 import VehiclesApiClient from "../api/ApiClient";
 
-const getVehicles = async () => {
-    let response = [];
-
-    await VehiclesApiClient.getAll();
-
-    return {
-        type: GET_VEHICLES_TYPE,
-        payload: []
+const getVehicles = () => {
+    return dispatch => {
+        VehiclesApiClient.getAll()
+            .then(response => dispatch({
+                type: FETCH_VEHICLES,
+                payload: response.data.vehicles
+            }))
     }
 };
 
 const getVehicleDetail = (id) => {
-    VehiclesApiClient.get({id})
-        .then(pa => {
-
-        });
-
-    return {
-        type: GET_VEHICLES_DETAIL_TYPE,
-        payload: {}
+    return dispatch => {
+        VehiclesApiClient.getOne({id})
+            .then(response => dispatch({
+                type: FETCH_VEHICLES_DETAIL,
+                payload: response.data
+            }))
     }
 };
 
 export {
+    getVehicleDetail,
     getVehicles,
-    getVehicleDetail
 }

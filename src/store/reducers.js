@@ -1,13 +1,20 @@
 import { combineReducers } from 'redux';
-import { GET_VEHICLES_DETAIL_TYPE, GET_VEHICLES_TYPE } from "./types";
+import { FETCH_VEHICLES_DETAIL, FETCH_VEHICLES } from "./types";
 
 export const vehiclesReducer = (state = [], action) => {
     switch (action.type) {
-        case GET_VEHICLES_TYPE:
+        case FETCH_VEHICLES:
             return [...action.payload];
-        case GET_VEHICLES_DETAIL_TYPE:
-            return {...response.data.vehicle};
+        case FETCH_VEHICLES_DETAIL:
+            console.log('action', action);
+            return [...state].map(item => {
+                console.log('item', item);
+                if (item.id === action.payload.id) {
+                    item.detail = action.payload;
+                }
+            });
         default:
+            console.log('action', state);
             return state
     }
 };
