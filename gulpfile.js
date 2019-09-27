@@ -22,6 +22,12 @@ function jsx() {
         .pipe(gulp.dest('dist'));
 }
 
+function assets() {
+    return gulp
+        .src('./images/*')
+        .pipe(gulp.dest('./dist/images'));
+}
+
 const runServer = done => {
     server.listen({path: './index.js'});
     done();
@@ -42,4 +48,4 @@ function test() {
         }));
 }
 
-exports.default = gulp.series(runServer, gulp.parallel(styles, jsx, watch));
+exports.default = gulp.series(runServer, gulp.parallel(styles, jsx, assets, watch));

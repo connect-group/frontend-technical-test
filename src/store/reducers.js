@@ -12,9 +12,9 @@ export const vehiclesReducer = (state = [], action) => {
                 if (item.id === action.payload.id) {
                     item.detail = action.payload;
                 }
+                return {item};
             });
         default:
-            console.log('action', state);
             return state
     }
 };

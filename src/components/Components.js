@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const VehicleContainer = styled.div`
+export const Container = styled.div`
     flex: 1;
     width: 100%;
     max-width: 25%;

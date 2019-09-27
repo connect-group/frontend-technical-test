@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { getVehicleDetail, getVehicles } from "../../store/action";
+import { getVehicles } from "../../store/action";
 import { Container } from "./Container";
+import Vehicle from "../Vehicle/Vehicle";
 
 class VehicleList extends Component {
     componentDidMount() {
@@ -11,19 +12,13 @@ class VehicleList extends Component {
     }
 
     renderContent() {
-        const {vehicles, getVehicleDetail} = this.props;
+        const {vehicles} = this.props;
 
         if (!vehicles.length) {
             return <h1>Não há veículos para exibição</h1>;
         }
 
-        vehicles.map(vehicle => {
-            getVehicleDetail(vehicle.id)
-        });
-
-        return (<div>
-
-        </div>);
+        return vehicles.map(vehicle => <Vehicle key={vehicle.id} vehicle={vehicle}/>);
     }
 
     render() {
@@ -43,5 +38,4 @@ const mapStateToProps = (state) => {
 
 export default connect(mapStateToProps, {
     getVehicles,
-    getVehicleDetail
 })(VehicleList)
