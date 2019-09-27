@@ -1,10 +1,8 @@
 import React from 'react';
 import { VehicleContainer } from "./styles";
-import { baseURL } from "../../api/config";
 
 const Vehicle = (props) => {
     const {vehicle} = props;
-    console.log('vehicle', vehicle);
 
     return (
         <VehicleContainer>

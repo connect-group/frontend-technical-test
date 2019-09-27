@@ -5,14 +5,15 @@ const source = require('vinyl-source-stream');
 const sass = require('gulp-sass');
 const mocha = require('gulp-mocha');
 const server = require('gulp-develop-server');
+const babel = require('@babel/register');
 
-function styles() {
+const styles = () => {
     return gulp.src('./src/style.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('./dist'));
-}
+};
 
-function jsx() {
+const jsx = () => {
     return browserify('src/app.js')
         .transform("babelify", {
             presets: ["@babel/preset-env", "@babel/preset-react"]
@@ -20,13 +21,13 @@ function jsx() {
         .bundle()
         .pipe(source('app.js'))
         .pipe(gulp.dest('dist'));
-}
+};
 
-function assets() {
+const assets = () => {
     return gulp
         .src('./images/*')
         .pipe(gulp.dest('./dist/images'));
-}
+};
 
 const runServer = done => {
     server.listen({path: './index.js'});
@@ -40,12 +41,12 @@ const watch = done => {
     done();
 };
 
-function test() {
+gulp.task('test', () => {
     return gulp.src('./test/*.spec.js', {read: false})
         .pipe(mocha({
             compilers: babel,
             require: ['./setupTest.js']
         }));
-}
+});
 
 exports.default = gulp.series(runServer, gulp.parallel(styles, jsx, assets, watch));

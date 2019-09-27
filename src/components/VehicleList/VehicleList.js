@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { getVehicles } from "../../store/action";
-import { Container } from "./Container";
+import { Container } from "./styles";
 import Vehicle from "../Vehicle/Vehicle";
 
 class VehicleList extends Component {
