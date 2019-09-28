@@ -5,7 +5,6 @@ const source = require('vinyl-source-stream');
 const sass = require('gulp-sass');
 const mocha = require('gulp-mocha');
 const server = require('gulp-develop-server');
-const babel = require('@babel/register');
 
 const styles = () => {
     return gulp.src('./src/style.scss')
@@ -14,8 +13,8 @@ const styles = () => {
 };
 
 const jsx = () => {
-    return browserify('src/app.js')
-        .transform("babelify", {
+    return browserify('src/index.js')
+        .transform(babelify, {
             presets: ["@babel/preset-env", "@babel/preset-react"]
         })
         .bundle()
@@ -41,12 +40,18 @@ const watch = done => {
     done();
 };
 
-gulp.task('test', () => {
-    return gulp.src('./test/*.spec.js', {read: false})
+const test = () => {
+    return gulp.src(['./test/*.spec.js', '!./test/mochaSetup.js'], {read: false})
         .pipe(mocha({
-            compilers: babel,
-            require: ['./setupTest.js']
+            require: ['@babel/register', './test/mochaSetup.js']
         }));
-});
+};
 
+const testWatch = done => {
+    gulp.watch('./test/*.js', test);
+    done();
+};
+
+exports.test = test;
+exports.testWatch = gulp.series(testWatch, test);
 exports.default = gulp.series(runServer, gulp.parallel(styles, jsx, assets, watch));

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { device } from "../../constants";
 
-export const VehicleContainer = styled.div`
+export const Container = styled.div`
     flex-basis: 100%;
     max-width: 100%;
     box-sizing: border-box;

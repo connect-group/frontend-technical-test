@@ -4,12 +4,14 @@
   "description": "",
   "scripts": {
     "start": "gulp default",
-    "test": "gulp test"
+    "test": "gulp test",
+    "test:watch": "gulp testWatch"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.6.2",
+    "@babel/plugin-transform-runtime": "^7.6.2",
     "@babel/polyfill": "^7.6.0",
     "@babel/preset-env": "^7.6.2",
     "@babel/preset-react": "^7.0.0",
@@ -17,26 +19,27 @@
     "babelify": "^10.0.0",
     "browserify": "^16.5.0",
     "chai": "^4.2.0",
-    "chai-enzyme": "^0.8.0",
+    "chai-enzyme": "^1.0.0-beta.1",
     "enzyme": "^3.10.0",
-    "sinon": "^7.5.0",
-    "sinon-chai": "^3.3.0"
-  },
-  "dependencies": {
-    "axios": "^0.19.0",
-    "express": "^4.17.1",
+    "enzyme-adapter-react-16": "^1.14.0",
     "gulp": "^4.0.2",
     "gulp-develop-server": "^0.5.2",
     "gulp-mocha": "^7.0.1",
     "gulp-sass": "^4.0.2",
-    "hbs": "^4.0.4",
     "jsdom": "^15.1.1",
+    "sinon": "^7.5.0",
+    "sinon-chai": "^3.3.0",
+    "vinyl-source-stream": "^2.0.0"
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "express": "^4.17.1",
+    "hbs": "^4.0.4",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-redux": "^7.1.1",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
-    "styled-components": "^4.4.0",
-    "vinyl-source-stream": "^2.0.0"
+    "styled-components": "^4.4.0"
   }
 }

@@ -1,16 +1,16 @@
 import React from 'react';
 import { render } from 'react-dom';
-import VehicleList from './components/VehicleList/VehicleList';
 import { Provider } from "react-redux";
 import reducers from "./store/reducers"
 import { applyMiddleware, createStore } from "redux";
 import thunk from "redux-thunk";
+import App from "./components/App";
 
 const store = createStore(reducers, applyMiddleware(thunk));
 
 render(
     <Provider store={store}>
-        <VehicleList/>
+        <App/>
     </Provider>,
     document.getElementById('app')
 );

@@ -3,27 +3,25 @@ import VehiclesApiClient from "../api/ApiClient";
 import axios from 'axios';
 
 const getVehicles = () => {
-    return dispatch => {
-        VehiclesApiClient.getAll()
-            .then(response => {
-                const {vehicles} = response.data;
+    return async dispatch => {
+        const {data} = await VehiclesApiClient.getAll();
+        const {vehicles} = data;
 
-                const requests = vehicles.map(vehicle => {
-                    return VehiclesApiClient.getOne({id: vehicle.id});
-                });
+        const requests = vehicles.map(vehicle => {
+            return VehiclesApiClient.getOne({id: vehicle.id});
+        });
 
-                axios.all(requests).then(response => {
-                    response.map(item => {
-                        const vehicle = vehicles.find(vehicle => item.data.id === vehicle.id);
-                        vehicle.detail = item.data;
-                    });
+        const response = await axios.all(requests);
 
-                    dispatch({
-                        type: FETCH_VEHICLES,
-                        payload: vehicles
-                    })
-                });
-            })
+        response.map(item => {
+            const vehicle = vehicles.find(vehicle => item.data.id === vehicle.id);
+            vehicle.detail = item.data;
+        });
+
+        dispatch({
+            type: FETCH_VEHICLES,
+            payload: vehicles
+        })
     }
 };
 
