@@ -1,5 +1,188 @@
-$bg-colour: #ccc;
+$bg-colour: darkgray;
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 
 body {
 	background-color: $bg-colour;
+	width: 100%;
+	height: 100%;
+}
+ 
+.container {
+	text-align: center;
+}
+
+.main-panel {
+	padding: 10px;
+	background-color: white;
+	width: 80%;
+	height: 100%;	
+	display: inline-block;
+	border: gray 1px solid;
+	border-radius: 5px;
+	text-align: left;
+}
+
+.vehicle-panel {
+	width: 100%;
+	height: 100px;
+	border-bottom: 1px solid gray;
+	margin-bottom: 10px;
+}
+
+.vehicle-panel:hover {
+	// width: 100%;
+	// height: 100px;
+	border-bottom: 1px solid gray;
+	margin-bottom: 10px;
+	background-color: #f2f0f0;
+	box-shadow: 3px 2px 0px 0px grey;
+}
+
+.vehicle-panel .vehicle-panel-header {
+	width: 20%;
+	height: 100%;
+	display: inline-block;
+}
+
+.vehicle-panel .vehicle-panel-body {
+	width: 80%;
+  height: 100%;
+	display: inline-block;
+	color: gray;
+	padding-left: 10px;
+}
+
+.vehicle-panel .vehicle-panel-body span {
+	float: left;
+	display: block;
+	width: 100%;
+	height: 33%;
+	font-size: 14px;
+}
+
+.vehicle-panel .vehicle-panel-body .title {
+	font-size: 25px;
+	margin-bottom: 5px;
+}
+
+.vehicle-img {
+	width: 100%;
+	height: 100%;
+}
+
+.app-title {
+	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+  font-size: 25px;
+  padding: 14px 5px;
+  text-align: center;
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+	color: #e0dfdc;
+	background-color: #333;
+	letter-spacing: .1em;
+	text-shadow: 
+		0 -1px 0 #fff, 
+		0 1px 0 #2e2e2e, 
+		0 2px 0 #2c2c2c, 
+		0 3px 0 #2a2a2a, 
+		0 4px 0 #282828, 
+		0 5px 0 #262626, 
+		0 6px 0 #242424, 
+		0 7px 0 #222, 
+		0 8px 0 #202020, 
+		0 9px 0 #1e1e1e, 
+		0 10px 0 #1c1c1c, 
+		0 11px 0 #1a1a1a, 
+		0 12px 0 #181818, 
+		0 13px 0 #161616, 
+		0 14px 0 #141414, 
+		0 15px 0 #121212, 
+		0 22px 30px rgba(0, 0, 0, 0.9);
+}
+
+@media only screen and (min-width: 768px) {
+/* FOR DESKTOP*/
+	.vehicle-panel {
+		width: 25%;
+    height: 300px;
+    display: inline-block;
+    padding: 3px;
+	}
+
+	.vehicle-panel .vehicle-panel-header {
+		width: 100%;
+    height: 50%;
+    display: inline-block;
+	}
+	
+	.vehicle-panel .vehicle-panel-body {
+		width: 100%;
+    height: 50%;
+    display: inline-block;
+    color: gray;
+    padding-left: 10px;
+	}
+
+	.vehicle-panel .vehicle-panel-body .title {
+		width: 100%;
+		height: 20%;
+		font-size: 25px;
+		margin-bottom: 5px;
+    display: inline-block;
+	}
+
+	.vehicle-panel .vehicle-panel-body .description{
+		height: 60%;
+	}
+
+	.vehicle-panel .vehicle-panel-body .price{
+		height: 20%;
+	}
+}
+
+@media only screen and (min-width: 568px) and (max-width: 768px) {
+	/* FOR TABLET*/
+	.vehicle-panel-md {
+		width: 50%;
+    height: 300px;
+    display: inline-block;
+    padding: 3px;
+	}
+
+	.vehicle-panel-md .vehicle-panel-header {
+		width: 100%;
+    height: 50%;
+    display: inline-block;
+	}
+	
+	.vehicle-panel-md .vehicle-panel-body {
+		width: 100%;
+    height: 50%;
+    display: inline-block;
+    color: gray;
+    padding-left: 10px;
+	}
+
+	.vehicle-panel-md .vehicle-panel-body .title {
+		width: 100%;
+		height: 20%;
+		font-size: 25px;
+		margin-bottom: 5px;
+    display: inline-block;
+	}
+
+	.vehicle-panel-md .vehicle-panel-body .description{
+		height: 60%;
+	}
+
+	.vehicle-panel-md .vehicle-panel-body .price{
+		height: 20%;
+	}
 }
