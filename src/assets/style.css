@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #ccc;
+}
+
+.container {
+  display: flex;
+}
+
+.card {
+  display: flex;
+}
+
+.card-list {
+  list-style: none;
+}
+
+.card-list__name {
+  display: flex;
+  flex-flow: column;
+  width: max-content;
+  padding: 5px 0;
+  margin: 10px auto;
+  text-transform: uppercase;
+  border-top: 1px solid #0c121c;
+  border-bottom: 1px solid #0c121c;
+  color: #0c121c;
+}
+
+.card-detail {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: #4a4f54;
+}
+
+.card-detail__price {
+  font-size: 18px;
+  margin: 20px 0;
+}
+
+.card-detail__description {
+  font-size: 16px;
+}
