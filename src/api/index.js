@@ -4,6 +4,6 @@ export const getData = async (id = '') => {
 	});
 
 	const vehicle = await res.json();
-	
+
 	return vehicle;
 };

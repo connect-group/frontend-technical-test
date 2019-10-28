@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { getData } from '../api';
 import { Card } from './card/Card';
+import { Details } from './card/Details';
 
 export default class VehicleList extends Component {
 	constructor(props) {

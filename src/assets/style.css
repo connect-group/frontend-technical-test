@@ -15,10 +15,12 @@ body {
 
 .card {
   display: flex;
+  width: 100%;
 }
 
 .card-list {
   list-style: none;
+  width: 25%;
 }
 
 .card-list__name {
@@ -31,6 +33,10 @@ body {
   border-top: 1px solid #0c121c;
   border-bottom: 1px solid #0c121c;
   color: #0c121c;
+}
+
+.card-list__image {
+  width: 100%;
 }
 
 .card-detail {

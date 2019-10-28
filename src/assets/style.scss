@@ -14,10 +14,12 @@ body {
 
 .card {
 	display: flex;
+	width: 100%;
 }
 
 .card-list {
 	list-style: none;
+	width: 25%;
 	&__name {
 		display: flex;
     flex-flow: column;
@@ -28,6 +30,10 @@ body {
 		border-top: 1px solid #0c121c;
 		border-bottom: 1px solid #0c121c;
 		color: #0c121c;
+	}
+
+	&__image {
+		width: 100%;
 	}
 }
 
