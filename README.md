@@ -11,6 +11,11 @@ npm install && gulp default
 
 ````
 
+run test
+````
+gulp test
+````
+
 Once complete navigation to [http://localhost:9988/](http://localhost:9988/)
 
 ### Task Instructions
