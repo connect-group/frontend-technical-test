@@ -32,7 +32,7 @@ gulp.task('sass:watch', function () {
 gulp.task('copy:assets', function () {
   return gulp
     .src('./src/assets/images/*')
-    .pipe(gulp.dest('./dist/assets'));
+    .pipe(gulp.dest('./dist/images'));
 });
 
 gulp.task('test', () => {
