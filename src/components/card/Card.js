@@ -11,9 +11,6 @@ export const Card = ({ vehicle }) => {
           title={`${vehicle.id} model ${vehicle.modelYear}`}
           className="card-list__image"
         />
-        <figcaption className="card-list__name">
-          {vehicle.id}
-        </figcaption>
       </figure>
       <Details id={vehicle.id}/>
     </li>

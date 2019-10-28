@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
-$bg-colour: #ccc;
-$black-pearl: #0c121c;
-$tuna: #0c121c;
+$bg-colour: 		#ccc;
+$black-pearl: 	#0c121c;
+$tuna: 					#0c121c;
+$azure: 				#eef1f1;
+$white: 				#ffffff;
 
 * { margin: 0; padding: 0; }
 
@@ -11,17 +13,35 @@ body {
 	background-color: $bg-colour;
 }
 .container {
-	display: flex;
+	width: 100%;
 }
 
 .card {
-	display: flex;
 	width: 100%;
 }
 
 .card-list {
 	list-style: none;
-	width: 25%;
+	width: 24.8%;
+	border: 1px solid $azure;
+	background: $white;
+	float: left;
+	text-align: center;
+	min-height: 380px;
+
+	@media (max-width: 767px) {
+		width: 100%;
+		text-align: left;
+		display: flex;
+		flex-direction: row;
+		min-height: auto;
+	}
+
+	@media (min-width: 767px) and (max-width: 1024px) {
+		width: 49.7%;
+		padding-bottom: 10px;
+	}
+
 	&__name {
 		display: flex;
     flex-flow: column;
@@ -31,24 +51,40 @@ body {
 		border-top: 1px solid $black-pearl;
 		border-bottom: 1px solid $black-pearl;
 		color: $black-pearl;
+		@media (max-width: 767px) {
+			margin: 5px 0;
+			font-size: 13px;
+		}
+
 	}
 
 	&__image {
 		width: 100%;
+		@media (max-width: 767px) {
+			width: 180px;
+			float: left;
+		}
 	}
 }
 
 .card-detail {
-	display: flex;
-	flex-direction: column;
-	text-align: center;
 	color: $tuna;
+	@media (max-width: 767px) {
+		padding-left: 20px;
+	}
 	&__price {
 		font-size: 18px;
 		margin: 20px 0;
+		@media (max-width: 767px) {
+			font-size: 13px;
+			margin: 0;
+		}
 	}
 	
 	&__description {
-		font-size: 16px;
+		font-size: 16px;	
+		@media (max-width: 767px) {
+			font-size: 11px;
+		}
 	}
 }
