@@ -5,8 +5,13 @@ const chai = require('chai');
 const chaiEnzyme = require('chai-enzyme');
 const JSDOM = require('jsdom').JSDOM;
 const exposedProperties = ['window', 'navigator', 'document'];
+const fetchPolifill = require('whatwg-fetch');
 
 const dom = new JSDOM('');
+global.fetch = fetchPolifill.fetch
+global.Request = fetchPolifill.Request
+global.Headers = fetchPolifill.Headers
+global.Response = fetchPolifill.Respons
 global.window = dom.window;
 global.document = dom.window.document;
 Object.keys(document.defaultView).forEach((property) => {
