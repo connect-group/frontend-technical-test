@@ -16,8 +16,9 @@ export default class Details extends Component {
   }
 
   render() {
-    if (this.state.data) {
-      const { price, description } = this.state.data;
+    const data = this.state.data
+    if (data) {
+      const { price, description } = data;
       return (
         <div className="card-detail">
           <h1 className="card-detail__price">

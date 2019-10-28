@@ -27,7 +27,6 @@ body {
   display: flex;
   flex-flow: column;
   width: max-content;
-  padding: 5px 0;
   margin: 10px auto;
   text-transform: uppercase;
   border-top: 1px solid #0c121c;
@@ -43,7 +42,7 @@ body {
   display: flex;
   flex-direction: column;
   text-align: center;
-  color: #4a4f54;
+  color: #0c121c;
 }
 
 .card-detail__price {

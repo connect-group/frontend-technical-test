@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
 $bg-colour: #ccc;
+$black-pearl: #0c121c;
+$tuna: #0c121c;
 
 * { margin: 0; padding: 0; }
 
@@ -24,12 +26,11 @@ body {
 		display: flex;
     flex-flow: column;
     width: max-content;
-		padding: 5px 0;
 		margin: 10px auto;
     text-transform: uppercase;
-		border-top: 1px solid #0c121c;
-		border-bottom: 1px solid #0c121c;
-		color: #0c121c;
+		border-top: 1px solid $black-pearl;
+		border-bottom: 1px solid $black-pearl;
+		color: $black-pearl;
 	}
 
 	&__image {
@@ -41,7 +42,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	text-align: center;
-	color: #4a4f54;
+	color: $tuna;
 	&__price {
 		font-size: 18px;
 		margin: 20px 0;

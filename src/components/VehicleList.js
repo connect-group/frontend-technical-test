@@ -18,8 +18,9 @@ export default class VehicleList extends Component {
 	}
 
 	render() {
-		if (this.state.data) {
-			const { vehicles } = this.state.data;
+		const data = this.state.data;
+		if (data) {
+			const { vehicles } = data;
 			return (
 				<div>
 					{
