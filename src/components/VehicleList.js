@@ -1,32 +1,37 @@
 import React, { Component } from 'react';
 import { getData } from '../api';
+import { Card } from './card/Card';
 
-export default
-class VehicleList extends Component {
-
+export default class VehicleList extends Component {
 	constructor(props) {
 		super(props);
-
 		this.state = {
 			data: null
 		}
 	}
 
-	componentDidMount() {
-		getData((data) => {
-			this.setState({
-				data
-			})
+	async componentDidMount() {
+		this.setState({
+			data: await getData()
 		});
 	}
 
 	render() {
-		if(this.state.data) {
-			console.log(this.state.data);
-		    return (
-			    <h1>Hello World</h1>
-		    )
-	    }
+		const data = this.state.data;
+		if (data) {
+			const { vehicles } = data;
+			return (
+				<div>
+					{
+						<div className='container'>
+							<ul className="card">
+								{vehicles.map(vehicle => <Card key={vehicle.id} vehicle={vehicle} />)}
+							</ul>
+						</div>
+					}
+				</div>
+			)
+		}
 
 		return (<h1>Loading...</h1>);
 	}

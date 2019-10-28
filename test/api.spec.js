@@ -10,11 +10,8 @@ describe("getData example test", function() {
         server.listen(9988);
     });
 
-    it('should respond with an array of vehicles', (done) => {
-        getData((response) => {
-            const data = JSON.parse(response);
-            expect(Array.isArray(data.vehicles)).to.equal(true);
-            done();
-        })
+    it('should respond with an array of vehicles', async () => {
+        const data = await getData();
+        expect(Array.isArray(data.vehicles)).to.equal(true);
     })
 });
