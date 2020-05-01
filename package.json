@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "test": "gulp test"
+    "test": "gulp test",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "author": "",
   "license": "ISC",
@@ -32,6 +34,8 @@
     "jsdom": "^10.1.0",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
-    "vinyl-source-stream": "^1.1.0"
-  }
+    "vinyl-source-stream": "^1.1.0",
+    "snyk": "^1.316.1"
+  },
+  "snyk": true
 }
