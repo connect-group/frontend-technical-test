@@ -1,50 +1,46 @@
-const gulp = require('gulp');
 const browserify = require('browserify');
-const babelify = require('babelify');
-const babel = require('babel-register');
+const del = require('del');
+const gulp = require('gulp');
 const source = require('vinyl-source-stream');
-const sass = require('gulp-sass');
-const mocha = require('gulp-mocha');
+const babelify = require('babelify');
 const server = require('gulp-develop-server');
+const jestcli = require('jest-cli');
+const sass = require('gulp-sass');
 
-gulp.task('js', function () {
-   return browserify({entries: './src/app.js', extensions: ['.js'], debug: true})
-        .transform('babelify', {presets: ['es2015', 'react']})
-        .bundle()
-        .pipe(source('app.js'))
-        .pipe(gulp.dest('dist'));
-});
+const clean = () => del(['dist']);
 
-gulp.task('js:watch', function () {
-    gulp.watch('./src/**/*.js', ['js']);
-});
+function scripts() {
+  return browserify({entries: './src/app.js', extensions: ['.js'], debug: true})
+    .transform('babelify')
+    .bundle()
+    .pipe(source('app.js'))
+    .pipe(gulp.dest('dist'));
+}
 
-gulp.task('sass', function () {
-    return gulp.src('./src/style.scss')
+function serve(done) {
+    server.listen( { path: './index.js' } );
+    done();
+}
+
+function watch(done) {
+    gulp.watch( [ './server.js' ], server.restart );
+    done();
+}
+
+function styles(done) {
+    gulp.src('./src/style.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('./dist'));
-});
+        done();
+}
 
-gulp.task('sass:watch', function () {
-    gulp.watch('./src/**/*.scss', ['sass']);
-});
+function test() {
+    jestcli.runCLI({ config: { rootDir: 'test/' } }, '.', (done) => {
+        done();
+    });
+}
 
-gulp.task('test', () => {
-    return gulp.src('./test/*.spec.js', {read: false})
-        .pipe(mocha({
-            compilers: babel,
-            require: ['./setupTest.js']
-        }));
-});
+const dev = gulp.series(clean, styles, scripts, serve, watch);
 
-gulp.task('server', function () {
-    server.listen( { path: './index.js' } );
-});
-
-gulp.task('server:watch', function () {
-    gulp.watch( [ './server.js' ], server.restart );
-});
-
-gulp.task('default', function () {
-  gulp.start('sass', 'sass:watch', 'js', 'js:watch', 'server', 'server:watch');
-});
+exports.test = test;
+exports.default = dev;
