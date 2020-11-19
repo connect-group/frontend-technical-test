@@ -47,7 +47,7 @@ function serve() {
     server.listen({ path: './index.js' });
 }
 
-function clean(cb) {
+function clean() {
     return del(['dist']);
 }
 
