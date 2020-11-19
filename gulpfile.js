@@ -28,10 +28,18 @@ function scss() {
         .pipe(dest('dist'));
 }
 
-function test(done) {
+function test() {
     return src('./test/*.spec.js', { read: false })
         .pipe(mocha({
-            require: []
+            require: [
+                '@babel/register',
+                './setupTest.js'
+            ],
+            env: {
+                NODE_ENV: 'test'
+            },
+            bail: true,
+            exit: true,
         }));
 }
 
