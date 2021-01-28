@@ -17,16 +17,22 @@ npm install && npm start
 ````
 
 ## Task Instructions
-1. You will receive a list of general vehicle information.
-You are now required to traverse the API and make further calls to get vehicle-specific details such as price and description.
-Ignore vehicles with broken apiUrl or without any price information from the results. All API related logic should be implemented
-inside `getData()` available at `src/api/index.js`. React component `VehicleList` use `getData()` inside a custom hook `useData`.
-No components are allowed to make any network request.
+1. API Implementation
+    * You will receive a list of general vehicle information by making an initial api request to endpoint `/api/vehicles.json`
+    * You are now required to traverse the API and make further calls on a detail endpoint (`apiUrl`) to get vehicle-specific details such as price and description
+    * Ignore vehicles with broken apiUrl or without any price information
+    * All API related logic should be implemented inside `getData()` available at `src/api/index.js`
 
-2. You are required to produce following design on a different viewport to match as closely as they can.
-- [Mobile](https://raw.githubusercontent.com/connect-group/frontend-technical-test/master/designs/mobile.png)
-- [Tablet](https://raw.githubusercontent.com/connect-group/frontend-technical-test/master/designs/tablet.png)
-- [Desktop](https://raw.githubusercontent.com/connect-group/frontend-technical-test/master/designs/desktop.png)
+2. Using `getData()` in a React component
+    * React component `VehicleList` is configured to use `getData()` through a custom hook `useData`
+    * If you prefer to use class-based component, then rule to make a single function to obtain all vehicles through `getData()` needs to be respected
+    * No other components are allowed to make any network request
+
+3. UI Design
+    * You are required to produce following design on a different viewport to match as closely as possible, ready for a designer to review
+    * [Mobile](https://raw.githubusercontent.com/connect-group/frontend-technical-test/master/designs/mobile.png)
+    * [Tablet](https://raw.githubusercontent.com/connect-group/frontend-technical-test/master/designs/tablet.png)
+    * [Desktop](https://raw.githubusercontent.com/connect-group/frontend-technical-test/master/designs/desktop.png)
 
 ## Browser Support
 We expect solution to work in the latest version of Chrome
@@ -46,7 +52,7 @@ We expect solution to work in the latest version of Chrome
 * No CSS framework allowed
 
 **We have a high focus on attention to detail in design**
-* We expect the designs to match as closely as they can
+* We expect the designs to match as closely as possible, ready for a designer to review
 * Images to be cropped and sized correctly to designs using responsive picture
 * Interactions and animations to be considered but not distracting users away from the experience
 * Minimal visual bugs when going resizing to mobile and large screen sizes
