@@ -1,19 +1,12 @@
+// eslint-disable-next-line no-unused-vars
+import { request } from './helpers';
+
 /**
-* This is an example request. Create your own using best practises for
-* handling asynchronous data fetching
-**/
-
-export const getData = (cb) => {
-    const vehicles = new XMLHttpRequest();
-    vehicles.open('GET', 'http://localhost:9988/api/vehicle');
-
-    vehicles.onreadystatechange = function() {
-        if(vehicles.readyState === 4) {
- 		    if(vehicles.status === 200) {
- 			    cb(vehicles.responseText);
-		    }
-		}
-	};
-
-	vehicles.send();
-};
+ * Pull vehicles information
+ *
+ * @return {Promise<Array.<vehicleSummaryPayload>>}
+ */
+// TODO: All API related logic should be made inside this function.
+export default async function getData() {
+  return [];
+}
