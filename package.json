@@ -8,9 +8,9 @@
     "build": "webpack --mode development",
     "test": "jest",
     "test:watch": "npm run test -- --watch",
-    "lint": "npm run eslint && npm run stylelint",
-    "eslint": "eslint src/**/*.js --fix",
-    "stylelint": "stylelint src/**/*.scss --fix"
+    "lint": "npm run lint:js && npm run lint:css",
+    "lint:js": "eslint \"src/**/*.js\" --fix",
+    "lint:css": "stylelint \"src/**/*.scss\" --fix"
   },
   "author": "",
   "license": "ISC",

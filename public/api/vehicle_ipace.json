@@ -1,0 +1,20 @@
+{
+    "id": "ipace",
+    "description": "Introducing Jaguar's first all-electric performance SUV.",
+    "price": "£65,100",
+    "meta": {
+        "passengers": 4,
+        "drivetrain": [
+            "AWD",
+            "RWD"
+        ],
+        "bodystyles": [
+            "COUPÉ",
+            "CONVERTIBLE"
+        ],
+        "emissions": {
+            "template": "CO2 Emissions $value g/km",
+            "value": 0
+        }
+    }
+}

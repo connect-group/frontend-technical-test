@@ -7,11 +7,7 @@ You’ll want to ensure you have the following already installed on your local m
 
 ## Setup Instructions
 1. Clone this repository
-2. If your strength is Vanilla JS then switch branch using following command
-```
-git checkout feature/vanillajs
-```
-3. Type following command to install dependencies and run the project
+2. Type the following command to install the dependencies and run the project
 ````
 npm install && npm start
 ````
@@ -25,40 +21,40 @@ npm install && npm start
 
 2. Using `getData()` in a React component
     * React component `VehicleList` is configured to use `getData()` through a custom hook `useData`
-    * If you prefer to use class-based component, then rule to make a single function to obtain all vehicles through `getData()` needs to be respected
+    * If you prefer to use class-based component, then the rule to make a single function to obtain all vehicles through `getData()` needs to be respected
     * No other components are allowed to make any network request
 
 3. UI Design
-    * You are required to produce following design on a different viewport to match as closely as possible, ready for a designer to review
+    * You are required to produce the following designs on different viewports to match as closely as possible, ready for a designer to review
     * [Mobile](https://raw.githubusercontent.com/connect-group/frontend-technical-test/master/designs/mobile.png)
     * [Tablet](https://raw.githubusercontent.com/connect-group/frontend-technical-test/master/designs/tablet.png)
     * [Desktop](https://raw.githubusercontent.com/connect-group/frontend-technical-test/master/designs/desktop.png)
 
 ## Browser Support
-We expect solution to work in the latest version of Chrome
+We expect the solution to work in the latest version of Chrome
 
 ## Acceptance criteria
 
-**We have a high focus on attention to detail in code**
+**We have a high focus on attention to details in code**
 * Solution should be written in either Reactjs or VanillaJS
 * The formatting of the codebase should be consistent and written in a modular approach
-* Internally, we use BEM - but we are open to other CSS naming conventions as long as it's built with scale and maintenance in mind
 * We expect the codebase to be written using ES6+ and libraries kept to a minimum
-* We expect code to be written with unit testing & performance in mind
+* We expect the code to be written with unit testing & performance in mind
 * We expect the code to be included in the relevant files
-* We prefer a native Browser Api over JS library
+* We prefer native Browser Api over JS libraries
 * Mobile-first development approach using min-width media queries
-* Solution should be accessible and meet WCAG Level A
+* Solution should be accessible and meet WCAG 2.1
 * No CSS framework allowed
+* Internally, we use BEM - but we are open to other CSS naming conventions as long as it's built with scale and maintenance in mind
 
-**We have a high focus on attention to detail in design**
+**We have a high focus on attention to details in design**
 * We expect the designs to match as closely as possible, ready for a designer to review
-* Images to be cropped and sized correctly to designs using responsive picture
+* Correct semantic HTML mark-up and/or CSS should be used to achieve the size and aspect ratio of the images in the design
 * Interactions and animations to be considered but not distracting users away from the experience
 * Minimal visual bugs when going resizing to mobile and large screen sizes
 
 ## Nice to have
-If you have achieved primary tasks and would like to showcase your skills by implementing additional feature(s) then you can consider following.
+If you have achieved primary tasks and would like to showcase your skills by implementing additional feature(s) then you can consider the following:
 - An [accessible modal implementation](https://www.w3.org/TR/wai-aria-practices-1.1/#dialog_modal) which displays the additional vehicle information e.g. emission, bodystyle
 - Implement "Read more" which Show/Hide additional vehicle information
 - A staggered fade in vehicle cards on load
@@ -66,7 +62,7 @@ If you have achieved primary tasks and would like to showcase your skills by imp
 - Anything else which we cannot think of!
 
 ## Tips
-Use linting to format code and autofix most of the formatting issues
+Use linting to format the code and autofix most of the formatting issues
 ```shell script
 npm run lint
 ```
