@@ -2,18 +2,28 @@
 * This is an example request. Create your own using best practises for
 * handling asynchronous data fetching
 **/
+import fetch from "node-fetch";
 
-export const getData = (cb) => {
-    const vehicles = new XMLHttpRequest();
-    vehicles.open('GET', 'http://localhost:9988/api/vehicle');
+const BASE_URL = "http://localhost:9988";
 
-    vehicles.onreadystatechange = function() {
-        if(vehicles.readyState === 4) {
- 		    if(vehicles.status === 200) {
- 			    cb(vehicles.responseText);
-		    }
-		}
-	};
+export const getData = async () => {
+	const vehicles = await fetch(`${BASE_URL}/api/vehicle`);
 
-	vehicles.send();
+	if (vehicles.status === 200) {
+	  return await vehicles.json();
+	}
+  
+	return null;
 };
+
+export const getVehicleAdditionalInformation = async (vehicleId) => {
+	const additionalInforamtion = await fetch(
+	  `${BASE_URL}/api/vehicle/` + vehicleId
+	);
+  
+	if (additionalInforamtion.status === 200) {
+	  return await additionalInforamtion.json();
+	}
+  
+	return null;
+  };
