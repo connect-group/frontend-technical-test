@@ -21,5 +21,3 @@ global.navigator = {
 };
 
 chai.use(chaiEnzyme());
-
-XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
