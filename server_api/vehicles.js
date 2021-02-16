@@ -3,6 +3,7 @@ module.exports = {
 		{
 			id: "xe",
 			modelYear: "k17",
+			name:"Toyota 2000cc",
 			url: "/api/vehicle/xe",
 			media: [
 				{
@@ -13,6 +14,7 @@ module.exports = {
 		},
 		{
 			id: "xf",
+			name:"Honda 2000cc",
 			modelYear: "k17",
 			url: "/api/vehicle/xf",
 			media: [
@@ -25,6 +27,7 @@ module.exports = {
 		{
 			id: "xj",
 			modelYear: "k16",
+			name:"Land Rover 2000cc",
 			url: "/api/vehicle/xj",
 			media: [
 				{
@@ -35,6 +38,7 @@ module.exports = {
 		},
 		{
 			id: "fpace",
+			name:"Sazuki 2000cc",
 			modelYear: "k17",
 			url: "/api/vehicle/fpace",
 			media: [
@@ -46,6 +50,7 @@ module.exports = {
 		},
 		{
 			id: "ftype",
+			name:"Audi 2000cc",
 			modelYear: "k17",
 			url: "/api/vehicle/ftype",
 			media: [
