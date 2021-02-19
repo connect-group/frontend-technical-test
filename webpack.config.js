@@ -11,6 +11,8 @@ module.exports = {
         path: path.resolve(__dirname, "dist")
     },
     devServer: {
+        hot: true,
+        inline: true,
         open: true,
         contentBase: path.join(__dirname, 'public')
     },
