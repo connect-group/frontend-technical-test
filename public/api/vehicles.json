@@ -1,0 +1,107 @@
+[
+    {
+        "id": "xe",
+        "modelYear": "k17",
+        "apiUrl": "/api/vehicle_xe.json",
+        "media": [
+            {
+                "name": "vehicle",
+                "url": "/images/16x9/xe_k17.jpg"
+            },
+            {
+                "name": "vehicle",
+                "url": "/images/1x1/xe_k17.jpg"
+            }
+        ]
+    },
+    {
+        "id": "xf",
+        "modelYear": "k17",
+        "apiUrl": "/api/vehicle_xf.json",
+        "media": [
+            {
+                "name": "vehicle",
+                "url": "/images/16x9/xf_k17.jpg"
+            },
+            {
+                "name": "vehicle",
+                "url": "/images/1x1/xf_k17.jpg"
+            }
+        ]
+    },
+    {
+        "id": "xj",
+        "modelYear": "k16",
+        "apiUrl": "/api/vehicle_xj.json",
+        "media": [
+            {
+                "name": "vehicle",
+                "url": "/images/16x9/xj_k16.jpg"
+            },
+            {
+                "name": "vehicle",
+                "url": "/images/1x1/xj_k16.jpg"
+            }
+        ]
+    },
+    {
+        "id": "fpace",
+        "modelYear": "k17",
+        "apiUrl": "/api/vehicle_fpace.json",
+        "media": [
+            {
+                "name": "vehicle",
+                "url": "/images/16x9/fpace_k17.jpg"
+            },
+            {
+                "name": "vehicle",
+                "url": "/images/1x1/fpace_k17.jpg"
+            }
+        ]
+    },
+    {
+        "id": "problematic",
+        "modelYear": "k17",
+        "apiUrl": "/api/vehicle_problematic.json",
+        "media": [
+            {
+                "name": "vehicle",
+                "url": "/images/16x9/problematic_k17.jpg"
+            },
+            {
+                "name": "vehicle",
+                "url": "/images/1x1/problematic_k17.jpg"
+            }
+        ]
+    },
+    {
+        "id": "ftype",
+        "modelYear": "k17",
+        "apiUrl": "/api/vehicle_ftype.json",
+        "media": [
+            {
+                "name": "vehicle",
+                "url": "/images/16x9/ftype_k17.jpg"
+            },
+            {
+                "name": "vehicle",
+                "url": "/images/1x1/ftype_k17.jpg"
+            }
+        ]
+    },
+    {
+        "id": "ipace",
+        "modelYear": "k21",
+        "apiUrl": "/api/vehicle_ipace.json",
+        "media": [
+            {
+                "name": "vehicle",
+                "url": "/images/16x9/ipace_k21.jpg"
+            },
+            {
+                "name": "vehicle",
+                "url": "/images/1x1/ipace_k21.jpg"
+            }
+        ]
+    }
+]
