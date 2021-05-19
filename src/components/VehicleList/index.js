@@ -1,40 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useData from './useData';
 import './style.scss';
+import Vehicle from '../Vehicle';
+import Modal from '../Modal';
 
-export default function VehicleList() {
+const VehicleList = () => {
+  const [modalContent, setModalContent] = useState(false);
   // eslint-disable-next-line no-unused-vars
   const [loading, error, vehicles] = useData();
-
+  // eslint-disable-next-line
+    console.log("loading, error, vehicles");
+  // eslint-disable-next-line
+    console.log(loading, error, vehicles);
   if (loading) {
     return <div data-testid="loading">Loading</div>;
   }
 
   if (error) {
-    return <div data-testid="error">{ error }</div>;
+    return <div data-testid="error">{error}</div>;
   }
 
   return (
-    <div data-testid="results">
-      <p>List of vehicles will be displayed here</p>
-      <p>
-        Visit
-        <a href="/api/vehicles.json" target="_blank"> /api/vehicles.json</a>
-        {' '}
-        (main endpoint)
-      </p>
-      <p>
-        Visit
-        <a href="/api/vehicle_fpace.json" target="_blank">/api/vehicle_fpace.json</a>
-        {' '}
-        (detail endpoint - apiUrl)
-      </p>
-      <p>
-        Visit
-        <a href="/api/vehicle_xf.json" target="_blank">/api/vehicle_xf.json</a>
-        {' '}
-        (vehicle without any price)
-      </p>
-    </div>
+    <>
+      <div className="VehicleList" data-testid="results">
+        {vehicles.map((car) => <Vehicle key={car.id} data={car} setModalContent={setModalContent} />)}
+      </div>
+      {modalContent && <Modal setModalContent={setModalContent} modalContent={modalContent} />}
+    </>
   );
-}
+};
+
+export default VehicleList;

@@ -1,0 +1,107 @@
+// Mobile
+.vehicle {
+
+  &__title {
+    font-size: 17px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__price {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  &__wrapper {
+    border-bottom: 2px solid #eef1f1;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    position: relative;
+    transition: 3s ease-in;
+  }
+
+  &__description {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    font-size: 15px;
+    text-align: center;
+  }
+
+  &__content {
+    font-size: 14px;
+    padding: 9px 18px;
+  }
+
+  &__thumbnail--mobile {
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-top: 100%;
+  }
+
+  &__thumbnail--tablet,
+  &__thumbnail--desktop {
+    background-size: cover;
+    padding-top: 56.25%;
+  }
+}
+
+// Tablet
+@media screen and (min-width: 768px) {
+
+  .vehicle {
+
+    &__thumbnail--mobile {
+      display: none;
+    }
+
+    &__wrapper {
+      grid-template-columns: 1fr;
+    }
+
+    &__title {
+      color: #0c121c;
+      margin-top: 10px;
+
+      & > span {
+        border-bottom: 2px solid #0c121c;
+        border-top: 2px solid #0c121c;
+      }
+    }
+
+    &__price,
+    &__description {
+      color: rgb(139, 139, 139);
+      font-weight: 200;
+    }
+
+    &__title,
+    &__price,
+    &__description {
+      height: 35px;
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+
+  .vehicle {
+
+    &__thumbnail--tablet,
+    &__thumbnail--desktop {
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+
+  .vehicle {
+
+    &__wrapper {
+      border: 0;
+    }
+  }
+}

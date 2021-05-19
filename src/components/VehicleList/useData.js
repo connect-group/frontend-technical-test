@@ -13,9 +13,5 @@ export default function useData() {
       .finally(() => setLoading(false));
   }, []);
 
-  return [
-    loading,
-    error,
-    vehicles,
-  ];
+  return [loading, error, vehicles];
 }
