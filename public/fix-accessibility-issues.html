@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Page title</title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main__heading">Page Heading</div>
+
+      <div class="section section--articles">
+        <div id="section_heading" class="section__heading">Latest Articles</div>
+
+        <!-- repeating articles -->
+        <div class="article">
+          <div class="article__heading">Article Heading</div>
+          <img src="/img.jpg" />
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+          <div class="button">Show more</div>
+          <div class="article__more" hidden>
+            <p>
+              ◦ Lorem ipsum dolor sit amet <br/>
+              ◦ Lorem ipsum dolor sit amet <br/>
+              ◦ Lorem ipsum dolor sit amet
+            </p>
+          </div>
+          <a href="/lorem-ipsum">Find out more</a>
+        </div>
+
+      </div>
+
+      <div class="section section--newsletter">
+        <div id="section_heading" class="section__heading">Sign up for our newsletter...</div>
+
+        <form class="newsletter" action="/form-submit/" method="post">
+          <input id="email" type="text" placeholder="Email address" />
+          <div class="button">Submit</div>
+        </form>
+
+      </div>
+    </div>
+  </body>
+</html>

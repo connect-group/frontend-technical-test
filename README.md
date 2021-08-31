@@ -1,4 +1,6 @@
-Frontend Technical Test for [TeamITG](https://teamitg.com/)
+# Frontend Technical Test for [TeamITG](https://teamitg.com/)
+
+It is a quick coding challenge. It is important to note that it is not by any means a test, and there are no trick questions. We want to understand how you write code and solve problems. You are allowed to use search engines or StackOverflow during the session.
 
 ## System requirements
 You’ll want to ensure you have the following already installed on your local machine before getting started with the test:
@@ -12,23 +14,17 @@ You’ll want to ensure you have the following already installed on your local m
 npm install && npm start
 ````
 
-## Task Instructions
-1. API Implementation
-    * You will receive a list of general vehicle information by making an initial api request to endpoint `/api/vehicles.json`
-    * You are now required to traverse the API and make further calls on a detail endpoint (`apiUrl`) to get vehicle-specific details such as price and description
-    * Ignore vehicles with broken apiUrl or without any price information
-    * All API related logic should be implemented inside `getData()` available at `src/api/index.js`
+## Brief
+We have a simple API that returns a list of vehicles as a JSON array. We would like you to read the API and display it as per the given designs ([Mobile](https://raw.githubusercontent.com/connect-group/frontend-technical-test/master/designs/mobile.png), [Tablet](https://raw.githubusercontent.com/connect-group/frontend-technical-test/master/designs/tablet.png), [Desktop](https://raw.githubusercontent.com/connect-group/frontend-technical-test/master/designs/desktop.png)). In addition, the list of vehicles should be ordered by the lowest price. Feel free to either use our pre-configured boilerplate or any other pre-configured environment for React or VanillaJS that you are familiar with.
 
-2. Using `getData()` in a React component
-    * React component `VehicleList` is configured to use `getData()` through a custom hook `useData`
-    * If you prefer to use class-based component, then the rule to make a single function to obtain all vehicles through `getData()` needs to be respected
-    * No other components are allowed to make any network request
 
-3. UI Design
-    * You are required to produce the following designs on different viewports to match as closely as possible, ready for a designer to review
-    * [Mobile](https://raw.githubusercontent.com/connect-group/frontend-technical-test/master/designs/mobile.png)
-    * [Tablet](https://raw.githubusercontent.com/connect-group/frontend-technical-test/master/designs/tablet.png)
-    * [Desktop](https://raw.githubusercontent.com/connect-group/frontend-technical-test/master/designs/desktop.png)
+### API End Points
+List of all vehicles:<br />
+http://localhost:8080/api/vehicles.json<br />
+
+Each vehicle has an “apiUrl” which contains the detail of a vehicle e.g. the price or description. Example of a detail endpoint:<br />
+http://localhost:8080/api/vehicle_fpace.json 
+
 
 ## Browser Support
 We expect the solution to work in the latest version of Chrome
