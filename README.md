@@ -1,4 +1,6 @@
-Frontend Technical Test for [TeamITG](https://teamitg.com/)
+# Frontend Technical Test for [TeamITG](https://teamitg.com/)
+
+It is a quick coding challenge. It is important to note that it is not by any means a test, and there are no trick questions. We want to understand how you write code and solve problems. You are allowed to use search engine or StackOverflow during the session.
 
 ## System requirements
 You’ll want to ensure you have the following already installed on your local machine before getting started with the test:
