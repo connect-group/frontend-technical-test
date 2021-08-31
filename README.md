@@ -12,23 +12,17 @@ You’ll want to ensure you have the following already installed on your local m
 npm install && npm start
 ````
 
-## Task Instructions
-1. API Implementation
-    * You will receive a list of general vehicle information by making an initial api request to endpoint `/api/vehicles.json`
-    * You are now required to traverse the API and make further calls on a detail endpoint (`apiUrl`) to get vehicle-specific details such as price and description
-    * Ignore vehicles with broken apiUrl or without any price information
-    * All API related logic should be implemented inside `getData()` available at `src/api/index.js`
+## Brief
+We have a simple API that returns a list of vehicles as JSON array. We would like you to read the API and display it as per given design ([Mobile](https://raw.githubusercontent.com/connect-group/frontend-technical-test/master/designs/mobile.png), [Tablet](https://raw.githubusercontent.com/connect-group/frontend-technical-test/master/designs/tablet.png), [Desktop](https://raw.githubusercontent.com/connect-group/frontend-technical-test/master/designs/desktop.png)). In addition, the list of vehicles should be ordered by the lowest price. Feel free to use our preconfigured boilerplate, familiar preconfigured environment for React development or VanillaJS.
 
-2. Using `getData()` in a React component
-    * React component `VehicleList` is configured to use `getData()` through a custom hook `useData`
-    * If you prefer to use class-based component, then the rule to make a single function to obtain all vehicles through `getData()` needs to be respected
-    * No other components are allowed to make any network request
 
-3. UI Design
-    * You are required to produce the following designs on different viewports to match as closely as possible, ready for a designer to review
-    * [Mobile](https://raw.githubusercontent.com/connect-group/frontend-technical-test/master/designs/mobile.png)
-    * [Tablet](https://raw.githubusercontent.com/connect-group/frontend-technical-test/master/designs/tablet.png)
-    * [Desktop](https://raw.githubusercontent.com/connect-group/frontend-technical-test/master/designs/desktop.png)
+### API End Points
+List of all vehicles:-
+http://localhost:8080/api/vehicles.json
+
+Each vehicle has "apiUrl" which contains the detail of a vehicle e.g. Price/Description
+Example of detail endpoint
+http://localhost:8080/api/vehicle_fpace.json 
 
 ## Browser Support
 We expect the solution to work in the latest version of Chrome
