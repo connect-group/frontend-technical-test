@@ -1,6 +1,6 @@
 # Frontend Technical Test for [TeamITG](https://teamitg.com/)
 
-It is a quick coding challenge. It is important to note that it is not by any means a test, and there are no trick questions. We want to understand how you write code and solve problems. You are allowed to use search engine or StackOverflow during the session.
+It is a quick coding challenge. It is important to note that it is not by any means a test, and there are no trick questions. We want to understand how you write code and solve problems. You are allowed to use search engines or StackOverflow during the session.
 
 ## System requirements
 You’ll want to ensure you have the following already installed on your local machine before getting started with the test:
@@ -15,16 +15,16 @@ npm install && npm start
 ````
 
 ## Brief
-We have a simple API that returns a list of vehicles as JSON array. We would like you to read the API and display it as per given design ([Mobile](https://raw.githubusercontent.com/connect-group/frontend-technical-test/master/designs/mobile.png), [Tablet](https://raw.githubusercontent.com/connect-group/frontend-technical-test/master/designs/tablet.png), [Desktop](https://raw.githubusercontent.com/connect-group/frontend-technical-test/master/designs/desktop.png)). In addition, the list of vehicles should be ordered by the lowest price. Feel free to use our preconfigured boilerplate, familiar preconfigured environment for React development or VanillaJS.
+We have a simple API that returns a list of vehicles as a JSON array. We would like you to read the API and display it as per the given designs ([Mobile](https://raw.githubusercontent.com/connect-group/frontend-technical-test/master/designs/mobile.png), [Tablet](https://raw.githubusercontent.com/connect-group/frontend-technical-test/master/designs/tablet.png), [Desktop](https://raw.githubusercontent.com/connect-group/frontend-technical-test/master/designs/desktop.png)). In addition, the list of vehicles should be ordered by the lowest price. Feel free to either use our pre-configured boilerplate or any other pre-configured environment for React or VanillaJS that you are familiar with.
 
 
 ### API End Points
-List of all vehicles:-
-http://localhost:8080/api/vehicles.json
+List of all vehicles:<br />
+http://localhost:8080/api/vehicles.json<br />
 
-Each vehicle has "apiUrl" which contains the detail of a vehicle e.g. Price/Description
-Example of detail endpoint
+Each vehicle has an “apiUrl” which contains the detail of a vehicle e.g. the price or description. Example of a detail endpoint:<br />
 http://localhost:8080/api/vehicle_fpace.json 
+
 
 ## Browser Support
 We expect the solution to work in the latest version of Chrome
