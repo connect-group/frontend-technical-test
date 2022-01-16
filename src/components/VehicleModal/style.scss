@@ -1,0 +1,81 @@
+.dialog-backdrop {
+    display: flex;
+    position: fixed;
+    overflow-y: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.dialog {
+    overflow: auto;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-color: #fff;
+    padding: 0;
+    z-index: 1;
+    box-shadow: 0 0 100px;
+    border-radius: 2px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .close_button {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 50px;
+        height: 50px;
+        opacity: 0.6;
+        background: #ffffff;
+        border: none;
+        cursor: pointer;
+        z-index: 1;
+
+        &:hover {
+            opacity: 1;
+        }
+        &:before,
+        &:after {
+            position: absolute;
+            top: 7px;
+            left: 24px;
+            content: "";
+            height: 33px;
+            width: 2px;
+            background-color: #333;
+        }
+        &:before {
+            transform: rotate(45deg);
+        }
+        &:after {
+            transform: rotate(-45deg);
+        }
+    }
+
+    .vehicle-detail {
+        flex-direction: column;
+        .body {
+            border-bottom: none;
+        }
+        img {
+            width: 100%;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .dialog {
+        width: 100%;
+        height: auto;
+        max-width: 800px;
+        overflow: hidden;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+}

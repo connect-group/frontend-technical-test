@@ -1,0 +1,28 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    th {
+        text-align: left;
+        background-color: rgb(209, 209, 209);
+        vertical-align: middle;
+        text-align: left;
+        padding: 10px;
+    }
+    tr {
+        &:nth-of-type(even) {
+            background-color: rgb(240, 240, 240);
+        }
+    }
+    td {
+        text-align: left;
+        padding: 10px;
+        font-size: 15px;
+    }
+}
+@media only screen and (min-width: 768px) {
+    table {
+        td {
+            font-size: 16px;
+        }
+    }
+}
