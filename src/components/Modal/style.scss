@@ -1,0 +1,93 @@
+.modal {
+
+  &__overlay {
+    background-color: #000;
+    height: 100vh;
+    left: 0;
+    opacity: .5;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 1040;
+  }
+
+  &__wrapper {
+    height: 100%;
+    left: 0;
+    outline: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1050;
+  }
+
+  &__body {
+    background: white;
+    border-radius: 3px;
+    margin: 1.75rem auto;
+    max-width: 500px;
+    position: relative;
+    z-index: 100;
+  }
+
+  &__close {
+    border: hidden;
+    color: #000;
+    cursor: pointer;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1;
+    opacity: .5;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+  }
+}
+
+.modal__wrapper > .modal__body > .card__vehicle {
+  border: hidden;
+  box-shadow: none;
+  max-width: 600px;
+  width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+
+  .modal__wrapper .modal__body .card {
+
+    &__vehicle {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      max-width: 600px;
+      width: 100%;
+    }
+  }
+
+  .modal__wrapper .modal__body .card {
+
+    &__header {
+      margin-bottom: .5rem;
+      padding: 0;
+      width: 100%;
+
+      img {
+        display: block;
+        max-height: 300px;
+        object-fit: contain;
+        object-position: center;
+        width: 100%;
+      }
+    }
+
+    &__body {
+      width: 100%;
+
+      p {
+        padding-bottom: 1rem;
+      }
+    }
+  }
+}
