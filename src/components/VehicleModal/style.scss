@@ -1,0 +1,117 @@
+@import "../../_variables.scss";
+
+.over {
+  background-color: rgba(0, 0, 0, .3);
+  height: 100%;
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9;
+}
+
+.modal {
+  margin: 1em auto;
+  max-width: 50%;
+  min-width: 290px;
+  position: relative;
+
+  &__button {
+    background-color: transparent;
+    border: 1px solid $gray;
+    border-radius: 100%;
+    color: $gray;
+    cursor: pointer;
+    height: 2em;
+    line-height: 1;
+    position: absolute;
+    right: .5em;
+    top: .5em;
+    width: 2em;
+
+    &:hover {
+      background-color: $gray;
+      color: $white;
+    }
+  }
+
+  &-content {
+    background-color: $white;
+  }
+
+  &-media {
+    line-height: 0;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  &-info {
+    border-color: $light-gray;
+    border-style: solid;
+    border-width: 0 1px 1px 1px;
+    padding: 1em;
+
+    &__name {
+      font-size: 1.2em;
+      font-weight: 700;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+    }
+
+    &__price {
+      color: $gray;
+      margin: .1em 0 .8em;
+    }
+
+    &__price-value {
+      margin-left: 5px;
+    }
+
+    &__description {
+      color: $gray;
+    }
+
+    &__button {
+      background: transparent;
+      border: 1px solid $gray;
+      border-radius: 0;
+      cursor: pointer;
+      font-style: inherit;
+      margin: 1em 0;
+      padding: .5em 1em;
+      transition: .2s;
+    }
+
+    &__button:hover {
+      background-color: $gray;
+      color: $white;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+
+  .modal {
+    text-align: center;
+
+    &-info {
+      padding-top: 2em;
+  
+      &__name {
+        border-bottom: 1px solid $gray;
+        border-top: 1px solid $gray;
+        display: inline-block;
+        font-size: 1.8em;
+      }
+
+      &__price {
+        margin-top: 1.5em;
+      }
+    }
+  }
+}
