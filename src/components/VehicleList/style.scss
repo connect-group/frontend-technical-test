@@ -1,3 +1,25 @@
 .VehicleList {
   width: 100%;
 }
+
+.container {
+  display: grid;
+  gap: .5rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-items: center;
+  margin: 2rem 1rem;
+}
+
+@media only screen and (max-width: 1300px) {
+
+  .container {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+  .container {
+    grid-template-columns: repeat(1, minmax(300px, 1fr));
+  }
+}
