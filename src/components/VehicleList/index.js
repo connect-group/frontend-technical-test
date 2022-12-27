@@ -3,7 +3,6 @@ import useData from './useData';
 import './style.scss';
 
 export default function VehicleList() {
-  // eslint-disable-next-line no-unused-vars
   const [loading, error, vehicles] = useData();
 
   if (loading) {
@@ -16,25 +15,29 @@ export default function VehicleList() {
 
   return (
     <div data-testid="results">
-      <p>List of vehicles will be displayed here</p>
-      <p>
-        Visit
-        <a href="/api/vehicles.json" target="_blank"> /api/vehicles.json</a>
-        {' '}
-        (main endpoint)
-      </p>
-      <p>
-        Visit
-        <a href="/api/vehicle_fpace.json" target="_blank">/api/vehicle_fpace.json</a>
-        {' '}
-        (detail endpoint - apiUrl)
-      </p>
-      <p>
-        Visit
-        <a href="/api/vehicle_xf.json" target="_blank">/api/vehicle_xf.json</a>
-        {' '}
-        (vehicle without any price)
-      </p>
+      <div className="container">
+        {vehicles.map((data) => <Vehicle data={data} key={data.id} />)}
+      </div>
+    </div>
+  );
+}
+
+function Vehicle({ data }) {
+  const {
+    media, id, price
+  } = data;
+  return (
+    <div className="card">
+      <div className="card__header">
+        <img src={media[0].url} alt={id} />
+      </div>
+      <div className="card__body">
+        <p className="card__name">{id}</p>
+        <p className="card__price">
+          {`From ${price}`}
+        </p>
+        <p className="card__description">The pinnacle of refined capability</p>
+      </div>
     </div>
   );
 }
