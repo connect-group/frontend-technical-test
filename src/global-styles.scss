@@ -1,5 +1,18 @@
+
+:root {
+  --gray: rgb(106, 106, 106);
+  --light-gray: #ededed;
+  --black: #000;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .root {
-  margin: 14px;
-  padding: 12px;
+
   z-index: 12;
+  font-size: 16px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 1px;
 }
