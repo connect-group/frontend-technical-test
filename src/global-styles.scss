@@ -9,22 +9,26 @@
   --white: #fff;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   font: inherit;
   margin: 0;
   padding: 0;
 }
 
-body, html {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+body,
+html {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 16px;
   letter-spacing: 1px;
 
 }
 
 button {
-  all: unset;
+  background: none;
+  border: none;         
   cursor: pointer;
 }
 
@@ -33,6 +37,5 @@ li {
 }
 
 .root {
-  padding: 12px 0;
   z-index: 12;
 }

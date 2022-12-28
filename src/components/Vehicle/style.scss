@@ -1,57 +1,58 @@
-@import '../../_variables';
+@import "../../_variables";
 
 .card {
-    border-bottom: 1px solid var(--light-gray);
-    display: flex;
-    width: 100%;
+  border-bottom: 1px solid var(--light-gray);
+  display: flex;
+  width: 100%;
+  
+  @media screen and (min-width: $tablet) {
+    align-items: center;
+    border-right: 1px solid var(--light-gray);
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  &__header img {
+    height: 100%;
+    object-fit: cover;
+    width: 110px;
   
     @media screen and (min-width: $tablet) {
-     align-items: center;
-     border-right: 1px solid var(--light-gray);
-     flex-direction: column;
-     text-align: center;
-    }
-  
-    &__header img{
-      height: 100%;
+      height: auto;
       object-fit: cover;
-      width: 110px;
-  
-      @media screen and (min-width: $tablet) {
-        height: auto;
-        object-fit: cover;
-        width: 100%;
-      }
-    }
-  
-    &__body {
-      padding: 12px 16px;
-      @media screen and (min-width: $tablet) {
-        padding: 0 0 12px;
-      }
-    }
-  
-    &__name {
-      font-size: 1.2rem;
-      font-weight: bold;
-      text-transform: uppercase;
-  
-      @media screen and (min-width: $tablet) {
-        border-bottom: 2px solid var(--black);
-        border-top: 2px solid var(--black);
-        margin: 24px 0;
-      }
-    }
-  
-    &__price {
-      color: var(--gray);
-      font-size: 1.1rem;
-      margin-bottom: 12px;
-    }
-  
-     &__description {
-      color: var(--gray);
-      font-size: 0.9rem;
+      width: 100%;
     }
   }
+  
+  &__body {
+    padding: 12px 16px;
+
+    @media screen and (min-width: $tablet) {
+      padding: 0 0 12px;
+    }
+  }
+  
+  &__name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  
+    @media screen and (min-width: $tablet) {
+      border-bottom: 2px solid var(--black);
+      border-top: 2px solid var(--black);
+      margin: 24px 0;
+    }
+  }
+  
+  &__price {
+    color: var(--gray);
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+  }
+  
+  &__description {
+    color: var(--gray);
+    font-size: .9rem;
+  }
+}
   
