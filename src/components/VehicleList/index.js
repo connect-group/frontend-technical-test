@@ -10,7 +10,7 @@ export default function VehicleList() {
   const { state: { modal } } = useStore();
 
   if (loading) {
-    return <div data-testid="loading">Loading</div>;
+    return <div data-testid="loading" className="loading">Loading...</div>;
   }
 
   if (error) {
@@ -20,7 +20,7 @@ export default function VehicleList() {
   return (
     <>
       <div data-testid="results">
-        <div className="container">
+        <div className="VehicleList">
           {vehicles.map((data) => <Vehicle data={data} key={data.id} />)}
         </div>
       </div>
