@@ -1,18 +1,38 @@
 
 :root {
-  --gray: rgb(106, 106, 106);
-  --light-gray: #ededed;
   --black: #000;
+  --border-radius: 4px;
+  --dark-green: #27985a;
+  --gray: rgb(106, 106, 106);
+  --green: #30c172;
+  --light-gray: #ededed;
+  --white: #fff;
 }
-* {
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  font: inherit;
   margin: 0;
   padding: 0;
 }
 
-.root {
-
-  z-index: 12;
-  font-size: 16px;
+body, html {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
   letter-spacing: 1px;
+
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+li {
+  all: unset;
+}
+
+.root {
+  padding: 12px 0;
+  z-index: 12;
 }
