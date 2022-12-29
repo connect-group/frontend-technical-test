@@ -44,7 +44,7 @@ export default function Modal() {
       <div className="modal__body" ref={content}>
         <img className="modal__image" src={media[0].url} alt={id} />
         <header>
-          <div id="title" className="modal__title">{title}</div>
+          <h1 id="title" className="modal__title">{title}</h1>
         </header>
         <p className="card__price">
           {`From ${price}`}
