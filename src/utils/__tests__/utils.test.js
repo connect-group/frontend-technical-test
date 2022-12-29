@@ -13,18 +13,18 @@ describe('util functions test', () => {
     expect(vehicleData).toEqual(expected);
   });
 
-  it('should remove any values that are empty', () => {
-    let data = { id: 'fpace', price: '' };
-    const valuesToCheck = ['price'];
+  it(' noEmptyValues should return false if any valueToCheck is falsy', () => {
+    let data = { id: 'fpace', price: '', description: '' };
+    const valuesToCheck = ['price', 'description'];
     expect(noEmptyValues(data, valuesToCheck)).toEqual(false);
 
-    data = { id: 'fpace', price: null };
+    data = { id: 'fpace', price: null, description: null };
     expect(noEmptyValues(data, valuesToCheck)).toEqual(false);
 
     data = { id: 'fpace' };
     expect(noEmptyValues(data, valuesToCheck)).toEqual(false);
 
-    data = { id: 'fpace', price: '£40,000' };
+    data = { id: 'fpace', price: '£40,000', description: 'Electric' };
     expect(noEmptyValues(data, valuesToCheck)).toEqual(true);
   });
 });

@@ -1,6 +1,6 @@
 export function noEmptyValues(data, valuesToCheck) {
   const notEmpty = (key) => data[key] !== '' && data[key] !== undefined && data[key] !== null;
-  return valuesToCheck.some(notEmpty);
+  return valuesToCheck.every(notEmpty);
 }
 
 export function mergeVehicleData (vehicles, vehicleDetails) {
