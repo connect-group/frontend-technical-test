@@ -19,10 +19,8 @@ export default function VehicleList() {
 
   return (
     <>
-      <div data-testid="results">
-        <div className="VehicleList">
-          {vehicles.map((data) => <Vehicle data={data} key={data.id} />)}
-        </div>
+      <div data-testid="results" className="VehicleList">
+        {vehicles.map((data) => <Vehicle data={data} key={data.id} />)}
       </div>
       {modal.isOpen && <Modal />}
     </>
