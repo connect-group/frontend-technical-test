@@ -12,14 +12,11 @@
     text-align: center;
   }
   
-  &__header img {
-    height: 100%;
+  &__image img {
     object-fit: cover;
     width: 110px;
   
     @media screen and (min-width: $tablet) {
-      height: auto;
-      object-fit: cover;
       width: 100%;
     }
   }
