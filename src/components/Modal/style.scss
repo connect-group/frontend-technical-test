@@ -16,9 +16,9 @@
   &__body {
     background-color: #fff;
     border-radius: var(--border-radius);
+    margin: 0 14px;
     max-width: 430px;
     padding: 12px;
-    margin: 0 14px;
     text-align: center;
     transform: translateY(-100px);
     
@@ -30,9 +30,9 @@
 
   &__image {
     display: block;
+    margin: 0 auto;
     max-width: 340px;
     object-fit: contain;
-    margin: 0 auto;
   }
 
   &__title {
@@ -49,10 +49,10 @@
     border-top: 1px solid var(--light-gray);
     color: var(--gray);
     display: grid;
+    font-size: .9rem;
     margin-top: 14px;
     padding: 12px 0;
     text-align: left;
-    font-size: .9rem;
 
     li {
       font-weight: bold;
