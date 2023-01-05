@@ -6,15 +6,15 @@ export default function Vehicle({ data }) {
   const {
     media, id, price
   } = data;
-  const { dispatch } = useStore();
+  const { dispatch, state } = useStore();
   return (
     <>
       <link rel="prefetch" href={media[0].url} as="image" />
-      <button type="button" onClick={() => dispatch({ type: 'TOGGLEMODAL', payload: { isOpen: true, data } })}>
+      <button type="button" onClick={() => dispatch({ type: 'TOGGLEMODAL', payload: { isOpen: true, data } })} aria-expanded={state.modal.isOpen}>
         <div className="card">
           <picture className="card__image">
             <source media="(min-width:768px)" srcSet={media[0].url} />
-            <img src={media[1].url} alt={id} />
+            <img src={media[1].url} alt={`${id} driving on road.`} />
           </picture>
           <div className="card__body">
             <p className="card__name">{id}</p>
