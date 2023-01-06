@@ -3,7 +3,7 @@ import { request } from '../helpers';
 
 jest.mock('../helpers');
 
-describe.skip('getData Tests', () => {
+describe('getData Tests', () => {
   const safelyCallApi = async () => {
     try {
       return await getData();
@@ -42,9 +42,8 @@ describe.skip('getData Tests', () => {
     request.mockResolvedValueOnce([{ apiUrl: '/api/vehicle_ftype.json' }, { apiUrl: '/api/vehicle_xj.json' }]);
     request.mockResolvedValueOnce({ id: 'ftype', price: '£36,000' });
     request.mockRejectedValueOnce('An error occurred');
-
     expect(safelyCallApi()).resolves.toEqual([
-      { apiUrl: '/api/vehicle_ftype.json', id: 'ftype', price: '£36,000' }
+      { id: 'ftype', price: '£36,000' }
     ]);
   });
 
@@ -55,7 +54,7 @@ describe.skip('getData Tests', () => {
     request.mockResolvedValueOnce({ id: 'xj', price: '£40,000' });
 
     return expect(safelyCallApi()).resolves.toEqual([
-      { apiUrl: '/api/xj.json', id: 'xj', price: '£40,000' }
+      { id: 'xj', price: '£40,000' }
     ]);
   });
 });

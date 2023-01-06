@@ -5,5 +5,6 @@
  * @return {Promise<Object>}
  */
 export async function request(apiUrl) {
-  return apiUrl;
+  const response = await fetch(apiUrl);
+  return response.json();
 }

@@ -1,3 +1,23 @@
-.VehicleList {
-  width: 100%;
+@import "../../_variables";
+
+.VehicleList {  
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  margin: 6px;
+
+  @media screen and (min-width: $tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (min-width: $desktop) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
+
+.loading {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}
+

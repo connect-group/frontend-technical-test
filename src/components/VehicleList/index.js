@@ -1,13 +1,16 @@
 import React from 'react';
 import useData from './useData';
 import './style.scss';
+import Vehicle from '../Vehicle';
+import Modal from '../Modal';
+import useStore from '../Context/useStore';
 
 export default function VehicleList() {
-  // eslint-disable-next-line no-unused-vars
   const [loading, error, vehicles] = useData();
+  const { state: { modal } } = useStore();
 
   if (loading) {
-    return <div data-testid="loading">Loading</div>;
+    return <div data-testid="loading" className="loading">Loading...</div>;
   }
 
   if (error) {
@@ -15,26 +18,11 @@ export default function VehicleList() {
   }
 
   return (
-    <div data-testid="results">
-      <p>List of vehicles will be displayed here</p>
-      <p>
-        Visit
-        <a href="/api/vehicles.json" target="_blank"> /api/vehicles.json</a>
-        {' '}
-        (main endpoint)
-      </p>
-      <p>
-        Visit
-        <a href="/api/vehicle_fpace.json" target="_blank">/api/vehicle_fpace.json</a>
-        {' '}
-        (detail endpoint - apiUrl)
-      </p>
-      <p>
-        Visit
-        <a href="/api/vehicle_xf.json" target="_blank">/api/vehicle_xf.json</a>
-        {' '}
-        (vehicle without any price)
-      </p>
-    </div>
+    <>
+      <div data-testid="results" className="VehicleList">
+        {vehicles.map((data) => <Vehicle data={data} key={data.id} />)}
+      </div>
+      {modal.isOpen && <Modal />}
+    </>
   );
 }
