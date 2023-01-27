@@ -1,13 +1,12 @@
 import React from "react";
-import { Vehicle } from "@components/Vehicle";
-import useData from "@hooks/useData";
+import { Vehicle } from "@components";
+import { useData } from "@hooks";
 import styles from "./VehicleList.module.scss";
 
 export default function VehicleList() {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [loading, error, vehicles] = useData();
+  const { isLoading, error, vehicles } = useData();
 
-  if (loading) {
+  if (isLoading) {
     return <div data-testid="loading">Loading</div>;
   }
 
@@ -15,12 +14,21 @@ export default function VehicleList() {
     return <div data-testid="error">{error}</div>;
   }
 
+  if (!vehicles?.length) {
+    return (
+      <div data-testid="nodata">
+        Sorry, there is no data available to display.
+      </div>
+    );
+  }
+
   return (
     <div data-testid="results" className={styles.container}>
-      <Vehicle />
-      <Vehicle />
-      <Vehicle />
-      <Vehicle />
+      {vehicles
+        .filter((x) => !!x)
+        .map((vehicle) => (
+          <Vehicle key={vehicle.id} {...vehicle} />
+        ))}
     </div>
   );
 }

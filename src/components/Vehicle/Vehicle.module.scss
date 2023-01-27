@@ -90,4 +90,9 @@
   color: var(--color-grey-400);
   margin-top: var(--spacing-lg);
   letter-spacing: 1.25px;
+  font-size: var(--font-xs);
+
+  @media screen and (min-width: $sm) {
+    font-size: var(--font-default);
+  }
 }

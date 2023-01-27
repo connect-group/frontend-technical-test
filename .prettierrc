@@ -7,6 +7,7 @@
     "^@api(.*)$",
     "^@components(.*)$",
     "^@hooks(.*)$",
+    "^@utils(.*)$",
     "^[./]"
   ],
   "importOrderSortSpecifiers": true,

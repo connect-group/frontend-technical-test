@@ -1,23 +1,35 @@
-import React from "react";
+import React, { FC } from "react";
+import { VehicleDetails, VehicleOverview } from "@types";
 import styles from "./Vehicle.module.scss";
 
-const formatter = Intl.NumberFormat("en-GB", {
-  currency: "GBP",
-  style: "currency",
-  maximumFractionDigits: 0,
-});
+type Props = Pick<
+  VehicleOverview & VehicleDetails,
+  "id" | "description" | "modelYear" | "price" | "media"
+>;
 
-const Vehicle = () => {
+const Vehicle: FC<Props> = ({ id, description, modelYear, price, media }) => {
+  const smallImage = media?.find(({ url }) => url.includes("1x1"));
+  const largeImage = media?.find(({ url }) => url.includes("16x9"));
+  const hasMedia = !!smallImage || !!largeImage;
+
   return (
     <div className={styles.container}>
-      <picture className={styles.image}>
-        <source media="(min-width:768px)" srcSet="/images/16x9/fpace_k17.jpg" />
-        <img src="/images/1x1/fpace_k17.jpg" alt={`Foo driving on road.`} />
-      </picture>
+      {hasMedia && (
+        <picture className={styles.image}>
+          {!!largeImage && (
+            <source media="(min-width:768px)" srcSet={largeImage.url} />
+          )}
+          {!!smallImage && (
+            <img src={smallImage.url} alt={`Foo driving on road.`} />
+          )}
+        </picture>
+      )}
       <div className={styles.content}>
-        <p className={styles.title}>Vehicle Name</p>
-        <p className={styles.price}>{`From ${formatter.format(76350)}`}</p>
-        <p className={styles.description}>The pinnacle of refined capability</p>
+        <p className={styles.title}>
+          {[id, modelYear].filter((x) => !!x).join(" ")}
+        </p>
+        <p className={styles.price}>{`From ${price}`}</p>
+        {!!description && <p className={styles.description}>{description}</p>}
       </div>
     </div>
   );

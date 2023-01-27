@@ -1,9 +1,7 @@
-/**
- * A utility function to make a network api call
- *
- * @param {string} apiUrl
- * @return {Promise<Object>}
- */
-export async function request(apiUrl) {
-  return apiUrl;
+import { ApiUrl } from "@types";
+
+export async function request<K extends keyof ApiUrl>(apiUrl: K) {
+  const response = await fetch(apiUrl);
+  const result = await response.json();
+  return result as ApiUrl[K];
 }

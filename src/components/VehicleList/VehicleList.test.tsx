@@ -1,15 +1,23 @@
 import React from "react";
+import { faker } from "@faker-js/faker";
 import { render } from "@testing-library/react";
-import VehicleList from "@components/VehicleList/VehicleList";
-import useData from "@hooks/useData";
+import { VehicleOverview } from "@types";
+import { VehicleList } from "@components";
+import { useData } from "@hooks";
 
-jest.mock("@hooks/useData");
+jest.mock("@hooks");
 
 const MockedUseData = jest.mocked(useData);
 
+const MockResults = [
+  {
+    id: faker.datatype.uuid(),
+  },
+] as VehicleOverview[];
+
 describe("<VehicleList /> Tests", () => {
   it("Should show loading state if it not falsy", () => {
-    MockedUseData.mockReturnValue([true, "An error occurred", "results"]);
+    MockedUseData.mockReturnValue([true, "An error occurred", MockResults]);
     const { queryByTestId } = render(<VehicleList />);
 
     expect(queryByTestId("loading")).not.toBeNull();
@@ -18,7 +26,7 @@ describe("<VehicleList /> Tests", () => {
   });
 
   it("Should show error if it is not falsy and loading is finished", () => {
-    MockedUseData.mockReturnValue([false, "An error occurred", "results"]);
+    MockedUseData.mockReturnValue([false, "An error occurred", MockResults]);
     const { queryByTestId } = render(<VehicleList />);
 
     expect(queryByTestId("loading")).toBeNull();
@@ -27,7 +35,7 @@ describe("<VehicleList /> Tests", () => {
   });
 
   it("Should show results if loading successfully finished", () => {
-    MockedUseData.mockReturnValue([false, false, "results"]);
+    MockedUseData.mockReturnValue([false, false, MockResults]);
     const { queryByTestId } = render(<VehicleList />);
 
     expect(queryByTestId("loading")).toBeNull();
