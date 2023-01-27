@@ -1,9 +1,8 @@
 import React from "react";
-import useData from "../../hooks/useData";
-import Vehicle from "../Vehicle";
+import Vehicle from "@components/Vehicle";
+import useData from "@hooks/useData";
 
 export default function VehicleList() {
-
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [loading, error, vehicles] = useData();
 

@@ -1,40 +1,37 @@
 {
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "ecmaVersion": 2018,
-        "sourceType": "module"
-    },
-    "plugins": [
-        "@typescript-eslint",
-        "react-hooks"
-    ],
-    "extends": [
-        "plugin:react/recommended",
-        "plugin:@typescript-eslint/recommended",
-        "prettier"
-    ],
-    "rules": {
-        "react-hooks/rules-of-hooks": "error",
-        "react-hooks/exhaustive-deps": "warn",
-        "react/prop-types": "off",
-        "import/prefer-default-export": "off",
-        "no-underscore-dangle": "off",
-        "space-before-function-paren": "off",
-        "react/forbid-prop-types": "off",
-        "react/prefer-stateless-function": "off",
-        "linebreak-style": "off",
-        "global-require": "off",
-        "semi": "warn",
-        "arrow-body-style": "off",
-        "comma-dangle": "off",
-        "max-len": "off",
-        "react/jsx-closing-tag-location": "off",
-        "react/no-multi-comp": "off"
-    },
-    "settings": {
-        "react": {
-            "pragma": "React",
-            "version": "detect"
-        }
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint", "react-hooks", "prettier"],
+  "extends": [
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/prop-types": "off",
+    "import/prefer-default-export": "off",
+    "no-underscore-dangle": "off",
+    "space-before-function-paren": "off",
+    "react/forbid-prop-types": "off",
+    "react/prefer-stateless-function": "off",
+    "linebreak-style": "off",
+    "global-require": "off",
+    "semi": "warn",
+    "arrow-body-style": "off",
+    "comma-dangle": "off",
+    "max-len": "off",
+    "react/jsx-closing-tag-location": "off",
+    "react/no-multi-comp": "off"
+  },
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "detect"
     }
+  }
 }

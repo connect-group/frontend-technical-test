@@ -12,7 +12,12 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
   },
   resolve: {
-    extensions: [".ts", ".tsx", ".js", ".jsx"],
+    extensions: [".js", ".ts", ".tsx"],
+    alias: {
+      "@components": path.resolve(__dirname, "src/components/"),
+      "@hooks": path.resolve(__dirname, "src/hooks/"),
+      "@api": path.resolve(__dirname, "src/api/"),
+    },
   },
   devServer: {
     hot: true,

@@ -1,4 +1,14 @@
 {
-    "useTabs": false,
-    "tabWidth": 2
+  "useTabs": false,
+  "tabWidth": 2,
+  "importOrder": [
+    "^react$",
+    "<THIRD_PARTY_MODULES>",
+    "^@api(.*)$",
+    "^@components(.*)$",
+    "^@hooks(.*)$",
+    "^[./]"
+  ],
+  "importOrderSortSpecifiers": true,
+  "importOrderGroupNamespaceSpecifiers": true
 }

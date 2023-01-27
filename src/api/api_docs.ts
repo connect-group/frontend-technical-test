@@ -12,3 +12,5 @@
  * @property {string} price - Price
  * @property {Array.<vehicleMedia>} media - Array of vehicle images
  */
+
+export default {};

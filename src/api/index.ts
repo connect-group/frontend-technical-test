@@ -1,5 +1,3 @@
-// import { request } from './helpers';
-
 /**
  * Pull vehicles information
  *
@@ -7,5 +5,5 @@
  */
 // TODO: All API related logic should be made inside this function.
 export default async function getData() {
-    return [];
+  return [];
 }
