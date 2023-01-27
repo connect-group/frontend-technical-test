@@ -1,6 +1,7 @@
 import React from "react";
-import Vehicle from "@components/Vehicle";
+import { Vehicle } from "@components/Vehicle";
 import useData from "@hooks/useData";
+import styles from "./VehicleList.module.scss";
 
 export default function VehicleList() {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -15,7 +16,10 @@ export default function VehicleList() {
   }
 
   return (
-    <div data-testid="results">
+    <div data-testid="results" className={styles.container}>
+      <Vehicle />
+      <Vehicle />
+      <Vehicle />
       <Vehicle />
     </div>
   );
