@@ -4,9 +4,9 @@ import { useData } from "@hooks";
 import styles from "./VehicleList.module.scss";
 
 export default function VehicleList() {
-  const { isLoading, error, vehicles } = useData();
+  const { loading, error, vehicles } = useData();
 
-  if (isLoading) {
+  if (loading) {
     return <div data-testid="loading">Loading</div>;
   }
 
@@ -23,12 +23,12 @@ export default function VehicleList() {
   }
 
   return (
-    <div data-testid="results" className={styles.container}>
+    <main data-testid="results" className={styles.container}>
       {vehicles
         .filter((x) => !!x)
         .map((vehicle) => (
           <Vehicle key={vehicle.id} {...vehicle} />
         ))}
-    </div>
+    </main>
   );
 }

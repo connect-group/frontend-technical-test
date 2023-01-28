@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { MergedVehicleDetails } from "@types";
-import getData from "../api";
+import { getData } from "@api";
 
 export default function useData() {
   const [vehicles, setVehicles] = useState<MergedVehicleDetails[]>([]);
-  const [isLoading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -14,5 +14,5 @@ export default function useData() {
       .finally(() => setLoading(false));
   }, []);
 
-  return { isLoading, error, vehicles };
+  return { loading, error, vehicles };
 }
