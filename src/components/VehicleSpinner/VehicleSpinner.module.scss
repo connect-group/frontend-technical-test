@@ -1,0 +1,65 @@
+.loader {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}
+
+.carBody {
+  animation: shake 0.2s ease-in-out infinite alternate;
+}
+
+.carLine {
+  animation: line 0.8s ease-in-out infinite;
+  animation-fill-mode: both;
+  stroke-dasharray: 22;
+  transform-origin: center right;
+}
+
+.top {
+  animation-delay: 0s;
+}
+
+.middle {
+  animation-delay: 0.2s;
+}
+
+.bottom {
+  animation-delay: 0.4s;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateY(-1%);
+  }
+
+  100% {
+    transform: translateY(3%);
+  }
+}
+
+@keyframes line {
+  0% {
+    stroke-dashoffset: 22;
+  }
+
+  25% {
+    stroke-dashoffset: 22;
+  }
+
+  50% {
+    stroke-dashoffset: 0;
+  }
+
+  51% {
+    stroke-dashoffset: 0;
+  }
+
+  80% {
+    stroke-dashoffset: -22;
+  }
+
+  100% {
+    stroke-dashoffset: -22;
+  }
+}

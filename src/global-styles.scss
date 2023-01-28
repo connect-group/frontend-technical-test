@@ -1,4 +1,4 @@
-@import "./_variables.scss";
+@import "./variables";
 
 *,
 *::before,
@@ -11,7 +11,8 @@
 
 body,
 html {
-  font-family: "Segoe UI", SegoeUI, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: "Segoe UI", SegoeUI, "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
   font-size: 16px;
 
   @media screen and (min-width: $md) {
@@ -26,17 +27,14 @@ html {
   --spacing-lg: 16px;
   --spacing-xl: 24px;
   --spacing-xxl: 32px;
-
   --font-xs: 0.75rem;
   --font-sm: 0.875rem;
   --font-default: 1rem;
   --font-md: 1.25rem;
   --font-lg: 1.5rem;
-
-  --color-grey-800: rgb(53, 51, 50);
-  --color-grey-600: rgba(74, 79, 84, 255);
-  --color-grey-400: rgba(92, 97, 102, 255);
-  --color-grey-200: rgba(240, 242, 242, 255);
-
+  --color-grey-800: rgb(53 51 50);
+  --color-grey-600: rgb(74 79 84);
+  --color-grey-400: rgb(92 97 102);
+  --color-grey-200: rgb(240 242 242);
   --border-radius-md: 4px;
 }

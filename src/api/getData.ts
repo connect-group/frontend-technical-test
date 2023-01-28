@@ -10,9 +10,17 @@ const getData = async () => {
       ({ apiUrl }) => apiUrl as keyof ApiUrl
     );
 
-    const responses = await Promise.allSettled(
-      detailsUrls.map((detail) => request(detail))
-    );
+    const responses = await Promise.allSettled([
+      ...detailsUrls.map((detail) => request(detail)),
+
+      // Arbitrarily slow down the initial page load so the
+      // client can see the spinner.  Demo purposes only.
+      new Promise((resolve) =>
+        setTimeout(() => {
+          resolve({ status: "rejected" });
+        }, 2000)
+      ),
+    ]);
 
     const allVehicleData = responses
       .filter((x) => x.status !== "rejected")

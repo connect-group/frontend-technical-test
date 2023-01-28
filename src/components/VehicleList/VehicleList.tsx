@@ -1,5 +1,5 @@
 import React from "react";
-import { Vehicle } from "@components";
+import { Vehicle, VehicleSpinner } from "@components";
 import { useData } from "@hooks";
 import styles from "./VehicleList.module.scss";
 
@@ -7,7 +7,11 @@ export default function VehicleList() {
   const { loading, error, vehicles } = useData();
 
   if (loading) {
-    return <div data-testid="loading">Loading</div>;
+    return (
+      <div className={styles.loading} data-testid="loading">
+        <VehicleSpinner />
+      </div>
+    );
   }
 
   if (error) {
