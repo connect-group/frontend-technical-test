@@ -3,6 +3,18 @@
 .container {
   width: 100%;
 
+  > div {
+    animation: intro 200ms linear forwards;
+    opacity: 0;
+    transform: translateX(-32px);
+  }
+
+  @for $i from 2 through 8 {
+    > div:nth-child(#{$i}) {
+      animation-delay: $i * 100ms;
+    }
+  }
+
   > div:not(:last-child) {
     border-bottom: 2px solid var(--color-grey-200);
 
@@ -30,5 +42,12 @@
     > div {
       flex-basis: 40%;
     }
+  }
+}
+
+@keyframes intro {
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
 }

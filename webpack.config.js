@@ -23,7 +23,7 @@ module.exports = {
   devServer: {
     hot: true,
     inline: true,
-    open: false,
+    open: true,
     contentBase: path.join(__dirname, "public"),
   },
   module: {
