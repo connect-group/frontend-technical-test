@@ -28,6 +28,7 @@ describe("getData Tests", () => {
   it("Should make an api call to receive a list of general vehicle information", async () => {
     expect.assertions(1);
     MockedRequest.mockResolvedValueOnce([]);
+
     await safelyCallApi();
 
     expect(MockedRequest).toBeCalledWith("/api/vehicles.json");
