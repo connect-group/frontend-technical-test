@@ -1,5 +1,41 @@
-.root {
-  margin: 14px;
-  padding: 12px;
-  z-index: 12;
+@import "./variables";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  font-family: "Segoe UI", SegoeUI, "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  font-size: 16px;
+
+  @media screen and (min-width: $md) {
+    font-size: 18px;
+  }
+}
+
+:root {
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+  --spacing-xl: 24px;
+  --spacing-xxl: 32px;
+  --font-xs: 0.75rem;
+  --font-sm: 0.875rem;
+  --font-default: 1rem;
+  --font-md: 1.25rem;
+  --font-lg: 1.5rem;
+  --color-grey-800: rgb(53 51 50);
+  --color-grey-600: rgb(74 79 84);
+  --color-grey-400: rgb(92 97 102);
+  --color-grey-200: rgb(240 242 242);
+  --border-radius-md: 4px;
+  --border-radius-lg: 8px;
 }

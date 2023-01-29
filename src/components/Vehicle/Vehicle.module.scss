@@ -1,0 +1,97 @@
+@import "../../variables";
+
+.container {
+  align-items: center;
+  background-color: white;
+  column-gap: var(--spacing-md);
+  display: flex;
+  scale: 1;
+  transition: scale 100ms ease-in-out;
+
+  &:hover {
+    border-bottom-left-radius: var(--border-radius-md);
+    border-bottom-right-radius: var(--border-radius-md);
+    filter: drop-shadow(0 4px 3px rgb(0 0 0 / 7%))
+      drop-shadow(0 2px 2px rgb(0 0 0 / 6%));
+    scale: 1.05;
+    z-index: 1;
+  }
+
+  @media screen and (min-width: $md) {
+    column-gap: var(--spacing-lg);
+    flex-direction: column;
+  }
+
+  @media screen and (min-width: $lg) {
+    flex-shrink: 0;
+  }
+}
+
+.image {
+  @media screen and (min-width: $md) {
+    width: 100%;
+  }
+
+  img {
+    display: block;
+    width: 120px;
+
+    @media screen and (min-width: $sm) {
+      width: 160px;
+    }
+
+    @media screen and (min-width: $md) {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+.content {
+  width: 100%;
+
+  @media screen and (min-width: $sm) {
+    padding: var(--spacing-md) var(--spacing-lg);
+  }
+
+  @media screen and (min-width: $md) {
+    padding-top: var(--spacing-xxl);
+    text-align: center;
+  }
+}
+
+.title {
+  color: var(--color-grey-800);
+  font-size: var(--font-md);
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  @media screen and (min-width: $sm) {
+    font-size: var(--font-lg);
+  }
+
+  @media screen and (min-width: $md) {
+    border-bottom: 2px solid var(--color-grey-800);
+    border-top: 2px solid var(--color-grey-800);
+    display: inline-block;
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-xs) 0;
+  }
+}
+
+.price {
+  color: var(--color-grey-600);
+  letter-spacing: 2px;
+}
+
+.description {
+  color: var(--color-grey-400);
+  font-size: var(--font-xs);
+  letter-spacing: 1.25px;
+  margin-top: var(--spacing-lg);
+
+  @media screen and (min-width: $sm) {
+    font-size: var(--font-default);
+  }
+}

@@ -1,0 +1,37 @@
+@import "../../variables";
+
+.dialog {
+  border: 1px solid var(--color-grey-600);
+  border-radius: var(--border-radius-lg);
+  margin: var(--spacing-xl) auto;
+  max-width: 500px;
+  overflow: visible;
+  width: calc(95% - var(--spacing-xxl));
+
+  &::backdrop {
+    background-color: rgb(0 0 0 / 50%);
+  }
+
+  @media screen and (min-width: $md) {
+    width: 80%;
+  }
+
+  @media screen and (min-width: $md) {
+    max-width: 700px;
+  }
+}
+
+.close {
+  background: black;
+  border: 0;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  height: 32px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  right: -12px;
+  top: -12px;
+  width: 32px;
+}

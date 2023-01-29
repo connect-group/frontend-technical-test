@@ -1,0 +1,28 @@
+@import "../../variables";
+
+.image {
+  height: 100px;
+  object-fit: cover;
+  width: 100%;
+
+  @media screen and (min-width: $md) {
+    height: 200px;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-xl);
+  row-gap: var(--spacing-md);
+}
+
+.header {
+  font-size: var(--font-lg);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.list {
+  list-style-type: none;
+}

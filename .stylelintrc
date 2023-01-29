@@ -1,20 +1,14 @@
 {
-    "extends": "stylelint-config-airbnb",
-    "plugins": [
-        "stylelint-scss",
-        "stylelint-order"
-    ],
-    "rules": {
-        "selector-max-specificity": "1,2,0",
-        "order/order": [
-            "custom-properties",
-            "declarations",
-            "rules"
-        ],
-        "order/properties-order": [
-            "width",
-            "height"
-        ],
-        "order/properties-alphabetical-order": true
-    }
+  "extends": [
+    "stylelint-config-standard-scss",
+    "stylelint-config-prettier-scss"
+  ],
+  "plugins": ["stylelint-order"],
+  "rules": {
+    "selector-max-specificity": "1,2,0",
+    "order/order": ["custom-properties", "declarations", "rules"],
+    "order/properties-order": ["width", "height"],
+    "order/properties-alphabetical-order": true,
+    "selector-class-pattern": "^[a-z][a-zA-Z0-9]+$"
+  }
 }
