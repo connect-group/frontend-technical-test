@@ -8,7 +8,8 @@ const VehicleCard = ({ vehicle }) => {
   return (
     <div className="card">
       <div className="card__image">
-        <img src={media[1].url} alt={id} />
+        <img src={media[0].url} alt={id} className="card__image--desktop" />
+        <img src={media[1].url} alt={id} className="card__image--mobile" />
       </div>
       <div className="card__content">
         {/* <h2 className="card__title">{id}</h2> */}
