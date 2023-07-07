@@ -6,10 +6,7 @@ import VehicleCard from '../VehicleCard';
 import './style.scss';
 
 export default function VehicleList() {
-  // eslint-disable-next-line no-unused-vars
   const [loading, error, vehicles] = useData();
-
-  console.log(vehicles);
 
   if (loading) {
     return <Loader />;
@@ -23,9 +20,9 @@ export default function VehicleList() {
 
   return (
     <div data-testid="results" className="container">
-      {vehicles.map((vehicle) => {
+      {vehicles.map((vehicle, index) => {
         const { id } = vehicle;
-        return <VehicleCard key={id} vehicle={vehicle} />;
+        return <VehicleCard key={id} vehicle={vehicle} index={index} />;
       })}
       {/* <p>List of vehicles will be displayed here</p>
       <p>
