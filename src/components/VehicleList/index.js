@@ -22,12 +22,12 @@ export default function VehicleList() {
   }
 
   return (
-    <div data-testid="results">
+    <div data-testid="results" className="container">
       {vehicles.map((vehicle) => {
         const { id } = vehicle;
         return <VehicleCard key={id} vehicle={vehicle} />;
       })}
-      <p>List of vehicles will be displayed here</p>
+      {/* <p>List of vehicles will be displayed here</p>
       <p>
         Visit
         <a href="/api/vehicles.json" target="_blank"> /api/vehicles.json</a>
@@ -45,7 +45,7 @@ export default function VehicleList() {
         <a href="/api/vehicle_xf.json" target="_blank">/api/vehicle_xf.json</a>
         {' '}
         (vehicle without any price)
-      </p>
+      </p> */}
     </div>
   );
 }

@@ -30,6 +30,8 @@ export default async function getData() {
         ),
       })
     );
+
+    console.log([validVehiclesWithDetails[0]]);
     return validVehiclesWithDetails;
   } catch (error) {
     return Promise.reject(error.message);
