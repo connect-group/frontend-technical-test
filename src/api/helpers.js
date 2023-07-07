@@ -5,5 +5,16 @@
  * @return {Promise<Object>}
  */
 export async function request(apiUrl) {
-  return apiUrl;
+  try {
+    const apiResponse = await fetch(apiUrl);
+    // if (!apiResponse.ok) {
+    //   throw new Error(`Request failed with status ${apiResponse.status}`);
+    // }
+    const data = await apiResponse.json();
+    return data;
+  } catch (error) {
+    // throw error;
+    // throw new Error('Request failed with status');
+    return Promise.reject(error);
+  }
 }
