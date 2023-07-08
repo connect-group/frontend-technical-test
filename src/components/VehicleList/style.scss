@@ -2,17 +2,5 @@
   @media (min-width: 481px) {
     display: flex;
     flex-wrap: wrap;
-    height: fit-content;
-    .card {
-      width: 50%;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    display: flex;
-    flex-wrap: wrap;
-    .card {
-      width: 25%;
-    }
   }
 }
