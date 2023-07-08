@@ -20,7 +20,7 @@ const VehicleCard = ({ vehicle, index }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(true);
-    }, index * 100); // Adjust the delay as desired for the staggered effect
+    }, index * 100);
 
     return () => clearTimeout(timer);
   }, [index]);
@@ -67,7 +67,7 @@ const VehicleCard = ({ vehicle, index }) => {
         <p className="card__description">{getShortenedDescription()}</p>
         {renderExpandedArea()}
         <Button
-          buttonClass="card__expandtext"
+          buttonClass="card__expandbutton"
           onClickHandler={toggleExpanded}
           ariaExpanded={expanded}
           text={renderReadText()}

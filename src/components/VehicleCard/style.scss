@@ -1,6 +1,6 @@
 .card {
   align-items: center;
-  border-bottom: 1px solid #eef1f1;
+  border-bottom: .0625rem solid #eef1f1;
   display: flex;
   flex-direction: row;
   height: fit-content;
@@ -8,15 +8,15 @@
   width: 100%;
 
   &:hover {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2);
+    box-shadow: 0 .25rem .5rem 0 rgba(0, 0, 0, .2);
     cursor: pointer;
   }
 
   &__image {
     flex-shrink: 0;
-    height: 150px;
-    margin-right: 20px;
-    width: 150px;
+    height: 9.375rem;
+    margin-right: 1.25rem;
+    width: 9.375rem;
 
     img {
       height: 100%;
@@ -31,42 +31,42 @@
     font-family: "Roboto", sans-serif;
     justify-content: center;
     width: 100%;
+  }
 
-    .card__title {
-      color: #0c121d;
-      font-size: 16px;
-      letter-spacing: 2px;
-      margin-bottom: 10px;
-      text-transform: uppercase;
-    }
+  &__title {
+    color: #0c121d;
+    font-size: 1rem;
+    letter-spacing: .125rem;
+    margin-bottom: .625rem;
+    text-transform: uppercase;
+  }
 
-    .card__price {
-      color: #4c5157;
-      font-size: 15px;
-      letter-spacing: 1.5px;
-    }
+  &__price {
+    color: #4c5157;
+    font-size: .9375rem;
+    letter-spacing: .09375rem;
+  }
 
-    .card__description {
-      color: #4c5157;
-      font-size: 14px;
-      letter-spacing: .5px;
-      line-height: 20px;
-      margin-top: 10px;
-    }
+  &__description {
+    color: #4c5157;
+    font-size: .875rem;
+    letter-spacing: .03125rem;
+    line-height: 1.25rem;
+    margin-top: .625rem;
+  }
 
-    .card__expandtext {
-      color: #1b4170;
-      cursor: pointer;
-      font-size: 13px;
-      letter-spacing: .5px;
-      line-height: 20px;
-      margin: 10px 0px;
-    }
+  &__expandbutton {
+    color: #1b4170;
+    cursor: pointer;
+    font-size: .8125rem;
+    letter-spacing: .03125rem;
+    line-height: 1.25rem;
+    margin: .3125rem .3125rem .3125rem 0;
+  }
 
-    .card__expandedarea {
-      font-size: 14px;
-      margin: 10px 0px 3px;
-    }
+  &__expandedarea {
+    font-size: .875rem;
+    margin: .625rem 0 .1875rem;
   }
 }
 
@@ -78,35 +78,35 @@
 
     &__image {
       height: 100%;
-      margin-right: 0px;
+      margin-right: 0;
       width: 100%;
     }
 
     &__content {
-      border-left: #eef1f1 1.5px solid;
-      border-right: #eef1f1 1.5px solid;
+      border-left: .09375rem solid #eef1f1;
+      border-right: .09375rem solid #eef1f1;
       display: block;
       text-align: center;
+    }
 
-      .card__title {
-        border-bottom: 2px solid #0c121d;
-        border-top: 2px solid #0c121d;
-        color: #0c121d;
-        font-size: 18px;
-        letter-spacing: 2px;
-        margin: 25px 30% 30px;
-        padding: 7px;
-      }
+    &__title {
+      border-bottom: .125rem solid #0c121d;
+      border-top: .125rem solid #0c121d;
+      color: #0c121d;
+      font-size: 1.125rem;
+      letter-spacing: .125rem;
+      margin: 1.5625rem 30% 1.875rem;
+      padding: .4375rem;
+    }
 
-      .card__description {
-        color: #4c5157;
-        font-size: 14px;
-        letter-spacing: 1px;
-        line-height: 22px;
-        margin: 15px 5px 5px;
-        min-height: 45px;
-        overflow: auto;
-      }
+    &__description {
+      color: #4c5157;
+      font-size: .875rem;
+      letter-spacing: .03125rem;
+      line-height: 1.375rem;
+      margin: .9375rem .3125rem .3125rem;
+      min-height: 2.8125rem;
+      overflow: auto;
     }
   }
 }
@@ -117,18 +117,18 @@
     width: 25%;
 
     &__content {
-      margin: 0px 10px;
+      margin: 0 .625rem;
+    }
 
-      .card__title {
-        margin-bottom: 25px;
-      }
+    &__title {
+      margin-bottom: 1.5625rem;
+    }
 
-      .card__description {
-        font-size: 16px;
-        line-height: 30px;
-        margin: 15px 5px 5px;
-        margin-top: 20px;
-      }
+    &__description {
+      font-size: 1rem;
+      line-height: 1.875rem;
+      margin: .9375rem .3125rem .3125rem;
+      margin-top: 1.25rem;
     }
   }
 }
@@ -145,7 +145,7 @@
 
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(.625rem);
   }
 
   to {
@@ -153,3 +153,4 @@
     transform: translateY(0);
   }
 }
+
