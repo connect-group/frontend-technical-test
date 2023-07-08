@@ -10,12 +10,10 @@ export default function VehicleList() {
 
   if (loading) {
     return <Loader />;
-    // return <div data-testid="loading">Loading</div>;
   }
 
   if (error) {
-    return <ErrorBox />;
-    // return <div data-testid="error">{ error }</div>;
+    return <ErrorBox error={error} />;
   }
 
   return (

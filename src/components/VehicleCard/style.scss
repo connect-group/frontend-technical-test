@@ -37,6 +37,7 @@
             letter-spacing: 2px;
             color: #0c121d;
             margin-bottom: 10px;
+            text-transform: uppercase;
         }
         .card__price {
             font-size: 15px;
@@ -51,7 +52,7 @@
             margin-top: 10px;
         }
         .card__expandtext {
-          font-size: 14px;
+          font-size: 13px;
           letter-spacing: 0.5px;
           line-height: 20px;
           color: #1b4170;
@@ -59,8 +60,8 @@
           cursor: pointer;
         }
         .card__expandedarea{
-          font-size: 13px;
-          margin: 10px 0px;
+          font-size: 14px;
+          margin: 10px 0px 3px;
         }
 
     }

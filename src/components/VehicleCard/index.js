@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Button from '../Button';
 import './style.scss';
 
 const VehicleCard = ({ vehicle, index }) => {
@@ -33,17 +34,13 @@ const VehicleCard = ({ vehicle, index }) => {
   const renderExpandedArea = () => {
     if (expanded) {
       return (
-        <p className="card_expandedarea">
+        <p className="card__expandedarea" data-testid="model-area">
           <b>
-            Model:
-            {' '}
+            Model(Style): &nbsp;
             {modelYear}
-          </b>
-          ,&nbsp;
-          <b>
-            Style:
-            {' '}
+            (
             {meta.bodystyles[0]}
+            )
           </b>
         </p>
       );
@@ -64,18 +61,16 @@ const VehicleCard = ({ vehicle, index }) => {
         <img src={media[1].url} alt={altText} />
       </picture>
       <div className="card__content">
-        <h2 className="card__title">{id.toUpperCase()}</h2>
+        <h2 className="card__title">{id}</h2>
         <p className="card__price">{`From ${price}`}</p>
         <p className="card__description">{getShortenedDescription()}</p>
         {renderExpandedArea()}
-        <button
-          type="button"
-          className="card__expandtext"
-          onClick={toggleExpanded}
-          aria-expanded={expanded}
-        >
-          {renderReadText()}
-        </button>
+        <Button
+          buttonClass="card__expandtext"
+          onClickHandler={toggleExpanded}
+          ariaExpanded={expanded}
+          text={renderReadText()}
+        />
       </div>
     </div>
   );
