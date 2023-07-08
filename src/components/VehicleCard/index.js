@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import Button from '../Button';
 import './style.scss';
 
@@ -74,6 +75,24 @@ const VehicleCard = ({ vehicle, index }) => {
       </div>
     </div>
   );
+};
+
+VehicleCard.propTypes = {
+  vehicle: PropTypes.shape({
+    description: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    media: PropTypes.arrayOf(
+      PropTypes.shape({
+        url: PropTypes.string.isRequired,
+      })
+    ).isRequired,
+    price: PropTypes.string.isRequired,
+    modelYear: PropTypes.string.isRequired,
+    meta: PropTypes.shape({
+      bodystyles: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+    }).isRequired,
+  }).isRequired,
+  index: PropTypes.number.isRequired,
 };
 
 export default VehicleCard;
