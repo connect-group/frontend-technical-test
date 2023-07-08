@@ -1,141 +1,155 @@
 .card {
-    display: flex;
-    border-bottom: 1px solid #eef1f1;
-    align-items: center;
-    flex-direction: row;
-    width: 100%;
-    height: fit-content;
-    transition: box-shadow 0.3s ease;
+  align-items: center;
+  border-bottom: 1px solid #eef1f1;
+  display: flex;
+  flex-direction: row;
+  height: fit-content;
+  transition: box-shadow .3s ease;
+  width: 100%;
 
-    &:hover {
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-      cursor: pointer;
+  &:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2);
+    cursor: pointer;
+  }
+
+  &__image {
+    flex-shrink: 0;
+    height: 150px;
+    margin-right: 20px;
+    width: 150px;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    font-family: "Roboto", sans-serif;
+    justify-content: center;
+    width: 100%;
+
+    .card__title {
+      color: #0c121d;
+      font-size: 16px;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
     }
 
-    &__image {
-        flex-shrink: 0;
-        margin-right: 20px;
-        height: 150px;
-        width: 150px;
+    .card__price {
+      color: #4c5157;
+      font-size: 15px;
+      letter-spacing: 1.5px;
+    }
 
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-          }
+    .card__description {
+      color: #4c5157;
+      font-size: 14px;
+      letter-spacing: .5px;
+      line-height: 20px;
+      margin-top: 10px;
+    }
+
+    .card__expandtext {
+      color: #1b4170;
+      cursor: pointer;
+      font-size: 13px;
+      letter-spacing: .5px;
+      line-height: 20px;
+      margin: 10px 0px;
+    }
+
+    .card__expandedarea {
+      font-size: 14px;
+      margin: 10px 0px 3px;
+    }
+  }
+}
+
+@media (min-width: 481px) {
+
+  .card {
+    flex-direction: column;
+    width: 50%;
+
+    &__image {
+      height: 100%;
+      margin-right: 0px;
+      width: 100%;
     }
 
     &__content {
-        display: flex;
-        width: 100%;
-        font-family: "Roboto", sans-serif;
-        flex-direction: column;
-        justify-content: center;
+      border-left: #eef1f1 1.5px solid;
+      border-right: #eef1f1 1.5px solid;
+      display: block;
+      text-align: center;
 
-        .card__title {
-            font-size: 16px;
-            letter-spacing: 2px;
-            color: #0c121d;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-        }
-        .card__price {
-            font-size: 15px;
-            letter-spacing: 1.5px;
-            color: #4c5157;
-        }
-        .card__description {
-            font-size: 14px;
-            letter-spacing: 0.5px;
-            line-height: 20px;
-            color: #4c5157;
-            margin-top: 10px;
-        }
-        .card__expandtext {
-          font-size: 13px;
-          letter-spacing: 0.5px;
-          line-height: 20px;
-          color: #1b4170;
-          margin: 10px 0px;
-          cursor: pointer;
-        }
-        .card__expandedarea{
-          font-size: 14px;
-          margin: 10px 0px 3px;
-        }
+      .card__title {
+        border-bottom: 2px solid #0c121d;
+        border-top: 2px solid #0c121d;
+        color: #0c121d;
+        font-size: 18px;
+        letter-spacing: 2px;
+        margin: 25px 30% 30px;
+        padding: 7px;
+      }
 
+      .card__description {
+        color: #4c5157;
+        font-size: 14px;
+        letter-spacing: 1px;
+        line-height: 22px;
+        margin: 15px 5px 5px;
+        min-height: 45px;
+        overflow: auto;
+      }
     }
+  }
+}
 
-    @media (min-width: 481px) {
-        flex-direction: column;
-        width: 50%;
+@media (min-width: 769px) {
 
-        &__image {
-            margin-right: 0px;
-            width: 100%;
-            height: 100%;
-        }
+  .card {
+    width: 25%;
 
-        &__content {
-            display: block;
-            text-align: center;
-            border-left: #eef1f1 1.5px solid;
-            border-right: #eef1f1 1.5px solid;
+    &__content {
+      margin: 0px 10px;
 
-            .card__title {
-                font-size: 18px;
-                letter-spacing: 2px;
-                color: #0c121d;
-                margin: 25px 30% 30px;
-                padding: 7px;
-                border-top: 2px solid #0c121d;
-                border-bottom: 2px solid #0c121d;
-            }
-            .card__description {
-                font-size: 14px;
-                letter-spacing: 1px;
-                line-height: 22px;
-                color: #4c5157;
-                min-height: 45px;
-                margin: 15px 5px 5px;
-                overflow: auto;
-            }
-        }
+      .card__title {
+        margin-bottom: 25px;
+      }
+
+      .card__description {
+        font-size: 16px;
+        line-height: 30px;
+        margin: 15px 5px 5px;
+        margin-top: 20px;
+      }
     }
-
-    @media (min-width: 769px) {
-        width: 25%;
-
-        &__content {
-            margin: 0px 10px;
-            .card__title {
-                margin-bottom: 25px;
-            }
-            .card__description {
-                font-size: 16px;
-                margin-top: 20px;
-                line-height: 30px;
-                margin: 15px 5px 5px;
-            }
-        }
-    }
+  }
 }
 
 .fade-in {
-  opacity: 0;
+  animation-duration: .9s;
+  animation-fill-mode: forwards;
   animation-name: fade-in;
-  animation-duration: 0.9s; /* Adjust the duration as desired */
-  animation-timing-function: ease-in-out; /* Adjust the easing as desired */
-  animation-fill-mode: forwards; /* Maintain the final state after animation */
+  animation-timing-function: ease-in-out;
+  opacity: 0;
 }
 
 @keyframes fade-in {
+
   from {
     opacity: 0;
-    transform: translateY(10px); /* Optional: Add additional animation properties */
+    transform: translateY(10px);
   }
+
   to {
     opacity: 1;
-    transform: translateY(0); /* Optional: Add additional animation properties */
+    transform: translateY(0);
   }
 }
