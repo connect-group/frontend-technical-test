@@ -3,15 +3,15 @@ $color-secondary: #4c5157;
 $color-accent: #1b4170;
 $color-primary-gray: #eef1f1;
 
-$spacing-xxs: 0.125rem;
-$spacing-xs: 0.3125rem;
-$spacing-sm: 0.625rem;
+$spacing-xxs: .125rem;
+$spacing-xs: .3125rem;
+$spacing-sm: .625rem;
 $spacing-md: 1.25rem;
 $spacing-lg: 1.875rem;
 $spacing-xl: 2.8125rem;
 
-$border-width: 0.09375rem;
-$box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2);
+$border-width: .09375rem;
+$box-shadow: 0 .25rem .5rem 0 rgba(0, 0, 0, .2);
 
 .root {
   z-index: 12;
