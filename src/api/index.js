@@ -1,6 +1,5 @@
 // eslint-disable-next-line no-unused-vars
 import { request } from './helpers';
-import { API_URL } from './constants';
 /**
  * Pull vehicles information
  *
@@ -9,7 +8,7 @@ import { API_URL } from './constants';
 // TODO: All API related logic should be made inside this function.
 export default async function getData() {
   try {
-    const allVehicles = await request(`${API_URL}/vehicles.json`);
+    const allVehicles = await request('/api/vehicles.json');
 
     const vehiclesDetailsApiCall = allVehicles.map((vehicle) => request(vehicle.apiUrl));
     const vehiclesDetails = await Promise.allSettled(
