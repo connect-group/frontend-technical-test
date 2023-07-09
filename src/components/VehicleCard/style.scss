@@ -17,7 +17,7 @@
   &__image {
     flex-shrink: 0;
     height: 9.375rem;
-    margin-right: 1.25rem;
+    margin-right: $spacing-md;
     width: 9.375rem;
 
     img {
@@ -53,7 +53,7 @@
     color: $color-secondary;
     font-size: .875rem;
     letter-spacing: .03125rem;
-    line-height: 1.25rem;
+    line-height: $spacing-md;
     margin-top: $spacing-xs;
   }
 
@@ -62,7 +62,7 @@
     cursor: pointer;
     font-size: .8125rem;
     letter-spacing: .03125rem;
-    line-height: 1.25rem;
+    line-height: $spacing-md;
     margin: $spacing-xs $spacing-xs $spacing-xs 0;
   }
 
@@ -121,7 +121,7 @@
 
     &__description {
       font-size: 1rem;
-      line-height: 1.875rem;
+      line-height: $spacing-lg;
       margin: $spacing-md $spacing-xs $spacing-xs;
     }
   }
