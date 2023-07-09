@@ -1,3 +1,6 @@
-.VehicleList {
-  width: 100%;
+.container {
+  @media (min-width: 481px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
