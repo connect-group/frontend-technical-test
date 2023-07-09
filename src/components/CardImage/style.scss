@@ -1,19 +1,22 @@
 @import "../../styles/variables.scss";
 
 .card-image {
-  height: $block-size-xxl;
+  height: 0;
   margin-right: $spacing-md;
-  width: $block-size-xxl;
+  padding-bottom: 56.25%; // 16:9 aspect ratio (9 divided by 16, multiplied by 100)
+  position: relative;
+  width: 100%;
 
   &__default {
     height: 100%;
     object-fit: cover;
+    object-position: center;
+    position: absolute;
     width: 100%;
   }
 
   @media (min-width: 481px) {
     height: 100%;
     margin-right: 0;
-    width: 100%;
   }
 }

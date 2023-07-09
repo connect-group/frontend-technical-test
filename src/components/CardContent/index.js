@@ -22,7 +22,7 @@ const CardContent = ({
   const renderExpandedArea = useMemo(() => {
     if (expanded) {
       return (
-        <p className="card__expandedarea" data-testid="model-area">
+        <p className="card-content__expandedarea" data-testid="model-area">
           <b>
             Model(Style): &nbsp;
             {modelYear}

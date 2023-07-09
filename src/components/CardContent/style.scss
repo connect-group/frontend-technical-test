@@ -3,6 +3,7 @@
 .card-content {
   display: flex;
   flex-direction: column;
+  gap: 10px;
   justify-content: center;
   width: 100%;
 
@@ -29,7 +30,7 @@
   }
 
   &__expandbutton {
-    color: $color-accent;
+    color: $color-primary-blue;
     cursor: pointer;
     font-size: .8125rem;
     letter-spacing: .03125rem;
