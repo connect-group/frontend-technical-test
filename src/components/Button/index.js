@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Button = ({
-  buttonClass, text, onClickHandler, ariaExpanded
+  buttonClass, text, onClickHandler, ariaExpanded, ariaLabel
 }) => {
   return (
     <button
@@ -10,6 +10,7 @@ const Button = ({
       className={buttonClass}
       onClick={onClickHandler}
       aria-expanded={ariaExpanded}
+      aria-label={ariaLabel}
     >
       {text}
     </button>

@@ -22,7 +22,12 @@ const CardContent = ({
   const renderExpandedArea = useMemo(() => {
     if (expanded) {
       return (
-        <p className="card-content__expandedarea" data-testid="model-area">
+        <p
+          className="card-content__expandedarea"
+          data-testid="model-area"
+          id={`model-area-${id}`}
+          aria-hidden={!expanded}
+        >
           <b>
             Model(Style): &nbsp;
             {modelYear}
@@ -34,7 +39,7 @@ const CardContent = ({
       );
     }
     return null;
-  }, [expanded, meta.bodystyles, modelYear]);
+  }, [expanded, meta.bodystyles, modelYear, id]);
 
   const renderReadText = useMemo(() => {
     return expanded ? 'Read Less' : 'Read More';
@@ -53,6 +58,7 @@ const CardContent = ({
         onClickHandler={toggleExpanded}
         ariaExpanded={expanded}
         text={renderReadText}
+        ariaLabel={renderReadText}
       />
     </div>
   );
