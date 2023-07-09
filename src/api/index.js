@@ -11,27 +11,21 @@ export default async function getData() {
     const allVehicles = await request('/api/vehicles.json');
 
     const vehiclesDetailsApiCall = allVehicles.map((vehicle) => request(vehicle.apiUrl));
-    const vehiclesDetails = await Promise.allSettled(
-      vehiclesDetailsApiCall
-    );
+    const vehiclesDetails = await Promise.allSettled(vehiclesDetailsApiCall);
 
     const validVehiclesResults = vehiclesDetails
-      .filter(
-        (result) => result.status === 'fulfilled' && !!result.value.price
-      )
+      .filter((result) => result.status === 'fulfilled' && result.value.price)
       .map((result) => result.value);
 
     const validVehiclesWithDetails = validVehiclesResults.map(
       (validVehicle) => ({
         ...validVehicle,
-        ...allVehicles.find(
-          (vehicle) => vehicle.id === validVehicle.id
-        ),
+        ...allVehicles.find((vehicle) => vehicle.id === validVehicle.id),
       })
     );
 
     return validVehiclesWithDetails;
   } catch (error) {
-    return Promise.reject(error.message);
+    throw new Error(error.message);
   }
 }

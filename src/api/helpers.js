@@ -10,6 +10,6 @@ export async function request(apiUrl) {
     const data = await apiResponse.json();
     return data;
   } catch (error) {
-    return Promise.reject(error);
+    throw new Error(`Request failed: ${error.message}`);
   }
 }
