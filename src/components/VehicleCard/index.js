@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import Button from '../Button';
+import CardImage from '../CardImage';
 import './style.scss';
+import CardContent from '../CardContent';
 
 const VehicleCard = ({ vehicle, index }) => {
   const {
@@ -25,54 +26,18 @@ const VehicleCard = ({ vehicle, index }) => {
     return () => clearTimeout(timer);
   }, [index]);
 
-  const getShortenedDescription = () => {
-    if (!expanded && description.length > 40) {
-      return `${description.substring(0, 40)}...`;
-    }
-    return description;
-  };
-
-  const renderExpandedArea = () => {
-    if (expanded) {
-      return (
-        <p className="card__expandedarea" data-testid="model-area">
-          <b>
-            Model(Style): &nbsp;
-            {modelYear}
-            (
-            {meta.bodystyles[0]}
-            )
-          </b>
-        </p>
-      );
-    }
-    return null;
-  };
-
-  const renderReadText = () => {
-    return expanded ? 'Read Less' : 'Read More';
-  };
-
   return (
-    <div
-      className={`card ${isVisible ? 'fade-in' : ''}`}
-    >
-      <picture className="card__image">
-        <source srcSet={media[0].url} type="image/jpg" media="(min-width:768px)" alt={altText} />
-        <img src={media[1].url} alt={altText} />
-      </picture>
-      <div className="card__content">
-        <h2 className="card__title">{id}</h2>
-        <p className="card__price">{`From ${price}`}</p>
-        <p className="card__description">{getShortenedDescription()}</p>
-        {renderExpandedArea()}
-        <Button
-          buttonClass="card__expandbutton"
-          onClickHandler={toggleExpanded}
-          ariaExpanded={expanded}
-          text={renderReadText()}
-        />
-      </div>
+    <div className={`card ${isVisible ? 'fade-in' : ''}`}>
+      <CardImage altText={altText} media={media} />
+      <CardContent
+        id={id}
+        price={price}
+        description={description}
+        modelYear={modelYear}
+        meta={meta}
+        expanded={expanded}
+        toggleExpanded={toggleExpanded}
+      />
     </div>
   );
 };
@@ -92,7 +57,6 @@ VehicleCard.propTypes = {
       bodystyles: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
     }).isRequired,
   }).isRequired,
-  index: PropTypes.number.isRequired,
 };
 
 export default VehicleCard;
