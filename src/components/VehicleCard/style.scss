@@ -1,14 +1,16 @@
+@import '../../global-styles';
+
 .card {
   align-items: center;
-  border-bottom: .0625rem solid #eef1f1;
+  border-bottom: $border-width solid $color-primary-gray;
   display: flex;
   flex-direction: row;
   height: fit-content;
-  transition: box-shadow .3s ease;
+  transition: box-shadow 0.3s ease;
   width: 100%;
 
   &:hover {
-    box-shadow: 0 .25rem .5rem 0 rgba(0, 0, 0, .2);
+    box-shadow: $box-shadow;
     cursor: pointer;
   }
 
@@ -34,45 +36,42 @@
   }
 
   &__title {
-    color: #0c121d;
+    color: $color-primary;
     font-size: 1rem;
-    letter-spacing: .125rem;
-    margin-bottom: .625rem;
+    letter-spacing: 0.125rem;
+    margin-bottom: $spacing-xs;
     text-transform: uppercase;
   }
 
   &__price {
-    color: #4c5157;
-    font-size: .9375rem;
-    letter-spacing: .09375rem;
+    color: $color-secondary;
+    font-size: 0.9375rem;
+    letter-spacing: 0.09375rem;
   }
 
   &__description {
-    color: #4c5157;
-    font-size: .875rem;
-    letter-spacing: .03125rem;
+    color: $color-secondary;
+    font-size: 0.875rem;
+    letter-spacing: 0.03125rem;
     line-height: 1.25rem;
-    margin-top: .625rem;
+    margin-top: $spacing-xs;
   }
 
   &__expandbutton {
-    color: #1b4170;
+    color: $color-accent;
     cursor: pointer;
-    font-size: .8125rem;
-    letter-spacing: .03125rem;
+    font-size: 0.8125rem;
+    letter-spacing: 0.03125rem;
     line-height: 1.25rem;
-    margin: .3125rem .3125rem .3125rem 0;
+    margin: $spacing-xs $spacing-xs $spacing-xs 0;
   }
 
   &__expandedarea {
-    font-size: .875rem;
-    margin: .625rem 0 .1875rem;
+    font-size: 0.875rem;
+    margin: $spacing-xs 0 $spacing-xs;
   }
-}
 
-@media (min-width: 481px) {
-
-  .card {
+  @media (min-width: 481px) {
     flex-direction: column;
     width: 50%;
 
@@ -83,58 +82,52 @@
     }
 
     &__content {
-      border-left: .09375rem solid #eef1f1;
-      border-right: .09375rem solid #eef1f1;
+      border-left: $border-width solid $color-primary-gray;
+      border-right: $border-width solid $color-primary-gray;
       display: block;
       text-align: center;
     }
 
     &__title {
-      border-bottom: .125rem solid #0c121d;
-      border-top: .125rem solid #0c121d;
-      color: #0c121d;
+      border-bottom: $spacing-xxs solid $color-primary;
+      border-top: $spacing-xxs solid $color-primary;
+      color: $color-primary;
       font-size: 1.125rem;
-      letter-spacing: .125rem;
-      margin: 1.5625rem 30% 1.875rem;
-      padding: .4375rem;
+      letter-spacing: 0.125rem;
+      margin: $spacing-md 30% $spacing-lg;
+      padding: $spacing-sm;
     }
 
     &__description {
-      color: #4c5157;
-      font-size: .875rem;
-      letter-spacing: .03125rem;
+      color: $color-secondary;
+      font-size: 0.875rem;
+      letter-spacing: 0.03125rem;
       line-height: 1.375rem;
-      margin: .9375rem .3125rem .3125rem;
-      min-height: 2.8125rem;
-      overflow: auto;
+      margin: $spacing-md $spacing-xs $spacing-xs;
+      min-height: $spacing-xl;
     }
   }
-}
 
-@media (min-width: 769px) {
-
-  .card {
+  @media (min-width: 769px) {
     width: 25%;
 
     &__content {
-      margin: 0 .625rem;
+      margin: 0 $spacing-sm;
     }
-
     &__title {
-      margin-bottom: 1.5625rem;
+      margin-bottom: $spacing-lg;
     }
 
     &__description {
       font-size: 1rem;
       line-height: 1.875rem;
-      margin: .9375rem .3125rem .3125rem;
-      margin-top: 1.25rem;
+      margin: $spacing-md $spacing-xs $spacing-xs;
     }
   }
 }
 
 .fade-in {
-  animation-duration: .9s;
+  animation-duration: 0.9s;
   animation-fill-mode: forwards;
   animation-name: fade-in;
   animation-timing-function: ease-in-out;
@@ -142,10 +135,9 @@
 }
 
 @keyframes fade-in {
-
   from {
     opacity: 0;
-    transform: translateY(.625rem);
+    transform: translateY($spacing-lg);
   }
 
   to {
@@ -153,4 +145,3 @@
     transform: translateY(0);
   }
 }
-
