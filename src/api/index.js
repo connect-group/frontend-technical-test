@@ -7,7 +7,6 @@ import { request } from './helpers';
  * @return {Promise<Array.<vehicleSummaryPayload>>}
  */
 // TODO: All API related logic should be made inside this function.
-// Need to clean up the logic below seems really long winded watch a tutorial on promises
 export default async function getData() {
   const vehicles = [];
   const detailedVehicles = [];
@@ -16,7 +15,7 @@ export default async function getData() {
     vehicles.push(...response);
   }).catch(() => {
     // error
-    console.log('Error getting vehicles');
+    console.error('Error getting vehicles');
   });
 
   await Promise.all(vehicles.map(async (vehicle) => {
@@ -34,7 +33,7 @@ export default async function getData() {
         detailedVehicles.push(detailedVehicle);
       }).catch(() => {
         // error
-        console.log('Error getting details');
+        console.error('Error getting vehicle details');
       });
     }
   }));

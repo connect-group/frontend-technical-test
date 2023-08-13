@@ -12,7 +12,7 @@ export async function request(apiUrl) {
 
     return result.json();
   }).catch((error) => {
-    console.log('Error getting details', error);
+    console.error(error);
   });
 
   return response;

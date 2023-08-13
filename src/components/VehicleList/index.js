@@ -54,7 +54,11 @@ export default function VehicleList() {
         </ul>
       </section>
       {modalOpen && (
-        <VehicleModal open={modalOpen} setOpen={setModalOpen} vehicle={selectedVehicle} />
+        <VehicleModal
+          open={modalOpen}
+          setOpen={setModalOpen}
+          vehicle={selectedVehicle}
+        />
       )}
     </>
   );
@@ -97,6 +101,10 @@ function VehicleModal({ open, setOpen, vehicle }) {
     };
   });
 
+  function getEmisionTemplate(vehicleData) {
+    return vehicleData.meta.emissions.template.replace('$value', vehicleData.meta.emissions.value);
+  }
+
   return (
     <div
       className={`modal ${fade ? 'modal--open' : ''}`}
@@ -109,7 +117,13 @@ function VehicleModal({ open, setOpen, vehicle }) {
         </div>
         <div className="modal__header">
           <h2 className="modal__title">Vehicle Name</h2>
-          <button className="modal__close" type="button" aria-label="Close modal" onClick={() => setOpen(false)} tabIndex={0}>
+          <button
+            className="modal__close"
+            type="button"
+            aria-label="Close modal"
+            onClick={() => setOpen(false)}
+            tabIndex={0}
+          >
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -135,7 +149,7 @@ function VehicleModal({ open, setOpen, vehicle }) {
               </tr>
               <tr>
                 <th>Emissions</th>
-                <td>{vehicle.meta.emissions.template.replace('$value', vehicle.meta.emissions.value)}</td>
+                <td>{getEmisionTemplate(vehicle)}</td>
               </tr>
               <tr>
                 <th>Drivetrain</th>

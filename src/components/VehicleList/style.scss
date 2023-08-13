@@ -6,12 +6,12 @@ $dark-white: #e7e7e7;
 
 /* Media Queries */
 $media: (
-    sm: 640px,
-    md: 768px,
-    lg: 1024px,
-    xl: 1280px,
-    2xl: 1536px,
-    3xl: 1920px,
+  sm: 640px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px,
+  2xl: 1536px,
+  3xl: 1920px,
 );
 
 @mixin breakpoint($breakpoint) {
@@ -30,18 +30,18 @@ $media: (
     opacity: 0;
     transform: translateY(50px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-
 .vehicle-list {
-  width: 100%;
-  padding: 0;
-  margin: 0;
   list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 
   @include breakpoint(md) {
     display: grid;
@@ -53,9 +53,9 @@ $media: (
   }
 
   .vehicle {
-    opacity: 0;
     animation: fadeInBottom 1s ease-in-out;
     animation-fill-mode: forwards;
+    opacity: 0;
 
     @for $i from 1 through 50 {
       &:nth-child(#{$i}) {
@@ -104,57 +104,57 @@ $media: (
   }
 
   &__card {
+    align-items: center;
     background: unset;
     border: unset;
-    padding: 0;
-    margin: 0;
     cursor: pointer;
     display: flex;
-    align-items: center;
-    width: 100%;
-    text-align: left;
     font-size: 1rem;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    width: 100%;
 
     @include breakpoint(md) {
       align-items: stretch;
       flex-direction: column;
-      text-align: center;
       height: 100%;
+      text-align: center;
     }
   }
 
   &__image {
-    width: 100px;
-    flex-shrink: 0;
-    position: relative;
-    overflow: hidden;
     align-self: stretch;
+    flex-shrink: 0;
+    overflow: hidden;
+    position: relative;
+    width: 100px;
     
     &::before {
-      content: '';
-      opacity: 0;
-      background-color: rgba(0, 0, 0, 0.3);
+      background-color: rgba(0, 0, 0, .3);
+      content: "";
       inset: 0;
+      opacity: 0;
       position: absolute;
+      transition: opacity .3s ease-in-out;
       z-index: 1;
-      transition: opacity 0.3s ease-in-out;
     }
 
     img {
-      width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.3s ease-in-out;
+      transition: transform .3s ease-in-out;
+      width: 100%;
     }
 
     @include breakpoint(sm) {
-      width: 180px;
       aspect-ratio: 1 / 1;
+      width: 180px;
     }
 
     @include breakpoint(md) {
-      width: 100%;
       aspect-ratio: 16 / 9;
+      width: 100%;
     }
   }
 
@@ -166,8 +166,8 @@ $media: (
     }
 
     @include breakpoint(md) {
-      padding: 2rem 1rem 0.5rem 1rem;
       flex-grow: 1;
+      padding: 2rem 1rem .5rem 1rem;
     }
 
     @include breakpoint(xl) {
@@ -176,48 +176,48 @@ $media: (
   }
 
   &__title {
-    text-transform: uppercase;
+    color: $grey;
+    font-size: 1.2rem;
     font-weight: bold;
     letter-spacing: 2px;
-    font-size: 1.2rem;
-    color: $grey;
-    margin-bottom: 0.2rem;
+    margin-bottom: .2rem;
+    text-transform: uppercase;
 
     @include breakpoint(md) {
-      display: inline-block;
-      border-top: 1px solid $grey;
       border-bottom: 1px solid $grey;
+      border-top: 1px solid $grey;
+      display: inline-block;
       margin-bottom: 1.5rem;
-      padding: 0.3rem 0;
+      padding: .3rem 0;
     }
   }
 
   &__price {
-    font-size: 1.1rem;
     color: $light-grey;
+    font-size: 1.1rem;
   }
 
   &__price-number {
-    padding-left: 0.5rem;
+    padding-left: .5rem;
   }
 
   &__description {
-    margin-top: 1rem;
     color: $light-grey;
+    margin-top: 1rem;
   }
 }
 
 .modal {
-  position: fixed;
-  inset: 0;
-  z-index: 10;
-  background-color: rgba(0, 0, 0, 0.5);
   align-items: center;
-  justify-content: center;
-  overflow: scroll;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+  background-color: rgba(0, 0, 0, .5);
   display: flex;
+  inset: 0;
+  justify-content: center;
+  opacity: 0;
+  overflow: scroll;
+  position: fixed;
+  transition: opacity .3s ease-in-out;
+  z-index: 10;
 
   &--open {
     opacity: 1;
@@ -225,11 +225,11 @@ $media: (
 
   &__content {
     background-color: $white;
-    max-width: 500px;
-    width: 100%;
     margin: 1rem;
+    max-width: 500px;
     padding: 1rem;
     position: relative;
+    width: 100%;
 
     @include breakpoint(md) {
       margin: 2rem;
@@ -238,18 +238,18 @@ $media: (
   }
 
   &__image {
+    aspect-ratio: 16 / 9;
     margin: -1rem -1rem 1rem;
     width: auto;
-    aspect-ratio: 16 / 9;
 
     @include breakpoint(md) {
       margin: -2rem -2rem 2rem;
     }
 
     img {
-      width: 100%;
       height: 100%;
       object-fit: cover;
+      width: 100%;
     }
   }
 
@@ -258,21 +258,21 @@ $media: (
   }
 
   &__close {
-    position: absolute;
-    top: -16px;
-    right: -16px;
-    cursor: pointer;
-    font-size: 2rem;
-    color: $grey;
-    border-radius: 500px;
-    display: flex;
-    width: 40px;
-    height: 40px;
     align-items: center;
-    justify-content: center;
     background: $white;
     border: 1px solid $light-grey;
-    transition: all 0.3s ease-in-out;
+    border-radius: 500px;
+    color: $grey;
+    cursor: pointer;
+    display: flex;
+    font-size: 2rem;
+    height: 40px;
+    justify-content: center;
+    position: absolute;
+    right: -16px;
+    top: -16px;
+    transition: all .3s ease-in-out;
+    width: 40px;
 
     &:hover {
       background: $dark-white;
@@ -280,12 +280,12 @@ $media: (
   }
 
   &__title {
-    margin-top: 0;
-    border-top: 1px solid $grey;
     border-bottom: 1px solid $grey;
-    display: inline-block;
+    border-top: 1px solid $grey;
     color: $grey;
-    padding: 0.3rem 0;
+    display: inline-block;
+    margin-top: 0;
+    padding: .3rem 0;
     text-transform: uppercase;
   }
 
@@ -294,22 +294,22 @@ $media: (
   }
 
   &__table {
-    width: 100%;
     border-collapse: collapse;
-    margin-top: 2rem;
     color: $light-grey;
+    margin-top: 2rem;
+    width: 100%;
 
     tbody {
       tr {
         > * {
-          padding: 0.5rem 1rem;
+          padding: .5rem 1rem;
         }
         
         > :first-child {
-          text-align: left;
           background: $grey;
+          border: 1px;
           color: $white;
-          border: 1px
+          text-align: left
         }
 
         &:nth-child(odd) {
