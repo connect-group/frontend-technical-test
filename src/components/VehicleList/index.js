@@ -1,5 +1,6 @@
 import React, { useState, useEffect, createRef } from 'react';
 import useData from './useData';
+import Loading from '../Loading';
 import './style.scss';
 
 export default function VehicleList() {
@@ -8,7 +9,7 @@ export default function VehicleList() {
   const [selectedVehicle, setSelectedVehicle] = useState(null);
 
   if (loading) {
-    return <div data-testid="loading">Loading</div>;
+    return <Loading />;
   }
 
   if (error) {

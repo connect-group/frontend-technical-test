@@ -1,0 +1,19 @@
+/* spinning animation */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading {
+  display: block;
+  text-align: center;
+
+  &__icon {
+    width: 50px;
+    animation: spin 1s ease-in-out infinite;
+  }
+}
