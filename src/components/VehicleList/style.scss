@@ -15,25 +15,25 @@ $media: (
 );
 
 @mixin breakpoint($breakpoint) {
-    @each $breakpoints, $size in $media {
-        @if $breakpoint==$breakpoints {
-            @media screen and (min-width: $size) {
-                @content;
-            }
-        }
+  @each $breakpoints, $size in $media {
+    @if $breakpoint==$breakpoints {
+      @media screen and (min-width: $size) {
+        @content;
+      }
     }
+  }
 }
 
 /* Fade in bottom animation */
 @keyframes fadeInBottom {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 
@@ -62,8 +62,6 @@ $media: (
         animation-delay: 100ms * $i;
       }
     }
-
-
 
     &:not(:last-child) {
       border-bottom: 1px solid $line-grey;
@@ -161,7 +159,11 @@ $media: (
   }
 
   &__details {
-    padding: 1rem 1rem 1rem 2rem;
+    padding: 1rem;
+
+    @include breakpoint(sm) {
+      padding: 1rem 1rem 1rem 2rem;
+    }
 
     @include breakpoint(md) {
       padding: 2rem 1rem 0.5rem 1rem;
@@ -176,15 +178,17 @@ $media: (
   &__title {
     text-transform: uppercase;
     font-weight: bold;
-    letter-spacing: 3.5px;
+    letter-spacing: 2px;
     font-size: 1.2rem;
     color: $grey;
+    margin-bottom: 0.2rem;
 
     @include breakpoint(md) {
       display: inline-block;
       border-top: 1px solid $grey;
       border-bottom: 1px solid $grey;
       margin-bottom: 1.5rem;
+      padding: 0.3rem 0;
     }
   }
 
@@ -281,6 +285,8 @@ $media: (
     border-bottom: 1px solid $grey;
     display: inline-block;
     color: $grey;
+    padding: 0.3rem 0;
+    text-transform: uppercase;
   }
 
   &__description {
