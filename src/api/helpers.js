@@ -5,15 +5,7 @@
  * @return {Promise<Object>}
  */
 export async function request(apiUrl) {
-  const response = await fetch(apiUrl).then((result) => {
-    if (!result.ok) {
-      throw new Error('Network response was not ok');
-    }
-
-    return result.json();
-  }).catch((error) => {
-    throw new Error(error);
-  });
-
-  return response;
+  const response = await fetch(apiUrl);
+  const data = await response.json();
+  return [response, data];
 }
