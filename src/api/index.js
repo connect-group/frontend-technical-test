@@ -15,7 +15,7 @@ export default async function getData() {
     vehicles.push(...response);
   }).catch(() => {
     // error
-    console.error('Error getting vehicles');
+    throw new Error('Error getting vehicles');
   });
 
   await Promise.all(vehicles.map(async (vehicle) => {
@@ -33,7 +33,7 @@ export default async function getData() {
         detailedVehicles.push(detailedVehicle);
       }).catch(() => {
         // error
-        console.error('Error getting vehicle details');
+        return null;
       });
     }
   }));

@@ -25,7 +25,7 @@ export default function VehicleList() {
     <>
       <section data-testid="results">
         <ul className="vehicle-list">
-          {vehicles.map((vehicle) => (
+          {Array.isArray(vehicles) ? vehicles.map((vehicle) => (
             <li key={vehicle.id} className="vehicle">
               <button
                 type="button"
@@ -50,7 +50,7 @@ export default function VehicleList() {
                 </div>
               </button>
             </li>
-          ))}
+          )) : 'No Cars Found'}
         </ul>
       </section>
       {modalOpen && (
