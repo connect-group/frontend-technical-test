@@ -1,3 +1,323 @@
-.VehicleList {
+$grey: #0c121c;
+$light-grey: #4a4f54;
+$line-grey: #eef1f1;
+$white: #fff;
+$dark-white: #e7e7e7;
+
+/* Media Queries */
+$media: (
+  sm: 640px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px,
+  2xl: 1536px,
+  3xl: 1920px,
+);
+
+@mixin breakpoint($breakpoint) {
+  @each $breakpoints, $size in $media {
+    @if $breakpoint==$breakpoints {
+      @media screen and (min-width: $size) {
+        @content;
+      }
+    }
+  }
+}
+
+/* Fade in bottom animation */
+@keyframes fadeInBottom {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.vehicle-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   width: 100%;
+
+  @include breakpoint(md) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include breakpoint(xl) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .vehicle {
+    animation: fadeInBottom 1s ease-in-out;
+    animation-fill-mode: forwards;
+    opacity: 0;
+
+    @for $i from 1 through 50 {
+      &:nth-child(#{$i}) {
+        animation-delay: 100ms * $i;
+      }
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $line-grey;
+      margin-bottom: -1px;
+    }
+
+    @include breakpoint(md) {
+      &:not(:last-child) {
+        border-bottom: 0px; 
+      }
+
+      &:nth-child(odd) {
+        .vehicle__details {
+          border-right: 1px solid $line-grey;
+        }
+      }      
+    }
+
+    @include breakpoint(xl) {
+      &:not(:last-child) {
+        .vehicle__details {
+          border-right: 1px solid $line-grey;
+        }
+      }
+    }
+  }
+}
+
+.vehicle {
+  &:hover {
+    .vehicle__image {
+      img {
+        transform: scale(1.1);
+      }
+
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__card {
+    align-items: center;
+    background: unset;
+    border: unset;
+    cursor: pointer;
+    display: flex;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    width: 100%;
+
+    @include breakpoint(md) {
+      align-items: stretch;
+      flex-direction: column;
+      height: 100%;
+      text-align: center;
+    }
+  }
+
+  &__image {
+    align-self: stretch;
+    flex-shrink: 0;
+    overflow: hidden;
+    position: relative;
+    width: 100px;
+    
+    &::before {
+      background-color: rgba(0, 0, 0, .3);
+      content: "";
+      inset: 0;
+      opacity: 0;
+      position: absolute;
+      transition: opacity .3s ease-in-out;
+      z-index: 1;
+    }
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      transition: transform .3s ease-in-out;
+      width: 100%;
+    }
+
+    @include breakpoint(sm) {
+      aspect-ratio: 1 / 1;
+      width: 180px;
+    }
+
+    @include breakpoint(md) {
+      aspect-ratio: 16 / 9;
+      width: 100%;
+    }
+  }
+
+  &__details {
+    padding: 1rem;
+
+    @include breakpoint(sm) {
+      padding: 1rem 1rem 1rem 2rem;
+    }
+
+    @include breakpoint(md) {
+      flex-grow: 1;
+      padding: 2rem 1rem .5rem 1rem;
+    }
+
+    @include breakpoint(xl) {
+      padding: 2rem 1rem;
+    }
+  }
+
+  &__title {
+    color: $grey;
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: .2rem;
+    text-transform: uppercase;
+
+    @include breakpoint(md) {
+      border-bottom: 1px solid $grey;
+      border-top: 1px solid $grey;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      padding: .3rem 0;
+    }
+  }
+
+  &__price {
+    color: $light-grey;
+    font-size: 1.1rem;
+  }
+
+  &__price-number {
+    padding-left: .5rem;
+  }
+
+  &__description {
+    color: $light-grey;
+    margin-top: 1rem;
+  }
+}
+
+.modal {
+  align-items: center;
+  background-color: rgba(0, 0, 0, .5);
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  opacity: 0;
+  overflow: scroll;
+  position: fixed;
+  transition: opacity .3s ease-in-out;
+  z-index: 10;
+
+  &--open {
+    opacity: 1;
+  }
+
+  &__content {
+    background-color: $white;
+    margin: 1rem;
+    max-width: 500px;
+    padding: 1rem;
+    position: relative;
+    width: 100%;
+
+    @include breakpoint(md) {
+      margin: 2rem;
+      padding: 2rem;
+    }
+  }
+
+  &__image {
+    aspect-ratio: 16 / 9;
+    margin: -1rem -1rem 1rem;
+    width: auto;
+
+    @include breakpoint(md) {
+      margin: -2rem -2rem 2rem;
+    }
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  &__header {
+    text-align: center;
+  }
+
+  &__close {
+    align-items: center;
+    background: $white;
+    border: 1px solid $light-grey;
+    border-radius: 500px;
+    color: $grey;
+    cursor: pointer;
+    display: flex;
+    font-size: 2rem;
+    height: 40px;
+    justify-content: center;
+    position: absolute;
+    right: -16px;
+    top: -16px;
+    transition: all .3s ease-in-out;
+    width: 40px;
+
+    &:hover {
+      background: $dark-white;
+    }
+  }
+
+  &__title {
+    border-bottom: 1px solid $grey;
+    border-top: 1px solid $grey;
+    color: $grey;
+    display: inline-block;
+    margin-top: 0;
+    padding: .3rem 0;
+    text-transform: uppercase;
+  }
+
+  &__description {
+    color: $light-grey;
+  }
+
+  &__table {
+    border-collapse: collapse;
+    color: $light-grey;
+    margin-top: 2rem;
+    width: 100%;
+
+    tbody {
+      tr {
+        > * {
+          padding: .5rem 1rem;
+        }
+        
+        > :first-child {
+          background: $grey;
+          border: 1px;
+          color: $white;
+          text-align: left
+        }
+
+        &:nth-child(odd) {
+          > :last-child {
+            background: $line-grey;
+          }
+        }
+      }
+    }
+  }
 }
