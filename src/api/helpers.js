@@ -12,7 +12,7 @@ export async function request(apiUrl) {
 
     return result.json();
   }).catch((error) => {
-    console.error(error);
+    throw new Error(error);
   });
 
   return response;
