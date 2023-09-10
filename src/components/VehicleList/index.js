@@ -11,12 +11,17 @@ export default function VehicleList() {
   }
 
   if (error) {
-    return <div data-testid="error">{ error }</div>;
+    return <div data-testid="error">{error}</div>;
   }
 
   return (
     <div data-testid="results">
       <p>List of vehicles will be displayed here</p>
+      {vehicles.map((v) => (
+        <>
+          <p>{v.id}</p>
+        </>
+      ))}
       <p>
         Visit
         <a href="/api/vehicles.json" target="_blank"> /api/vehicles.json</a>
