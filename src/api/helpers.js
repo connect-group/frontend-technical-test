@@ -17,7 +17,7 @@ export async function request(apiUrl) {
  */
 export const filterOutApiUrl = (vehicles, apiUrl) => {
   return vehicles.filter((v) => v.apiUrl !== apiUrl);
-}
+};
 
 /**
  * Pull vehicle information by id

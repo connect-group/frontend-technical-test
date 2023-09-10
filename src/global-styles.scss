@@ -1,5 +1,15 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans:400italic,700italic,400,700);
+
+$roboto-slab: "Roboto Slab", serif;
+$open-sans: "Open Sans", sans-serif;
+
+body {
+    font-family: $open-sans;
+    font-weight: normal;
+}
+
 .root {
-  margin: 14px;
-  padding: 12px;
-  z-index: 12;
+    margin: 14px;
+    padding: 12px;
+    z-index: 12;
 }
