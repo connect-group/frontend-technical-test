@@ -1,14 +1,4 @@
 /**
- * A utility function to make a network api call
- *
- * @param {string} apiUrl
- * @return {Promise<Object>}
- */
-export async function request(apiUrl) {
-  return apiUrl;
-}
-
-/**
  * A utility function to filter out broken apiUrl in vehicles array
  *
  * @param {Array.<vehicleSummaryPayload>} vehicles
@@ -26,7 +16,9 @@ export const filterOutApiUrl = (vehicles, apiUrl) => {
  * @return {Promise<vehicleSummaryPayload>}
  */
 export const getDataDetail = async (id) => {
-  const vehicle = await import(`../../public/api/vehicle_${id}`);
+  const data = await fetch(`/api/vehicle_${id}.json`);
+  const vehicle = data.json();
+
   return vehicle;
 };
 
@@ -53,3 +45,16 @@ export const filterVehicles = async (vehicles, brokenApiUrl) => {
 
   return filtered;
 };
+
+/**
+ * A utility function to make a network api call
+ *
+ * @param {string} apiUrl
+ * @return {Promise<Object>}
+ */
+export async function request(apiUrl) {
+  const data = await fetch(apiUrl);
+  const vehicles = data.json();
+
+  return vehicles;
+}
