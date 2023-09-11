@@ -35,6 +35,10 @@ $gray: 	#696969;
     margin-bottom: 1rem;
     margin-top: 1rem;
   }
+
+  &:last-of-type {
+    border: 0;
+  }
 }
 
 $breakpoint-tablet: 768px;
@@ -42,7 +46,7 @@ $breakpoint-tablet: 768px;
 @media (min-width: $breakpoint-tablet) {
 
   .vehicle {
-    border-bottom: none;
+    border: 0;
     grid-template-columns: auto;
 
     &__image-1x1 {
