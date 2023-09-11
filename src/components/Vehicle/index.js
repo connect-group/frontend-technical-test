@@ -25,7 +25,7 @@ export default function Vehicle({ vehicle }) {
         </div>
         {/* <img src={vehicle.media[INDX_IMG_16X9].url} /> */}
         <div className="vehicle__info">
-          <h2 className="vehicle__name">{vehicle.id}</h2>
+          <h2 className="vehicle__name">{vehicle.id.toUpperCase()}</h2>
           <p className="vehicle__price">
             From
             {' '}

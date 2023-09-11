@@ -1,8 +1,12 @@
+$light-gray: #D3D3D3;
+$gray: 	#696969;
+
+
 .vehicle {
     display: grid;
     grid-template-columns: 110px 75%;
     grid-column-gap: 1.5em;
-    border-bottom: 1px solid #D3D3D3;
+    border-bottom: 1px solid $light-gray;
 
     &__image-1x1 {
         width: 100%;
@@ -14,13 +18,19 @@
     &__name {
         margin-top: 0.5rem;
         margin-bottom: 0;
+        font-size: 1.2rem;
+        font-weight: 600;
     }
     &__price {
         margin: 0;
+        color: $gray;
+        font-size: 0.9rem;
     }
     &__description {
         margin-top: 1rem;
         margin-bottom: 1rem;
+        color: $gray;
+        font-size: 0.9rem;
     }
 }
 
