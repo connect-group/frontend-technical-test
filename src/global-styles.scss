@@ -5,11 +5,14 @@ $open-sans: "Open Sans", sans-serif;
 
 body {
     font-family: $open-sans;
-    font-weight: normal;
 }
 
 .root {
     margin: 14px;
     padding: 12px;
     z-index: 12;
+}
+
+h2 {
+  font-weight: normal;
 }
