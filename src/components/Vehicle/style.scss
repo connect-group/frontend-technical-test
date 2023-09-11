@@ -1,0 +1,85 @@
+$light-gray: #D3D3D3;
+$gray: 	#696969;
+
+.vehicle {
+  border-bottom: 1px solid $light-gray;
+  display: grid;
+  grid-column-gap: 1.5em;
+  grid-template-columns: 110px 75%;
+
+  &__image-1x1 {
+    height: 100%;
+    width: 100%;
+  }
+
+  &__image-16x9 {
+    display: none;
+  }
+
+  &__name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0;
+    margin-top: .5rem;
+  }
+
+  &__price {
+    color: $gray;
+    font-size: .9rem;
+    margin: 0;
+  }
+
+  &__description {
+    color: $gray;
+    font-size: .9rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+
+  &:last-of-type {
+    border: 0;
+  }
+}
+
+$breakpoint-tablet: 768px;
+
+@media (min-width: $breakpoint-tablet) {
+
+  .vehicle {
+    border: 0;
+    grid-template-columns: auto;
+
+    &__image-1x1 {
+      display: none;
+    }
+
+    &__image-16x9 {
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+
+    &__name {
+      border-bottom: 1px solid;
+      border-top: 1px solid;
+      display: inline-block;
+      margin-bottom: 1rem;
+      margin-top: 1rem;
+    }
+
+    &__price {
+      margin-bottom: 1rem;
+      margin-top: 1rem;
+    }
+
+    &__description {
+      margin-bottom: .5rem;
+      margin-left: .5rem;
+      margin-right: .5rem;
+    }
+
+    &__info {
+      text-align: center;
+    }
+  }
+}

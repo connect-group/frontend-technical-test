@@ -1,5 +1,7 @@
 // eslint-disable-next-line no-unused-vars
-import { request } from './helpers';
+import { filterVehicles, request } from './helpers';
+
+const BROKEN_API_URL = '/api/vehicle_problematic.json';
 
 /**
  * Pull vehicles information
@@ -8,5 +10,7 @@ import { request } from './helpers';
  */
 // TODO: All API related logic should be made inside this function.
 export default async function getData() {
-  return [];
+  const vehicles = await request('/api/vehicles.json');
+  const filteredVehicles = await filterVehicles(vehicles, BROKEN_API_URL);
+  return filteredVehicles;
 }

@@ -1,3 +1,22 @@
 .VehicleList {
+  display: grid;
   width: 100%;
+}
+
+$breakpoint-tablet: 768px;
+
+@media (min-width: $breakpoint-tablet) {
+
+  .VehicleList {
+    grid-template-columns: repeat(2, 50%);
+  }
+}
+
+$breakpoint-desktops: 992px;
+
+@media (min-width: $breakpoint-desktops) {
+
+  .VehicleList {
+    grid-template-columns: repeat(4, 25%);
+  }
 }
