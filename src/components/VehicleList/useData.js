@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import getData from '../../api';
+import getData from '../../api/index';
 
 export default function useData() {
   const [vehicles, setVehicles] = useState([]);

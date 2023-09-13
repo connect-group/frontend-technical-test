@@ -1,3 +1,102 @@
 .VehicleList {
   width: 100%;
 }
+
+/* Font styles */
+body {
+  font-family: "Inter", "Open Sans", "Roboto", sans-serif;
+}
+
+/* Base styles */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  display: flex;
+
+  img {
+      width: 120px;
+      height: auto;
+  }
+
+  &-details {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      align-self: center;
+      padding: 0 15px;
+
+      &__item--name {
+          font-weight: 500;
+          font-size: 18px;
+          color: #0f141b;
+
+          span,
+          &--price span {
+              letter-spacing: 1.5px;
+          }
+      }
+
+      &__item--price {
+          color: #40454a;
+          font-size: 12px;
+          font-weight: 400;
+          margin-top: 5px;
+      }
+
+      &__item--description {
+          color: #40454a;
+          font-size: 12px;
+          margin-top: 12px;
+          letter-spacing: 1px;
+      }
+  }
+
+  .mobile-tablet-image {
+      display: block;
+  }
+
+  .desktop-image {
+      display: none;
+  }
+}
+
+@media screen and (min-width: 688px) {
+  .card {
+      flex-direction: column;
+
+      img {
+          width: 100%;
+          height: auto;
+      }
+
+      &-details {
+          margin: 20px 0;
+          text-align: center;
+
+          &__item--name span {
+              display: inline-block;
+              border-top: 1px solid #40454a;
+              border-bottom: 1px solid #40454a;
+              margin-bottom: 15px;
+              padding: 5px 0;
+          }
+
+          &__item--price {
+              margin-top: 5px;
+          }
+      }
+      .mobile-tablet-image {
+          display: none;
+      }
+
+      .desktop-image {
+          display: block;
+      }
+  }
+}
