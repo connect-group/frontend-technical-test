@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import VehicleList from './components/VehicleList';
+import VehicleList from './components/VehicleList/VehicleList';
 
 ReactDOM.render(
   <React.StrictMode>
