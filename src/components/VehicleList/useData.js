@@ -6,29 +6,44 @@ export default function useData() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
-  async function fetchVehicleDetails(detailUrl, vehicleId) {
+  function removeVehicle(vehicle, reason) {
+    // eslint-disable-next-line no-console
+    console.log('💥', `Removing vehicle because '${reason}'`, vehicle);
+    setVehicles((currentVehicles) => currentVehicles.filter((v) => v.id !== vehicle.id));
+  }
+
+  async function fetchVehicleDetails(vehicle) {
     try {
-      const details = await getData(detailUrl);
+      const { apiUrl, id } = vehicle;
+      const details = await getData(apiUrl);
       // eslint-disable-next-line no-console
       console.log('📊', details);
-      setVehicles((currentVehicles) => currentVehicles.map((v) => (v.id === vehicleId ? { ...v, details } : v)));
+      if (details && details.price) {
+        // eslint-disable-next-line no-console
+        console.log('🇨🇭', 'Adding details');
+        setVehicles((currentVehicles) => currentVehicles.map((v) => (v.id === id ? { ...v, details } : v)));
+      } else {
+        // If there's no price, remove the vehicle from the state
+        // eslint-disable-next-line no-console
+        removeVehicle(vehicle, 'No price');
+      }
     } catch (err) {
       // We don't wait to use `setError` here because NOT getting details isn't
       // critical, it just means we don't have details. Sad times.
       // eslint-disable-next-line no-console
       console.error(err.toString());
+      removeVehicle(vehicle, 'Error fetching vehicle details');
     }
   }
 
   async function fetchVehiclesData() {
     setLoading(true);
     try {
-      const vehicleData = await getData('/api/vehicles.json');
-      setVehicles(vehicleData);
-
-      vehicleData.forEach((vehicle) => {
-        fetchVehicleDetails(vehicle.apiUrl, vehicle.id);
-      });
+      const vehiclesData = await getData('/api/vehicles.json');
+      // Filter out vehicles with no apiUrl
+      const validVehiclesData = vehiclesData.filter((v) => v.apiUrl);
+      setVehicles(validVehiclesData);
+      validVehiclesData.forEach((v) => fetchVehicleDetails(v));
     } catch (err) {
       setError(err.toString());
     } finally {

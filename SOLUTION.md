@@ -7,6 +7,7 @@
 - (10m) 09 Nov 2023, 1300-1310 - Semantic HTML
 - (20m) 09 Nov 2023, 1310-1330 - Fetching vehicle details
 - (20m) 09 Nov 2023, 1350-1410 - Data fetching loose ends
+- (30m) 09 Nov 2023, 1600-1630 - "Ignore vehicles with broken apiUrl or without any price information"
 
 ## Notes
 
