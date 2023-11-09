@@ -4,7 +4,7 @@ import './style.scss';
 
 export default function VehicleList() {
   // eslint-disable-next-line no-unused-vars
-  const [loading, error, vehicles] = useData();
+  const { loading, error, vehicles } = useData();
 
   if (loading) {
     return <div data-testid="loading">Loading</div>;

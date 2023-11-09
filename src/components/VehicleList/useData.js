@@ -6,16 +6,28 @@ export default function useData() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
-  useEffect(() => {
-    getData()
-      .then((response) => setVehicles(response))
-      .catch((err) => setError(err))
-      .finally(() => setLoading(false));
-  }, []);
+  async function fetchVehiclesData() {
+    setLoading(true);
+    try {
+      const vehicleData = await getData('/api/vehicles.json');
+      setVehicles(vehicleData);
 
-  return [
+      vehicleData.forEach((vehicle) => {
+        // eslint-disable-next-line no-console
+        console.log(vehicle);
+      });
+    } catch (err) {
+      setError(err.toString());
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  useEffect(() => fetchVehiclesData(), []);
+
+  return {
     loading,
     error,
     vehicles,
-  ];
+  };
 }
