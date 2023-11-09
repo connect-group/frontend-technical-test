@@ -8,6 +8,7 @@
 - (20m) 09 Nov 2023, 1310-1330 - Fetching vehicle details
 - (20m) 09 Nov 2023, 1350-1410 - Data fetching loose ends
 - (30m) 09 Nov 2023, 1600-1630 - "Ignore vehicles with broken apiUrl or without any price information"
+- (30m) 09 Nov 2023, 1650-1710 - New component and basic styling
 
 ## Notes
 
