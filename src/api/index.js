@@ -7,6 +7,8 @@ import { request } from './helpers';
  */
 export default async function getData(apiUrl) {
   try {
+    // eslint-disable-next-line no-console
+    console.log('🔄', apiUrl);
     const data = await request(apiUrl);
     return data;
   } catch (error) {

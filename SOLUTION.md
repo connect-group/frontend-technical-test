@@ -4,6 +4,8 @@
 
 - (10m) 09 Nov 2023, 1130-1140 - Setup
 - (20m) 09 Nov 2023, 1240-1300 - Understanding and getting data flowing
+- (20m) 09 Nov 2023, 1300-1310 - Semantic HTML
+- (20m) 09 Nov 2023, 1310-1330 - Fetching vehicle details
 
 ## Notes
 

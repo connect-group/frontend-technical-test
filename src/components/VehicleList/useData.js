@@ -9,9 +9,13 @@ export default function useData() {
   async function fetchVehicleDetails(detailUrl, vehicleId) {
     try {
       const details = await getData(detailUrl);
+      // eslint-disable-next-line no-console
       console.log('📊', details);
       setVehicles((currentVehicles) => currentVehicles.map((v) => (v.id === vehicleId ? { ...v, details } : v)));
     } catch (err) {
+      // We don't wait to use `setError` here because NOT getting details isn't
+      // critical, it just means we don't have details. Sad times.
+      // eslint-disable-next-line no-console
       console.error(err.toString());
     }
   }
