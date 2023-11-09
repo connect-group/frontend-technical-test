@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import VehicleList from '..';
+import VehicleList from '../VehicleList';
 import useData from '../useData';
 
 jest.mock('../useData');
