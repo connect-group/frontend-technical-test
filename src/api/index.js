@@ -13,7 +13,7 @@ export default async function getData(apiUrl) {
     return data;
   } catch (error) {
     // eslint-disable-next-line no-console
-    console.error('Error fetching data:', error);
+    console.error('Error fetching data:', error, apiUrl);
     throw error; // Re-throw the error so it can be caught and handled by the caller
   }
 }

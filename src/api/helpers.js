@@ -15,7 +15,7 @@ export async function request(apiUrl) {
     return await response.json();
   } catch (error) {
     // eslint-disable-next-line no-console
-    console.error('Error fetching data: ', error);
+    console.error('Error fetching data: ', error, apiUrl);
     throw error;
   }
 }
