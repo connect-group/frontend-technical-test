@@ -15,33 +15,35 @@ export default function VehicleList() {
   }
 
   return (
-    <div data-testid="results">
-      <h1>Vehicles</h1>
-      <ul>
-        {vehicles && vehicles.map((vehicle) => (
-          <li key={vehicle.id}>
-            {vehicle.id}
+    <section aria-labelledby="vehicle-list-heading" data-testid="results">
+      <h1 id="vehicle-list-heading">Vehicles</h1>
+      <ul className="vehicle-list">
+        {vehicles.map((vehicle) => (
+          <li key={vehicle.id} className="vehicle-list__item">
+            <article>
+              <header className="vehicle-list__item__header">
+                <h2>{vehicle.description}</h2>
+                <p>
+                  Price:
+                  {' '}
+                  {vehicle.price}
+                </p>
+              </header>
+              <div className="vehicle-list__item__media">
+                {vehicle.media.map((mediaItem) => (
+                  <figure key={mediaItem.url} className="vehicle-list__item__media__item">
+                    <img src={mediaItem.url} alt={mediaItem.name} />
+                    <figcaption>{mediaItem.name}</figcaption>
+                  </figure>
+                ))}
+              </div>
+              <footer className="vehicle-list__item__details">
+                <a href={vehicle.apiUrl} target="_blank" rel="noopener noreferrer">More details</a>
+              </footer>
+            </article>
           </li>
         ))}
       </ul>
-      <p>
-        Visit
-        <a href="/api/vehicles.json" target="_blank"> /api/vehicles.json</a>
-        {' '}
-        (main endpoint)
-      </p>
-      <p>
-        Visit
-        <a href="/api/vehicle_fpace.json" target="_blank">/api/vehicle_fpace.json</a>
-        {' '}
-        (detail endpoint - apiUrl)
-      </p>
-      <p>
-        Visit
-        <a href="/api/vehicle_xf.json" target="_blank">/api/vehicle_xf.json</a>
-        {' '}
-        (vehicle without any price)
-      </p>
-    </div>
+    </section>
   );
 }
