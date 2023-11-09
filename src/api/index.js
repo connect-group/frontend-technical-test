@@ -5,8 +5,7 @@ import { request } from './helpers';
  *
  * @return {Promise<Array.<vehicleSummaryPayload>>}
  */
-export default async function getData() {
-  const apiUrl = '/api/vehicles.json';
+export default async function getData(apiUrl) {
   try {
     const data = await request(apiUrl);
     return data;

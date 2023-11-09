@@ -6,7 +6,7 @@ jest.mock('../helpers');
 describe.skip('getData Tests', () => {
   const safelyCallApi = async () => {
     try {
-      return await getData();
+      return await getData('/api/vehicles.json');
     } catch (e) {
       return null;
     }
@@ -15,7 +15,7 @@ describe.skip('getData Tests', () => {
   it('Should fail if initial api call is failed', () => {
     request.mockRejectedValueOnce('An error occurred');
 
-    return expect(() => getData()).rejects.not.toBeFalsy();
+    return expect(() => getData('/api/vehicles.json')).rejects.not.toBeFalsy();
   });
 
   it('Should make an api call to receive a list of general vehicle information', async () => {
