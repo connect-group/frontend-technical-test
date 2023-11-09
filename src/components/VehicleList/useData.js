@@ -6,6 +6,16 @@ export default function useData() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
+  async function fetchVehicleDetails(detailUrl, vehicleId) {
+    try {
+      const details = await getData(detailUrl);
+      console.log('📊', details);
+      setVehicles((currentVehicles) => currentVehicles.map((v) => (v.id === vehicleId ? { ...v, details } : v)));
+    } catch (err) {
+      console.error(err.toString());
+    }
+  }
+
   async function fetchVehiclesData() {
     setLoading(true);
     try {
@@ -13,8 +23,7 @@ export default function useData() {
       setVehicles(vehicleData);
 
       vehicleData.forEach((vehicle) => {
-        // eslint-disable-next-line no-console
-        console.log(vehicle);
+        fetchVehicleDetails(vehicle.apiUrl, vehicle.id);
       });
     } catch (err) {
       setError(err.toString());
