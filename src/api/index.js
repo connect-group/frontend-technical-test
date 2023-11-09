@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import { request } from './helpers';
 
 /**
@@ -6,7 +5,14 @@ import { request } from './helpers';
  *
  * @return {Promise<Array.<vehicleSummaryPayload>>}
  */
-// TODO: All API related logic should be made inside this function.
 export default async function getData() {
-  return [];
+  const apiUrl = '/api/vehicles.json';
+  try {
+    const data = await request(apiUrl);
+    return data;
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error('Error fetching data:', error);
+    throw error; // Re-throw the error so it can be caught and handled by the caller
+  }
 }
