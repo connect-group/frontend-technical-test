@@ -26,7 +26,7 @@ export default function VehicleList() {
                 <p>
                   Price:
                   {' '}
-                  {vehicle.price}
+                  {vehicle.details && vehicle.details.price}
                 </p>
               </header>
               <div className="vehicle-list__item__media">
@@ -38,7 +38,7 @@ export default function VehicleList() {
                 ))}
               </div>
               <footer className="vehicle-list__item__details">
-                <a href={vehicle.apiUrl} target="_blank" rel="noopener noreferrer">More details</a>
+                { JSON.stringify(vehicle.details) }
               </footer>
             </article>
           </li>
