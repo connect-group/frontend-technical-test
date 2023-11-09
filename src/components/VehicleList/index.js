@@ -16,7 +16,14 @@ export default function VehicleList() {
 
   return (
     <div data-testid="results">
-      <p>List of vehicles will be displayed here</p>
+      <h1>Vehicles</h1>
+      <ul>
+        {vehicles && vehicles.map((vehicle) => (
+          <li key={vehicle.id}>
+            {vehicle.id}
+          </li>
+        ))}
+      </ul>
       <p>
         Visit
         <a href="/api/vehicles.json" target="_blank"> /api/vehicles.json</a>
