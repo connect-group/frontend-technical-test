@@ -16,4 +16,4 @@ Same as initial, no addition packages used
 - All tests are passing
 - Couldn't match font to design as it seems to be a propriety landrover font so used the closest free match
 - Didn't identify a good use case for Redux in this project other than storing the data but as mentioned above Tanstack Query would have been better for this to cache data. If there were filters, etc for the vehicles then I would have implemented a store. Maybe something like Zustand as I prefer the API over Redux
-- Used a placeholder as fallback for broken images however in a real project we might want to handle this better in accordance with brand gudiances
+- Used a placeholder as fallback for broken images however in a real project we might want to handle this better in accordance with brand guidelines
