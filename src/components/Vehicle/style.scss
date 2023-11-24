@@ -30,7 +30,7 @@
 .vehicle-list__item picture {
   display: block;
   flex-shrink: 0;
-  max-width: 100px;
+  max-width: 105px;
   width: 100%;
 }
 
@@ -45,7 +45,7 @@
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: 0.5em;
 }
 
 .vehicle-list__item-details__title {
@@ -144,6 +144,7 @@
     padding: 2rem;
     text-align: center;
     width: 100%;
+    gap: 1em;
   }
 
   .vehicle-list__item picture {
