@@ -56,19 +56,42 @@
   text-transform: uppercase;
 }
 
+.vehicle-list__item-details__meta {
+  padding-top: 1em;
+}
+
+.vehicle-list__item-details__meta dt {
+  font-weight: 600;
+  font-size: 0.875em;
+  opacity: 0.5;
+}
+
+.vehicle-list__item-details__meta dd:not(:last-child) {
+  margin-bottom: 0.5em;
+}
+
 .vehicle-list__item-details__description {
+  text-wrap: pretty;
+}
+
+.vehicle-list__item-details__description--collapsed {
   -webkit-box-orient: vertical;
   display: -webkit-box;
   -webkit-line-clamp: 1;
   overflow: hidden;
   text-overflow: ellipsis;
-  text-wrap: pretty;
 }
 
 .vehicle-list__item-details__price {
   font-size: 1.15em;
   font-weight: 500;
   letter-spacing: 0.075em;
+}
+
+.vehicle-modal__content .vehicle-list__item-details__price {
+  font-size: 1em;
+  font-weight: 600;
+  opacity: 0.75;
 }
 
 .vehicle-list__item-details__more {

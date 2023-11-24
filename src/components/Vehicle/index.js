@@ -53,11 +53,9 @@ export default function Vehicle({ vehicle, index }) {
           <h3 className="vehicle-list__item-details__title">
             <span>{`Jaguar ${vehicle.id}`}</span>
           </h3>
-          {vehicle.price ? (
-            <p className="vehicle-list__item-details__price">
-              {`From ${vehicle.price}`}
-            </p>
-          ) : null}
+          <p className="vehicle-list__item-details__price">
+            {`From ${vehicle.price}`}
+          </p>
 
           <p className="vehicle-list__item-details__description  vehicle-list__item-details__description--collapsed">
             {vehicle.description ? vehicle.description : ''}
@@ -69,22 +67,28 @@ export default function Vehicle({ vehicle, index }) {
         <Modal onClose={handleCloseModal}>
           <h3 className="vehicle-modal__title">{`Jaguar ${vehicle.id} - details`}</h3>
           <div className="vehicle-modal__content">
-            <p>
-              <strong>Passengers:</strong> {vehicle.meta.passengers}
+            <p className="vehicle-list__item-details__price">
+              {`From ${vehicle.price}`}
             </p>
-            <p>
-              <strong>Drivetrain:</strong> {vehicle.meta.drivetrain.join(', ')}
+            <p className="vehicle-list__item-details__description">
+              {vehicle.description ? vehicle.description : ''}
             </p>
-            <p>
-              <strong>Bodystyles:</strong> {vehicle.meta.bodystyles.join(', ')}
-            </p>
-            <p>
-              <strong>Emissions:</strong>{' '}
-              {vehicle.meta.emissions.template.replace(
-                '$value',
-                vehicle.meta.emissions.value,
-              )}
-            </p>
+
+            <dl className="vehicle-list__item-details__meta">
+              <dt>Passengers:</dt>
+              <dd>{vehicle.meta.passengers}</dd>
+              <dt>Drivetrain:</dt>
+              <dd>{vehicle.meta.drivetrain.join(', ')}</dd>
+              <dt>Bodystyles:</dt>
+              <dd>{vehicle.meta.bodystyles.join(', ')}</dd>
+              <dt>Emissions:</dt>
+              <dd>
+                {vehicle.meta.emissions.template.replace(
+                  '$value',
+                  vehicle.meta.emissions.value,
+                )}
+              </dd>
+            </dl>
           </div>
         </Modal>
       )}
