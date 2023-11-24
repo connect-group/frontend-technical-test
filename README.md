@@ -1,5 +1,7 @@
 Frontend Technical Test submission for [TeamITG](https://teamitg.com/)
 
+[Preview link](https://itg-fe-test.vercel.app/)
+
 ## Tech stack
 Same as initial, no addition packages used
 
