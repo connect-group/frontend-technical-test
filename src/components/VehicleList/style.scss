@@ -1,3 +1,18 @@
-.VehicleList {
-  width: 100%;
+.vehicle-list {
+  --border-color: #eef1f1;
+}
+
+@media screen and (min-width: 768px) {
+
+  .vehicle-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+
+  .vehicle-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }

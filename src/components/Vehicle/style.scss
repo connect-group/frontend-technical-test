@@ -1,0 +1,209 @@
+.vehicle-list__item {
+  align-items: flex-start;
+  animation: fade-in 1s var(--delay, 5s) forwards;
+  display: flex;
+  font-size: 14px;
+  opacity: 0;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    translate: 0px 10px;
+  }
+
+  100% {
+    opacity: 1;
+    translate: 0px;
+  }
+}
+
+.vehicle-list__item:not(:last-child) .vehicle-list__item-details {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.vehicle-list__item__image {
+  display: flex;
+  width: 100%;
+}
+
+.vehicle-list__item picture {
+  display: block;
+  flex-shrink: 0;
+  max-width: 105px;
+  width: 100%;
+}
+
+.vehicle-list__item picture > * {
+  aspect-ratio: 1/1;
+  width: 100%;
+}
+
+.vehicle-list__item-details {
+  color: #6a6d71;
+  flex: 1;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.vehicle-list__item-details__title {
+  color: #0b121d;
+  font-size: 1.3em;
+  font-weight: 600;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+}
+
+.vehicle-list__item-details__meta {
+  padding-top: 1em;
+}
+
+.vehicle-list__item-details__meta dt {
+  font-weight: 600;
+  font-size: 0.875em;
+  opacity: 0.5;
+}
+
+.vehicle-list__item-details__meta dd:not(:last-child) {
+  margin-bottom: 0.5em;
+}
+
+.vehicle-list__item-details__description {
+  text-wrap: pretty;
+}
+
+.vehicle-list__item-details__description--collapsed {
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.vehicle-list__item-details__price {
+  font-size: 1.15em;
+  font-weight: 500;
+  letter-spacing: 0.075em;
+}
+
+.vehicle-modal__content .vehicle-list__item-details__price {
+  font-size: 1em;
+  font-weight: 600;
+  opacity: 0.75;
+}
+
+.vehicle-list__item-details__more {
+  align-items: center;
+  border-radius: 0.25em;
+  cursor: pointer;
+  display: flex;
+  height: 24px;
+  justify-content: center;
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  width: 24px;
+  font-size: 14px;
+}
+
+.vehicle-list__item-details__more span {
+  display: none;
+}
+
+.vehicle-list__item-details__more:focus {
+  outline: 1px solid #0b121d;
+}
+
+.vehicle-modal__title {
+  color: #0b121d;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.075em;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.vehicle-modal__content > * + * {
+  margin-top: 0.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .vehicle-list__item {
+    flex-direction: column;
+    font-size: 16px;
+  }
+
+  .vehicle-list__item:not(:last-child) .vehicle-list__item-details {
+    border-bottom-color: transparent;
+  }
+
+  .vehicle-list__item:not(:first-child):not(:nth-child(odd))
+    .vehicle-list__item-details {
+    border-left: 1px solid var(--border-color);
+  }
+
+  .vehicle-list__item-details__title {
+    margin-bottom: 1em;
+  }
+
+  .vehicle-list__item-details__description {
+    -webkit-line-clamp: 3;
+  }
+
+  .vehicle-list__item-details__price {
+    font-size: 1em;
+  }
+
+  .vehicle-list__item-details__title > span {
+    border-bottom: 1px solid currentColor;
+    border-top: 1px solid currentColor;
+    padding: 0.25em 0;
+    white-space: pre;
+  }
+
+  .vehicle-list__item-details {
+    padding: 2rem;
+    text-align: center;
+    width: 100%;
+    gap: 1em;
+  }
+
+  .vehicle-list__item picture {
+    max-width: 100%;
+  }
+
+  .vehicle-list__item picture * {
+    aspect-ratio: 16/9;
+  }
+
+  .vehicle-list__item-details__more {
+    position: static;
+    width: auto;
+    height: auto;
+    gap: 0.5rem;
+    // margin-top: max(1.5rem, auto);
+    margin: auto auto 0;
+    border: 1px solid var(--border-color);
+    padding: 0.5rem;
+  }
+
+  .vehicle-list__item-details__more span {
+    display: inline;
+  }
+
+  .vehicle-list__item-details__more svg {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .vehicle-list__item:not(:nth-child(4n + 1)) .vehicle-list__item-details {
+    border-left: 1px solid var(--border-color);
+  }
+
+  .vehicle-list__item-details__title {
+    font-size: 1.4em;
+  }
+}
