@@ -1,11 +1,11 @@
 import React from 'react';
 import useData from './useData';
 import './style.scss';
+import VehicleListItem from '../VehicleListItem';
 
 export default function VehicleList() {
   // eslint-disable-next-line no-unused-vars
   const [loading, error, vehicles] = useData();
-
   if (loading) {
     return <div data-testid="loading">Loading</div>;
   }
@@ -17,6 +17,11 @@ export default function VehicleList() {
   return (
     <div data-testid="results">
       <p>List of vehicles will be displayed here</p>
+      {Array.isArray(vehicles) && vehicles.length && (
+      <ul className="VehicleList">
+        {vehicles.map((vehicle) => <VehicleListItem vehicle={vehicle} key={vehicle.id} />)}
+      </ul>
+      )}
       <p>
         Visit
         <a href="/api/vehicles.json" target="_blank"> /api/vehicles.json</a>

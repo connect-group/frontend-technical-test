@@ -1,6 +1,3 @@
-// eslint-disable-next-line no-unused-vars
-import { request } from './helpers';
-
 /**
  * Pull vehicles information
  *
@@ -8,5 +5,24 @@ import { request } from './helpers';
  */
 // TODO: All API related logic should be made inside this function.
 export default async function getData() {
-  return [];
+  // Generic function to get data from json files
+  async function getDataFromJson(endpoint) {
+    return fetch(endpoint)
+      .then((response) => response.json())
+      .then((responseJson) => Promise.all(responseJson.map((vehicle) => {
+        // Iterate through the individual cars to get the complex
+        return fetch(vehicle.apiUrl)
+          .then((vehicleResponse) => (vehicleResponse.json()))
+          .then((vehicleResponseJson) => ({ ...vehicle, ...vehicleResponseJson }))
+          .catch(() => (vehicle));
+      })))
+      .then((vehicles) => vehicles.filter((vehicle) => vehicle.price))
+      .catch(() => ([]));
+  }
+
+  // get initial list of vehicles
+  const vehicles = await getDataFromJson('/api/vehicles.json');
+  if (!vehicles) return [];
+
+  return vehicles;
 }
