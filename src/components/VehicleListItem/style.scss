@@ -1,0 +1,105 @@
+.VehicleListItem {
+  align-items: center;
+  border-bottom: 1px solid #dedede;
+  box-sizing: border-box;
+  display: flex;
+  flex-basis: 100%;
+  flex-direction: row;
+  font-size: 12px;
+  margin: 0;
+  max-width: 100%;
+  padding: 0;
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .ImageContainer {
+    flex-basis: 20%;
+    margin: 0;
+    padding: 0;
+    width: 20%;
+
+    img {
+      height: auto;
+      width: 100%;
+    }
+  }
+
+  .InfoContainer {
+    flex-basis: 80%;
+    padding: 0 1rem;
+    width: 80%;
+
+    .VehicleTitle {
+      font-size: 14px;
+      letter-spacing: .2rem;
+      margin-bottom: .2rem;
+      text-transform: uppercase;
+    }
+
+    .VehiclePrice {
+      margin-bottom: .3rem;
+    }
+
+    .VehicleDescription {
+      font-size: 10px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-wrap: nowrap;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+
+  .VehicleListItem {
+    flex-basis: 50%;
+    flex-direction: column;
+    height: 100%;
+    max-width: 50%;
+
+    .ImageContainer {
+      flex-basis: 100%;
+      width: 100%;
+    }
+
+    .InfoContainer {
+      flex-basis: 100%;
+      flex-direction: column;
+      padding: 1rem 1rem .35rem;
+      text-align: center;
+      width: 100%;
+    }
+
+    .VehicleTitle {
+      border-bottom: 1px solid #000;
+      border-top: 1px solid #000;
+      display: inline-block;
+      margin-bottom: 1rem;
+      padding: 2px 0 1px;
+    }
+
+    .VehiclePrice {
+      margin-bottom: .7rem;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .VehicleListItem {
+    flex-basis: 25%;
+    max-width: 25%;
+
+    .InfoContainer {
+      padding-bottom: 1.2rem;
+
+      .VehicleDescription {
+        font-size: 12px;
+      }
+    }
+  }
+}
