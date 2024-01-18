@@ -8,7 +8,7 @@ export default function useData() {
 
   useEffect(() => {
     getData()
-      .then((response) => setVehicles(response))
+      .then((response) => setVehicles(response ))
       .catch((err) => setError(err))
       .finally(() => setLoading(false));
   }, []);

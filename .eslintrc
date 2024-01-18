@@ -1,5 +1,5 @@
 {
-    "extends": "airbnb",
+    "extends": ["airbnb", "airbnb-typescript"],
     "parser": "babel-eslint",
     "parserOptions": {
         "ecmaVersion": 6,
