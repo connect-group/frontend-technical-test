@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "sourceMap": true,
+        "jsx": "react",
+        "target": "ES6",
+        "allowSyntheticDefaultImports": true,
+        "moduleResolution": "node",
+        "paths": {
+            "@components/*": [
+                "./src/components"
+            ]
+        }
+    }
+}
