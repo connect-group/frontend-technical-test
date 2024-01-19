@@ -5,7 +5,8 @@
         "ecmaVersion": 6,
         "ecmaFeatures": {
             "jsx": true
-        }
+        },
+        "parser": "@typescript-eslint/parser"
     },
     "env": {
         "browser": true,
@@ -15,6 +16,13 @@
         "jest": true,
         "jquery": true
     },
+    "overrides": [
+        {
+          "files": ["./src/**/*.ts"],
+          "parser": "@typescript-eslint/parser",
+          "plugins": ["@typescript-eslint"]
+        }
+      ],
     "rules": {
         "import/prefer-default-export": "off",
         "no-underscore-dangle": "off",

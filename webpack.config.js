@@ -3,6 +3,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -24,6 +25,7 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
+          
         },
       },
       { test: /\.tsx?$/, loader: 'ts-loader' },
@@ -34,7 +36,9 @@ module.exports = {
     ],
   },
   resolve: {
+   
     extensions: ['*', '.js', '.jsx', '.ts', '.tsx'],
+    plugins: [new TsconfigPathsPlugin()],
   },
   plugins: [
     new CleanWebpackPlugin(),
