@@ -3,6 +3,6 @@
         ["@babel/preset-env", {
             "exclude": ["babel-plugin-transform-async-to-generator", "babel-plugin-transform-regenerator"]
         }],
-        ["@babel/preset-react"]
+        "@babel/preset-react","@babel/preset-typescript"
     ]
 }

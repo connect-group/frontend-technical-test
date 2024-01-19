@@ -1,5 +1,5 @@
-import getData from '..';
-import { request } from '../helpers';
+import getData from '@api';
+import { request } from '@api/helpers';
 
 jest.mock('../helpers');
 
