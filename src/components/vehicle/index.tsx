@@ -10,7 +10,7 @@ const Vehicle: React.FC<TVehicleId> = ({ id }) => {
 
     return (
         <div
-            data-testid="vehicle"
+            data-testid={`vehicle-${id}`}
             className="vehicle"
             role="button"
             tabIndex={0}

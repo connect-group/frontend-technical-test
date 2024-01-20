@@ -4,7 +4,7 @@ exports[`<Vehicle /> Should render Vehicle component 1`] = `
 <div>
   <div
     class="vehicle"
-    data-testid="vehicle"
+    data-testid="vehicle-xe"
     role="button"
     tabindex="0"
   >
