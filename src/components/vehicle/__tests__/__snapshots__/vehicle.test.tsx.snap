@@ -6,6 +6,7 @@ exports[`<Vehicle /> Should render Vehicle component 1`] = `
     class="vehicle"
     data-testid="vehicle-xe"
     role="button"
+    style="--animation-order: 0;"
     tabindex="0"
   >
     <div
@@ -29,6 +30,7 @@ exports[`<Vehicle /> Should render Vehicle component 1`] = `
         />
       </picture>
       <button
+        aria-label="Show vehicle extra informations"
         class="vehicle__show_more"
         tabindex="-1"
         title="Show vehicle extra informations"
