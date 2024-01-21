@@ -23,3 +23,4 @@ export type TVehicleMeta ={
         value: number;
     };
 }
+export type TVehicleId = Pick<TVehicle, "id">;

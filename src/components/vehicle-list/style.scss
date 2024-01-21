@@ -1,0 +1,17 @@
+@import "../../styles/mixins";
+
+.vehicles {  
+    width: 100%;    
+    display: flex;
+    flex-direction: column;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    @include breakpoint_mixin(tablet) {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    @include breakpoint_mixin(desktop) {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}

@@ -18,8 +18,9 @@
     },
     "overrides": [
         {
-          "files": ["./src/**/*.ts"],
+          "files": ["*.ts", "*.tsx"],
           "parser": "@typescript-eslint/parser",
+          "extends": ["airbnb", "airbnb-typescript"],
           "plugins": ["@typescript-eslint"]
         }
       ],
