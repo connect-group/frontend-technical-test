@@ -1,11 +1,12 @@
 import React from "react";
+import Button from "../button";
 
 export interface IDialogCloseProps {
     onClick?: () => void;
 }
 const DialogClose: React.FC<IDialogCloseProps> = ({ onClick = null }) => {
     return (
-        <button
+        <Button
             className="dialog__close"
             type="button"
             title="Close Dialog"
@@ -14,7 +15,7 @@ const DialogClose: React.FC<IDialogCloseProps> = ({ onClick = null }) => {
             data-testid="dialog-close"
         >
             &times;
-        </button>
+        </Button>
     );
 };
 export default DialogClose;

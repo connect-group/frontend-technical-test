@@ -1,11 +1,13 @@
 import React, { PropsWithChildren } from "react";
+import Text from "../text";
 
 const Description: React.FC<PropsWithChildren> = ({ children }) => (
-    <p
+    <Text
+        as="p"
         className="vehicle__content-description"
         data-testid="vehicle-description"
     >
         {children}
-    </p>
+    </Text>
 );
 export default Description;

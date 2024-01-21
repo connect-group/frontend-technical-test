@@ -1,6 +1,7 @@
 import React from "react";
 import useVehiclesStore from "../../store/vehicles-store";
 import { vehicleDetailsSelector } from "../../store/vehicles-store/selectors/vehicle-details-selector";
+import Text from "../text";
 
 const Details: React.FC = () => {
     const details = useVehiclesStore(vehicleDetailsSelector);
@@ -9,7 +10,7 @@ const Details: React.FC = () => {
             {details.map(({ label, value }, index) => {
                 return (
                     <div className="vehicle-detail__detail" key={index}>
-                        <span className="vehicle-detail__label">{label}:</span>
+                        <Text className="vehicle-detail__label">{label}:</Text>
                         {value}
                     </div>
                 );

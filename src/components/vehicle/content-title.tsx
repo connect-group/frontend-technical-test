@@ -1,6 +1,15 @@
 import React, { PropsWithChildren } from "react";
+import Heading from "../heading";
 
 const ContentTitle: React.FC<PropsWithChildren> = ({ children }) => {
-    return <h4 className="vehicle__content-title" data-testid="vehicle-title">{children}</h4>
-}
-export default ContentTitle
+    return (
+        <Heading
+            as="h4"
+            className="vehicle__content-title"
+            data-testid="vehicle-title"
+        >
+            {children}
+        </Heading>
+    );
+};
+export default ContentTitle;

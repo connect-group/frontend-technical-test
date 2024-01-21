@@ -1,8 +1,9 @@
 import React, { PropsWithChildren } from "react";
+import Text from "../text";
 
 const Price: React.FC<PropsWithChildren> = ({ children }) => (
-    <p className="vehicle__content-price" data-testid="vehicle-price">
+    <Text as="p" className="vehicle__content-price" data-testid="vehicle-price">
         From {children}
-    </p>
+    </Text>
 );
 export default Price;

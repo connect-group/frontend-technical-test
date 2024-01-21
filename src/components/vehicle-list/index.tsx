@@ -4,6 +4,7 @@ import Title from "../title";
 import Vehicle from "../vehicle";
 import "./style.scss";
 import VehicleDetail from "../vehicle-detail";
+import Heading from "../heading";
 
 export default function VehicleList() {
     const [loading, error, vehicles] = useData();
@@ -14,7 +15,7 @@ export default function VehicleList() {
     return (
         <>
             <div className="main">
-                <Title>Vehicles List</Title>
+                <Heading>Vehicles List</Heading>
                 <div data-testid="results" className="vehicles">
                     {vehicles &&
                         vehicles.map((vehicle) => (
