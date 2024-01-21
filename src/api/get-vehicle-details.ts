@@ -1,5 +1,6 @@
-import { TVehicle, TVehicleDetail } from "../@typings/vehicle";
-import { request } from "./helpers";
+/* eslint-disable import/prefer-default-export */
+import { TVehicle, TVehicleDetail } from '../@typings/vehicle';
+import { request } from './helpers';
 
 /**
  * The function `getVehicleDetails` is an asynchronous function that takes a `vehicle` object as a
@@ -11,16 +12,16 @@ import { request } from "./helpers";
  * @returns The function `getVehicleDetails` returns a Promise that resolves to a `TVehicle` object.
  */
 export const getVehicleDetails = async (
-    vehicle: TVehicle
+  vehicle: TVehicle,
 ): Promise<TVehicle> => {
-    try {
-        const vehicleDetail: TVehicleDetail = await request<TVehicleDetail>(
-            vehicle.apiUrl
-        );
-        return vehicleDetail.price && vehicleDetail.price !== ""
-            ? { ...vehicle, detail: vehicleDetail }
-            : { ...vehicle };
-    } catch (e) {
-        throw new Error("Failed to fetch vehicle details");
-    }
+  try {
+    const vehicleDetail: TVehicleDetail = await request<TVehicleDetail>(
+      vehicle.apiUrl,
+    );
+    return vehicleDetail.price && vehicleDetail.price !== ''
+      ? { ...vehicle, detail: vehicleDetail }
+      : { ...vehicle };
+  } catch (e) {
+    throw new Error('Failed to fetch vehicle details');
+  }
 };

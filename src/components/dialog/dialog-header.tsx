@@ -1,6 +1,5 @@
-import React, { PropsWithChildren } from "react";
+/* eslint-disable react/prop-types */
+import React, { PropsWithChildren } from 'react';
 
-const DialogHeader: React.FC<PropsWithChildren> = ({ children }) => {
-    return <div className="dialog__header">{children}</div>;
-};
+const DialogHeader: React.FC<PropsWithChildren> = ({ children }) => <div className="dialog__header">{children}</div>;
 export default DialogHeader;

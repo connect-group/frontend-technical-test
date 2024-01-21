@@ -4,8 +4,8 @@ import getData from '../../api';
 import useVehiclesStore from '../../store/vehicles-store';
 
 export default function useData(): [boolean, string | null, Array<TVehicle> | undefined] {
-  const setVehicles = useVehiclesStore(s => s.setVehicles);
-  const vehicles = useVehiclesStore(s => s.vehicles);
+  const setVehicles = useVehiclesStore((s) => s.setVehicles);
+  const vehicles = useVehiclesStore((s) => s.vehicles);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
