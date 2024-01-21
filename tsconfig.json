@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "sourceMap": true,
+        "jsx": "react",
+        "target": "ES2020",
+        "allowSyntheticDefaultImports": true,
+        "moduleResolution": "node"
+    }
+}

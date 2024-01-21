@@ -1,0 +1,20 @@
+@import "../../styles/typography";
+
+.vehicle-detail {
+    &__description {
+        font-weight: $font-weight-normal;
+        font-size: large;
+    }
+    &__details {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    &__detail {
+        display: flex;
+        gap: 0.3rem;
+    }
+    &__label {
+        font-weight: $font-weight-semibold;
+    }
+}

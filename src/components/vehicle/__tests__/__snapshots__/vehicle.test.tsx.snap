@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Vehicle /> Should render Vehicle component 1`] = `
+<div>
+  <div
+    class="vehicle"
+    data-testid="vehicle-xe"
+    role="button"
+    style="--animation-order: 0;"
+    tabindex="0"
+  >
+    <div
+      class="vehicle__image_wrapper"
+    >
+      <picture
+        class="vehicle__image_wrapper-picture"
+      >
+        <source
+          media="(min-width:768px)"
+          srcset="/images/16x9/xe_k17.jpg"
+        />
+        <source
+          media="(max-width:767px)"
+          srcset="/images/1x1/xe_k17.jpg"
+        />
+        <img
+          alt="vehicle"
+          class="vehicle__image_wrapper-img"
+          src="/images/16x9/xe_k17.jpg"
+        />
+      </picture>
+      <button
+        aria-label="Show vehicle extra informations"
+        class="vehicle__show_more"
+        tabindex="-1"
+        title="Show vehicle extra informations"
+        type="button"
+      >
+        More
+      </button>
+    </div>
+    <div
+      class="vehicle__content"
+    >
+      <h4
+        class="vehicle__content-title"
+        data-testid="vehicle-title"
+      >
+        xe
+      </h4>
+      <p
+        class="vehicle__content-price"
+        data-testid="vehicle-price"
+      >
+        From 
+        £30,000
+      </p>
+      <p
+        class="vehicle__content-description"
+        data-testid="vehicle-description"
+      >
+        The most advanced, efficient and refined sports saloon that Jaguar has ever produced
+      </p>
+    </div>
+  </div>
+</div>
+`;
