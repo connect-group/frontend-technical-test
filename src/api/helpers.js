@@ -16,7 +16,7 @@ export async function request(apiUrl) {
 
     return await response.json();
   } catch (error) {
-    console.error("Error in request function:", error);
+    console.warn("Error in request function:", error);
     throw error;
   }
 }

@@ -15,7 +15,7 @@ export default async function getData() {
         const detailResponse = await request(vehicle.apiUrl);
         return detailResponse;
       } catch (error) {
-        console.error("Error fetching vehicle details:", error);
+        console.warn("Error fetching vehicle details:", error);
         return null; // Return null for unsuccessful responses (404 - /api/vehicle_problematic.json)
       }
     });
@@ -31,7 +31,7 @@ export default async function getData() {
 
     return updatedVehicles;
   } catch (error) {
-    console.error("Error in getData function:", error);
+    console.warn("Error in getData function:", error);
     throw error;
   }
 }
