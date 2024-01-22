@@ -51,3 +51,24 @@ h6 {
   isolation: isolate;
 }
 /* stylelint-enable selector-max-id */
+
+@font-face {
+  font-family: "Tuffy";
+  src: local("Tuffy"), url("./fonts/Tuffy.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "TuffyBold";
+  src: local("TuffyBold"), url("./fonts/TuffyBold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "TuffyBoldItalic";
+  src: local("TuffyBoldItalic"),
+    url("./fonts/TuffyBoldItalic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "TuffyItalic";
+  src: local("TuffyItalic"), url("./fonts/TuffyItalic.otf") format("opentype");
+}
