@@ -4,7 +4,6 @@ import "./style.scss";
 
 export default function VehicleList() {
     const [loading, error, vehicles] = useData();
-    // console.log(vehicles);
 
     if (loading) {
         return <div data-testid="loading">Loading</div>;

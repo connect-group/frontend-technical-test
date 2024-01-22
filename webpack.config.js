@@ -9,12 +9,14 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, "dist"),
+        publicPath: "/",
     },
     devServer: {
         hot: true,
-        inline: true,
         open: true,
-        contentBase: path.join(__dirname, "public"),
+        static: {
+            directory: path.join(__dirname, "public"),
+        },
     },
     module: {
         rules: [
