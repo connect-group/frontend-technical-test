@@ -3,14 +3,8 @@
     "description": "Premium luxury saloon, spacious and beautiful yet powerfully agile.",
     "meta": {
         "passengers": 5,
-        "drivetrain": [
-            "AWD",
-            "RWD"
-        ],
-        "bodystyles": [
-            "saloon (SWB)",
-            "saloon (LWB)"
-        ],
+        "drivetrain": ["AWD", "RWD"],
+        "bodystyles": ["saloon (SWB)", "saloon (LWB)"],
         "emissions": {
             "template": "CO2 Emissions $value g/km",
             "value": 149
