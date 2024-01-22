@@ -25,9 +25,9 @@ export default async function getData() {
     const updatedVehicles = vehicleList
       .map((vehicle, index) => ({
         ...vehicle,
-        details: vehicleDetailsList[index],
+        ...vehicleDetailsList[index],
       }))
-      .filter((vehicle) => vehicle.details && vehicle.details.price);
+      .filter((vehicle) => vehicle.price);
 
     return updatedVehicles;
   } catch (error) {

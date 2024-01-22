@@ -40,9 +40,9 @@ export default function VehicleList() {
               </div>
               <div className="vehicle-card__info">
                 <h2 className="vehicle-card__name">{vehicle.id}</h2>
-                <h3 className="vehicle-card__price">{`From ${vehicle.details.price}`}</h3>
+                <h3 className="vehicle-card__price">{`From ${vehicle.price}`}</h3>
                 <p className="vehicle-card__description">
-                  {vehicle.details.description}
+                  {vehicle.description}
                 </p>
               </div>
             </article>

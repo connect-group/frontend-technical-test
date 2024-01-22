@@ -43,10 +43,8 @@ describe("<VehicleList /> Tests", () => {
               url: "/example-image-large.jpg",
             },
           ],
-          details: {
-            price: "£30,000",
-            description: "Example description",
-          },
+          price: "£30,000",
+          description: "Example description",
         },
       ],
     ]);
