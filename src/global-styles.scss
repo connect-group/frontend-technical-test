@@ -46,6 +46,8 @@ h6 {
 }
 
 /* 8. Create a root stacking context */
+/* stylelint-disable selector-max-id */
 #root {
   isolation: isolate;
 }
+/* stylelint-enable selector-max-id */

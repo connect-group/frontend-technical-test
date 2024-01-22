@@ -1,3 +1,17 @@
-.VehicleList {
-    width: 100%;
+.vehicles {
+  width: 100%;
+}
+
+.vehicle-card {
+  display: flex;
+
+  &__image-container {
+    flex-shrink: 0;
+    height: 120px;
+    width: 120px;
+  }
+
+  &__info {
+    padding: 1rem;
+  }
 }

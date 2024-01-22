@@ -4,6 +4,7 @@ import "./style.scss";
 
 export default function VehicleList() {
   const [loading, error, vehicles] = useData();
+  console.log(vehicles);
 
   if (loading) {
     return <div data-testid="loading">Loading</div>;
@@ -14,30 +15,34 @@ export default function VehicleList() {
   }
 
   return (
-    <div data-testid="results">
-      <p>List of vehicles will be displayed here</p>
-      <p>
-        Visit
-        <a href="/api/vehicles.json" target="_blank">
-          {" "}
-          /api/vehicles.json
-        </a>{" "}
-        (main endpoint)
-      </p>
-      <p>
-        Visit
-        <a href="/api/vehicle_fpace.json" target="_blank">
-          /api/vehicle_fpace.json
-        </a>{" "}
-        (detail endpoint - apiUrl)
-      </p>
-      <p>
-        Visit
-        <a href="/api/vehicle_xf.json" target="_blank">
-          /api/vehicle_xf.json
-        </a>{" "}
-        (vehicle without any price)
-      </p>
-    </div>
+    <section data-testid="results" className="vehicles">
+      {vehicles.map((vehicle) => {
+        const [{ url: imageLargeUrl }, { url: imageSmallUrl, name: altText }] =
+          vehicle.media;
+
+        return (
+          <article className="vehicle-card" key={vehicle.id}>
+            <div className="vehicle-card__image-container">
+              <picture>
+                <source media="(max-width: 600px)" srcSet={imageSmallUrl} />
+                <source media="(min-width: 601px)" srcSet={imageLargeUrl} />
+                <img
+                  className="vehicle-card__image"
+                  src={imageSmallUrl}
+                  alt={altText}
+                />
+              </picture>
+            </div>
+            <div className="vehicle-card__info">
+              <h2 className="vehicle-car__name">{vehicle.id}</h2>
+              <h3 className="vehicle-car__price">{vehicle.details.price}</h3>
+              <p className="vehicle-car__description">
+                {vehicle.details.description}
+              </p>
+            </div>
+          </article>
+        );
+      })}
+    </section>
   );
 }
