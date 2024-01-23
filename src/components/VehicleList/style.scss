@@ -14,9 +14,9 @@ $border: 1px solid lighten($base-color, 90%);
   display: flex;
 
   @media (min-width: 601px) {
-    width: 50%;
     display: inline-flex;
     flex-direction: column;
+    width: 50%;
   }
 
   @media (min-width: 1025px) {
@@ -38,49 +38,49 @@ $border: 1px solid lighten($base-color, 90%);
     }
 
     @media (min-width: 601px) {
-      width: 100%;
       height: auto;
+      width: 100%;
     }
   }
 
   &__info {
-    flex-grow: 1;
-    padding: 1rem;
-    font-family: "Tuffy", sans-serif;
     border-bottom: $border;
+    flex-grow: 1;
+    font-family: "Tuffy", sans-serif;
+    padding: 1rem;
 
     @media (min-width: 601px) {
-      text-align: center;
-      padding: 1rem 1rem 0.5rem;
       border-bottom: 0;
+      padding: 1rem 1rem .5rem;
+      text-align: center;
     }
 
     @media (min-width: 1025px) {
-      padding: 1rem;
       border-bottom: $border;
       border-right: $border;
+      padding: 1rem;
     }
   }
 
   &__name {
     display: inline-block;
-    text-transform: uppercase;
     font-family: "TuffyBold", sans-serif;
-    letter-spacing: 1px;
     font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 
     @media (min-width: 601px) {
-      margin-bottom: 1rem;
-      margin-top: 0.75rem;
       border-bottom: 1.25px solid currentColor;
       border-top: 1.25px solid currentColor;
+      margin-bottom: 1rem;
+      margin-top: .75rem;
     }
   }
 
   &__price {
     color: lighten($base-color, 40%);
-    letter-spacing: 2px;
     font-size: 14px;
+    letter-spacing: 2px;
   }
 
   &__description {

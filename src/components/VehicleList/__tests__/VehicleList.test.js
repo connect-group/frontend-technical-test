@@ -53,5 +53,6 @@ describe("<VehicleList /> Tests", () => {
     expect(queryByTestId("loading")).toBeNull();
     expect(queryByTestId("error")).toBeNull();
     expect(queryByTestId("results")).not.toBeNull();
+    expect(queryByTestId("results").children.length).toBe(1);
   });
 });

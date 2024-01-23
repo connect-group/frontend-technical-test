@@ -11,7 +11,11 @@ export default function VehicleList() {
   }
 
   if (error) {
-    return <div data-testid="error">{error}</div>;
+    return (
+      <div data-testid="error" role="alert">
+        {error}
+      </div>
+    );
   }
 
   return (
@@ -34,7 +38,7 @@ export default function VehicleList() {
                   <img
                     className="vehicle-card__image"
                     src={imageSmallUrl}
-                    alt={altText}
+                    alt={`Image of ${altText}`}
                   />
                 </picture>
               </div>
