@@ -23,14 +23,18 @@ export default function VehicleList() {
       {vehicles
         // .concat(vehicles)
         // .concat(vehicles) // To test for larger amount of data
-        .map((vehicle) => {
+        .map((vehicle, index) => {
           const [
             { url: imageLargeUrl },
             { url: imageSmallUrl, name: altText },
           ] = vehicle.media;
 
           return (
-            <article className="vehicle-card" key={vehicle.id}>
+            <article
+              className="vehicle-card"
+              key={vehicle.id}
+              style={{ "--animation-order": index + 1 }}
+            >
               <div className="vehicle-card__image-container">
                 <picture>
                   <source media="(max-width: 600px)" srcSet={imageSmallUrl} />
