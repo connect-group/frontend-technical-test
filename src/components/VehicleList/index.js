@@ -7,7 +7,7 @@ export default function VehicleList() {
   // console.log(vehicles);
 
   if (loading) {
-    return <div data-testid="loading">Loading</div>;
+    return <div data-testid="loading" className="loader" />;
   }
 
   if (error) {
