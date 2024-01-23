@@ -38,7 +38,7 @@ export default function VehicleList() {
                   <img
                     className="vehicle-card__image"
                     src={imageSmallUrl}
-                    alt={`Image of ${altText}`}
+                    alt={altText}
                   />
                 </picture>
               </div>
