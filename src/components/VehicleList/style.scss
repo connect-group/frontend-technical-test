@@ -2,9 +2,10 @@ $base-color: black;
 $border: 1px solid lighten($base-color, 90%);
 
 @keyframes animateIn {
+
   0% {
     opacity: 0;
-    transform: scale(0.6) translateY(-8px);
+    transform: scale(.6) translateY(-8px);
   }
 
   100% {
@@ -13,6 +14,7 @@ $border: 1px solid lighten($base-color, 90%);
 }
 
 @keyframes rotate {
+
   0% {
     transform: rotate(0deg);
   }
@@ -23,6 +25,7 @@ $border: 1px solid lighten($base-color, 90%);
 }
 
 @keyframes prixClipFix {
+
   0% {
     clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
   }
@@ -71,9 +74,9 @@ $border: 1px solid lighten($base-color, 90%);
 }
 
 .vehicles {
-  width: 100%;
   display: inline-flex;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .vehicle-card {
@@ -126,7 +129,7 @@ $border: 1px solid lighten($base-color, 90%);
 
     @media (min-width: 601px) {
       border-bottom: 0;
-      padding: 1rem 1rem 0.5rem;
+      padding: 1rem 1rem .5rem;
       text-align: center;
     }
 
@@ -148,7 +151,7 @@ $border: 1px solid lighten($base-color, 90%);
       border-bottom: 1.25px solid currentColor;
       border-top: 1.25px solid currentColor;
       margin-bottom: 1rem;
-      margin-top: 0.75rem;
+      margin-top: .75rem;
     }
   }
 
@@ -167,22 +170,22 @@ $border: 1px solid lighten($base-color, 90%);
   }
 
   &__button {
-    padding: 3pt 20px;
-    display: inline-flex;
-    justify-content: center;
     align-items: center;
+    background: 0;
     border: 2px solid currentColor;
     color: lighten($base-color, 30%);
-    background: 0;
     cursor: pointer;
-    overflow: hidden;
-    text-transform: uppercase;
+    display: inline-flex;
     font-family: "TuffyBold", sans-serif;
     font-size: 14px;
+    justify-content: center;
     margin-top: 20px;
+    overflow: hidden;
+    padding: 3pt 20px;
+    text-transform: uppercase;
 
-    @media (min-width: 390px) {
-      display: none;
-    }
+    // @media (min-width: 390px) {
+    //   display: none;
+    // }
   }
 }

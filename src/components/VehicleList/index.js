@@ -67,6 +67,7 @@ export default function VehicleList() {
                   {vehicle.description}
                 </p>
                 <button
+                  type="button"
                   className="vehicle-card__button"
                   onClick={handleReadMoreClick(vehicle)}
                 >
