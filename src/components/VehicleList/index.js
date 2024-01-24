@@ -70,8 +70,11 @@ export default function VehicleList() {
                   type="button"
                   className="vehicle-card__button"
                   onClick={handleReadMoreClick(vehicle)}
+                  aria-label="Read More"
                 >
-                  Read More
+                  <span class="vehicle-card__screen-reader-text">
+                    Read More
+                  </span>
                 </button>
               </div>
             </article>
