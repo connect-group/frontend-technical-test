@@ -1,0 +1,26 @@
+.modal-dialog {
+  display: grid;
+  margin: auto;
+  padding: 0;
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  max-inline-size: min(90vw, 60ch);
+  max-block-size: min(80vh, 100%);
+  max-block-size: min(80dvb, 100%);
+  overflow: hidden;
+
+  &::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(1px);
+  }
+
+  &:not([open]) {
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  &__h2 {
+    text-transform: uppercase;
+  }
+}

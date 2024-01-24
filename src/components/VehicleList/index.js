@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
+
+import Modal from "../Modal";
 import useData from "./useData";
 import "./style.scss";
 
 export default function VehicleList() {
   const [loading, error, vehicles] = useData();
-  // console.log(vehicles);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [vehicleData, setVehicleData] = useState({});
 
   if (loading) {
     return <div data-testid="loading" className="loader" />;
@@ -18,12 +21,23 @@ export default function VehicleList() {
     );
   }
 
+  const openDialog = () => setIsDialogOpen(true);
+  const closeDialog = () => setIsDialogOpen(false);
+
+  const handleReadMoreClick = (vehicle) => () => {
+    setVehicleData(vehicle);
+    openDialog();
+  };
+
+  const handleOnClose = () => {
+    setVehicleData({});
+    closeDialog();
+  };
+
   return (
-    <section data-testid="results" className="vehicles">
-      {vehicles
-        // .concat(vehicles)
-        // .concat(vehicles) // To test for larger amount of data
-        .map((vehicle, index) => {
+    <>
+      <section data-testid="results" className="vehicles">
+        {vehicles.map((vehicle, index) => {
           const [
             { url: imageLargeUrl },
             { url: imageSmallUrl, name: altText },
@@ -52,10 +66,22 @@ export default function VehicleList() {
                 <p className="vehicle-card__description">
                   {vehicle.description}
                 </p>
+                <button
+                  className="vehicle-card__button"
+                  onClick={handleReadMoreClick(vehicle)}
+                >
+                  Read More
+                </button>
               </div>
             </article>
           );
         })}
-    </section>
+      </section>
+      <Modal
+        isOpen={isDialogOpen}
+        onClose={handleOnClose}
+        vehicleData={vehicleData}
+      />
+    </>
   );
 }
