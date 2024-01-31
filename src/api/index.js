@@ -8,5 +8,18 @@ import { request } from './helpers';
  */
 // TODO: All API related logic should be made inside this function.
 export default async function getData() {
-  return [];
+  let vehicles = await request('/api/vehicles.json');
+  const vehiclesWithDetailsPromise = vehicles.map(async vehicle => {
+      try {
+          const details = await request(`/api/vehicle_${vehicle.id}.json`);
+          return {
+              ...vehicle,
+              ...details
+          }
+      } catch (error) {
+          return null;
+      }
+  });
+  vehicles = await Promise.all(vehiclesWithDetailsPromise);
+  return vehicles.filter(v => !!v && !!v.price);
 }

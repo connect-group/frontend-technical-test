@@ -1,5 +1,10 @@
-.root {
-  margin: 14px;
-  padding: 12px;
-  z-index: 12;
+@import "styles/typography";
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
 }
