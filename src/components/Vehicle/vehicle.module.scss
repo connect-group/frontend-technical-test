@@ -52,7 +52,7 @@ $borderColor: #b7b7b7;
 
 .name {
     text-transform: uppercase;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: bolder;
 
     @include md-up {
@@ -65,7 +65,7 @@ $borderColor: #b7b7b7;
 
 .price {
     margin-bottom: 1.2rem;
-    font-size: 1.1rem;
+    font-size: 1.0rem;
     color: rgba(0, 0, 0, 0.65);
 
     @include md-up {
