@@ -1,0 +1,19 @@
+@import "../../styles/mixins";
+
+.vehicleList {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    @include md-up {
+        flex-direction: row;
+
+        > * {
+            width: 50%;
+        }
+    }
+
+    @include lg-up {
+        flex-wrap: nowrap;
+    }
+}

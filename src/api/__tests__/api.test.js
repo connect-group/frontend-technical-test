@@ -3,7 +3,7 @@ import { request } from '../helpers';
 
 jest.mock('../helpers');
 
-describe.skip('getData Tests', () => {
+describe('getData Tests', () => {
   const safelyCallApi = async () => {
     try {
       return await getData();
@@ -28,7 +28,7 @@ describe.skip('getData Tests', () => {
 
   it('Should traverse and make further api calls on main results', async () => {
     expect.assertions(3);
-    request.mockResolvedValueOnce([{ apiUrl: '/api/vehicle_ftype.json' }, { apiUrl: '/api/vehicle_xj.json' }]);
+    request.mockResolvedValueOnce([{ apiUrl: '/api/vehicle_ftype.json', id: 'ftype' }, { apiUrl: '/api/vehicle_xj.json', id: 'xj' }]);
     request.mockResolvedValueOnce({ id: 'ftype', price: '£36,000' });
     request.mockResolvedValueOnce({ id: 'xj', price: '£40,000' });
     await safelyCallApi();
