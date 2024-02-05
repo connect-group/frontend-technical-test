@@ -1,0 +1,93 @@
+@import "../../styles/_variables.scss";
+
+@import "../../styles/_mixins.scss";
+
+.vehicleDetailsModal {
+  height: 100%;
+  width: 100%;
+
+  @media screen and (min-width: $breakpoint-tablet-min) {
+    max-height: 750px;
+    max-width: 750px;
+  }
+
+  &__header {
+    position: relative;
+
+    &:before {
+      background-color: rgba(0, 0, 0, .5);
+      content: "";
+      height: 100%;
+      left: 50%;
+      position: absolute;
+      top: 0;
+      transform: translateX(-50%);
+      width: 100%;
+      z-index: 5;
+    }
+  }
+
+  &__headerInfo {
+    @include flex-center;
+
+    color: white;
+    flex-direction: column;
+    height: 100%;
+    left: 50%;
+    position: absolute;
+    text-transform: uppercase;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    z-index: 10;
+  }
+
+  &__title {
+    border-bottom: 4px solid white;
+    border-top: 4px solid white;
+    display: inline-block;
+    font-size: 64px;
+    line-height: 1;
+    margin-bottom: 32px;
+    padding: 16px 24px;
+  }
+
+  &__subtitle {
+    font-size: 20px;
+  }
+
+  &__content {
+    padding: 32px;
+  }
+
+  &__description {
+    text-align: center;
+  }
+
+  &__specificationsTitle {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 24px 0 12px;
+    text-transform: uppercase;
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__listItem {
+    padding: 16px;
+
+    &:nth-child(odd) {
+      background-color: $light-gray;
+    }
+
+    strong {
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 500;
+      min-width: 200px;
+      text-transform: uppercase;
+    }
+  }
+}

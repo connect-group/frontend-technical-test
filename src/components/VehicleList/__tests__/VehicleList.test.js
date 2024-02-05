@@ -1,6 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import VehicleList from '..';
+
+import VehicleList from '../index';
+import mockVehicle from '../../../__mocks__/mockVehicle';
 import useData from '../useData';
 
 jest.mock('../useData');
@@ -8,9 +10,9 @@ jest.mock('../useData');
 describe('<VehicleList /> Tests', () => {
   it('Should show loading state if it not falsy', () => {
     useData.mockReturnValue([true, 'An error occurred', 'results']);
-    const { queryByTestId } = render(<VehicleList />);
+    const { queryAllByTestId, queryByTestId } = render(<VehicleList />);
 
-    expect(queryByTestId('loading')).not.toBeNull();
+    expect(queryAllByTestId('loading')).not.toBeNull();
     expect(queryByTestId('error')).toBeNull();
     expect(queryByTestId('results')).toBeNull();
   });
@@ -25,7 +27,7 @@ describe('<VehicleList /> Tests', () => {
   });
 
   it('Should show results if loading successfully finished', () => {
-    useData.mockReturnValue([false, false, 'results']);
+    useData.mockReturnValue([false, false, [mockVehicle]]);
     const { queryByTestId } = render(<VehicleList />);
 
     expect(queryByTestId('loading')).toBeNull();

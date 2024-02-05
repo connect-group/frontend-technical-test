@@ -1,0 +1,57 @@
+@import "../../styles/_variables.scss";
+
+@import "../../styles/animations.scss";
+
+.modalContainer {
+  align-items: center;
+  background-color: rgba(0, 0, 0, .5);
+  bottom: 0;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  left: 0;
+  overflow: auto;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100vw;
+  z-index: 99;
+  
+  &__overlay {
+    animation: fadeInSlide .3s ease-out forwards;
+    background-color: $white;
+  }
+
+  &__content {
+    background: white;
+    position: relative;
+    width: 100%;
+  }
+
+  &__close {
+    align-items: center;
+    background: none;
+    background-color: rgba(255, 255, 255, .5);
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 20px;
+    height: 40px;
+    justify-content: center;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    transition: background-color .3s;
+    width: 40px;
+    z-index: 20;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 1);
+    }
+  }
+}
+
+.fadeOutSlide {
+  animation: fadeOutSlide .3s ease-out forwards;
+}

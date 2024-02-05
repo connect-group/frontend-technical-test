@@ -1,0 +1,47 @@
+@import "../../styles/_variables.scss";
+
+@import "../../styles/animations.scss";
+
+.shimmerTitle {
+  height: 24px;
+  width: 50%;
+
+  @media screen and (min-width: #{$breakpoint-tablet-min}) {
+    margin: 0 auto;
+  }
+}
+
+.shimmerText {
+  height: 16px;
+  width: 100%;
+}
+
+.shimmerImage {
+  display: block !important;
+  height: 170px;
+  width: 170px;
+
+  @media screen and (min-width: #{$breakpoint-tablet-min}) {
+    height: 230px;
+    width: 100%;
+  }
+}
+
+.shine {
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeholderShimmer;
+  animation-timing-function: linear;
+  background: #f6f7f8;
+  background-image: linear-gradient(
+    to right,
+    #f6f7f8 0%,
+    #edeef1 50%,
+    #f6f7f8 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 800px 304px;
+  display: inline-block;
+  position: relative;
+}

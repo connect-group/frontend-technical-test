@@ -1,0 +1,22 @@
+@import "../../styles/_variables.scss";
+
+$thumbnail-size-mobile: 170px;
+
+.vehicleCardImageContainer {
+  height: $thumbnail-size-mobile;
+  min-height: $thumbnail-size-mobile;
+  min-width: $thumbnail-size-mobile;
+  width: $thumbnail-size-mobile;
+
+  @media screen and (min-width: #{$breakpoint-tablet-min}) {
+    height: unset;
+    min-height: unset;
+    min-width: unset;
+    width: 100%;
+  }
+
+  &__image {
+    height: 100%;
+    width: 100%;
+  }
+}
