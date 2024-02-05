@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
+@import "./reset.scss";
+
+@import "./_variables.scss";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: $font-family;
+}
+
+*:focus {
+  border: 1px solid tomato;
+  outline: none;
+}
+
+*:focus:not(:focus-visible) {
+  border: 0;
+}
+
+body {
+  box-sizing: border-box;
+  letter-spacing: .8px;
+  margin: 0;
+  padding: 0;
+}
+
+.root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  position: relative;
+  z-index: 12;
+}
