@@ -1,0 +1,13 @@
+@import "variables";
+
+@mixin md-up {
+  @media screen and (min-width: $md) {
+    @content;
+  }
+}
+
+@mixin lg-up {
+  @media screen and (min-width: $lg) {
+    @content;
+  }
+}
