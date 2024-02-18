@@ -7,15 +7,32 @@ export default function useData() {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    getData()
-      .then((response) => setVehicles(response))
-      .catch((err) => setError(err))
-      .finally(() => setLoading(false));
+    let isMounted = true;
+
+    const fetchData = async () => {
+      try {
+        const response = await getData();
+
+        if (isMounted) {
+          setVehicles(response);
+        }
+      } catch (err) {
+        if (isMounted) {
+          setError(err.message || 'An error occurred while fetching data.');
+        }
+      } finally {
+        if (isMounted) {
+          setLoading(false);
+        }
+      }
+    };
+
+    fetchData();
+
+    return () => {
+      isMounted = false; // Ensure cleanup if the component is unmounted
+    };
   }, []);
 
-  return [
-    loading,
-    error,
-    vehicles,
-  ];
+  return [loading, error, vehicles];
 }

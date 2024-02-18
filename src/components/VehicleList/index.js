@@ -1,40 +1,35 @@
 import React from 'react';
 import useData from './useData';
-import './style.scss';
+import Vehicle from '../Vehicle';
+import styles from './vehicle-list.module.scss';
 
 export default function VehicleList() {
-  // eslint-disable-next-line no-unused-vars
   const [loading, error, vehicles] = useData();
 
   if (loading) {
-    return <div data-testid="loading">Loading</div>;
+    return (
+      <div className={styles.loading} data-testid="loading">
+        <span>Loading...</span>
+      </div>
+    );
   }
 
   if (error) {
-    return <div data-testid="error">{ error }</div>;
+    return (
+      <div className={styles.error} data-testid="error">
+        <span>
+          Error:
+          {error}
+        </span>
+      </div>
+    );
   }
 
   return (
-    <div data-testid="results">
-      <p>List of vehicles will be displayed here</p>
-      <p>
-        Visit
-        <a href="/api/vehicles.json" target="_blank"> /api/vehicles.json</a>
-        {' '}
-        (main endpoint)
-      </p>
-      <p>
-        Visit
-        <a href="/api/vehicle_fpace.json" target="_blank">/api/vehicle_fpace.json</a>
-        {' '}
-        (detail endpoint - apiUrl)
-      </p>
-      <p>
-        Visit
-        <a href="/api/vehicle_xf.json" target="_blank">/api/vehicle_xf.json</a>
-        {' '}
-        (vehicle without any price)
-      </p>
+    <div className={styles.vehicleList} data-testid="results">
+      {vehicles.map((vehicle) => (
+        <Vehicle key={vehicle.id} data={vehicle} />
+      ))}
     </div>
   );
 }
