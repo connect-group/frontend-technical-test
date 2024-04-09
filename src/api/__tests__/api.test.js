@@ -3,7 +3,7 @@ import { request } from '../helpers';
 
 jest.mock('../helpers');
 
-describe.skip('getData Tests', () => {
+describe('getData Tests', () => {
   const safelyCallApi = async () => {
     try {
       return await getData();
