@@ -1,15 +1,21 @@
 import { useState, useEffect } from 'react';
 import getData from '../../api';
 
+/**
+ *
+ * @return {[boolean,string,vehicleSummaryPayload[]]}
+ */
 export default function useData() {
   const [vehicles, setVehicles] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
+  const [error, setError] = useState();
 
   useEffect(() => {
     getData()
       .then((response) => setVehicles(response))
-      .catch((err) => setError(err))
+      .catch((err) => {
+        setError(err);
+      })
       .finally(() => setLoading(false));
   }, []);
 

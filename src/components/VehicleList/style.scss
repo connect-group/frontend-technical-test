@@ -1,3 +1,29 @@
 .VehicleList {
+  display: grid;
+  grid-template-columns: 1fr;
   width: 100%;
+
+  @media (max-width: 480px) {
+
+    .Vehicle:first-child .Vehicle__details {
+      border-top: 1px solid #EEF1F1;
+    }
+  }
+
+  @media (min-width: 481px) {
+    grid-template-columns: repeat(2, 1fr);
+
+    .Vehicle:nth-child(2n) .Vehicle__details {
+      border-right: 1px solid #EEF1F1;
+
+    }
+  }
+
+  @media (min-width: 769px) {
+    grid-template-columns: repeat(4, 1fr);
+
+    .Vehicle:nth-child(4n) .Vehicle__details {
+      border-right: 1px solid #EEF1F1;
+    }
+  }
 }

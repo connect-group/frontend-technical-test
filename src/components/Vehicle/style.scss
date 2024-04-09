@@ -1,0 +1,99 @@
+.Vehicle {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  grid-template-rows: 90px;
+  position: relative;
+
+  @media (min-width: 480px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
+  &__image {
+    background-image: var(--square-bg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 100%;
+    width: 100%;
+
+    @media (min-width: 480px) {
+      background-image: var(--rectangular-bg);
+      padding-bottom: 50%;
+    }
+  }
+
+  &__details {
+    border-bottom: 1px solid #EEF1F1;
+    border-right: 1px solid #EEF1F1;
+    color: #6A6E72;
+    font-size: 12px;
+    overflow: hidden;
+    padding: 17px 20px 20px;
+
+    @media (min-width: 480px) {
+      border-left: 1px solid #EEF1F1;
+      border-right: 0;
+      text-align: center;
+    }
+  }
+
+  &__name {
+    color: #000;
+    display: flex;
+    font-family: Syne, sans-serif;
+    font-size: 12px;
+    letter-spacing: .1em;
+    margin-bottom: 7px;
+    text-transform: uppercase;
+
+    @media (min-width: 480px) {
+      font-size: 14px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__name h3 {
+    margin: 0;
+
+    @media (min-width: 480px) {
+      border-bottom: 2px solid #000;
+      border-top: 2px solid #000;
+    }
+  }
+
+  &__price {
+    color: #4C5156;
+    font-size: 12px;
+    letter-spacing: .05em;
+    margin-bottom: 10px;
+
+    @media (min-width: 480px) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__description {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    width: 100%;
+
+    .excerpt {
+      flex-grow: 1;
+      min-width: 50px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .expand {
+      background: #4C5156;
+      border: 0;
+      border-radius: 2px;
+      color: #fff;
+      white-space: nowrap;
+    }
+  }
+}

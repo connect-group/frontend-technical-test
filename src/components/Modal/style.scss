@@ -1,0 +1,42 @@
+.Modal {
+  background: rgba(0,0,0,.3);
+  display: flex;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 100;
+
+  &__box {
+    background: #fff;
+    margin: auto;
+    padding: 20px;
+  }
+
+  &__head {
+    display: flex;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    flex-grow: 1;
+    font-family: Syne, sans-serif;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  &__close {
+    background: #4C5156;
+    border: 0;
+    border-radius: 2px;
+    color: #fff;
+    white-space: nowrap;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+}
