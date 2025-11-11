@@ -61,7 +61,25 @@ describe('<Vehicle /> Tests', () => {
       thumbnails={vehicleStub.thumbnails}
     />);
 
-    expect(queryByTestId('vehicle-name')).not.toBeNull();
+    const title = queryByTestId('vehicle-name');
+    expect(title).not.toBeNull();
+    expect(title).toBeInstanceOf(HTMLHeadingElement);
+    expect(title.tagName).toBe('H3');
+  });
+
+  it('Should allow a different heading level', () => {
+    const { queryByTestId } = render(<Vehicle
+      description={vehicleStub.description}
+      id={vehicleStub.id}
+      name={vehicleStub.name}
+      price={vehicleStub.price}
+      thumbnails={vehicleStub.thumbnails}
+      titleAs="h4"
+    />);
+
+    const title = queryByTestId('vehicle-name');
+    expect(title).toBeInstanceOf(HTMLHeadingElement);
+    expect(title.tagName).toBe('H4');
   });
 
   it('Should contain a price', () => {
