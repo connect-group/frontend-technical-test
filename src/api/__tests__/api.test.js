@@ -3,7 +3,7 @@ import { request } from '../helpers';
 
 jest.mock('../helpers');
 
-describe.skip('getData Tests', () => {
+describe('getData Tests', () => {
   const safelyCallApi = async () => {
     try {
       return await getData();
@@ -28,7 +28,7 @@ describe.skip('getData Tests', () => {
 
   it('Should traverse and make further api calls on main results', async () => {
     expect.assertions(3);
-    request.mockResolvedValueOnce([{ apiUrl: '/api/vehicle_ftype.json' }, { apiUrl: '/api/vehicle_xj.json' }]);
+    request.mockResolvedValueOnce([{ apiUrl: '/api/vehicle_ftype.json', id: 'ftype' }, { apiUrl: '/api/vehicle_xj.json', id: 'xj' }]);
     request.mockResolvedValueOnce({ id: 'ftype', price: '£36,000' });
     request.mockResolvedValueOnce({ id: 'xj', price: '£40,000' });
     await safelyCallApi();
@@ -39,7 +39,7 @@ describe.skip('getData Tests', () => {
   });
 
   it('Should ignore failed API calls during traversing', () => {
-    request.mockResolvedValueOnce([{ apiUrl: '/api/vehicle_ftype.json' }, { apiUrl: '/api/vehicle_xj.json' }]);
+    request.mockResolvedValueOnce([{ apiUrl: '/api/vehicle_ftype.json', id: 'ftype' }, { apiUrl: '/api/vehicle_xj.json', id: 'xj' }]);
     request.mockResolvedValueOnce({ id: 'ftype', price: '£36,000' });
     request.mockRejectedValueOnce('An error occurred');
 
@@ -49,7 +49,11 @@ describe.skip('getData Tests', () => {
   });
 
   it('Should ignore vehicles without valid price during traversing', () => {
-    request.mockResolvedValueOnce([{ apiUrl: '/api/ftype.json' }, { apiUrl: '/api/xe.json' }, { apiUrl: '/api/xj.json' }]);
+    request.mockResolvedValueOnce([
+      { apiUrl: '/api/ftype.json', id: 'ftype' },
+      { apiUrl: '/api/xe.json', id: 'xe' },
+      { apiUrl: '/api/xj.json', id: 'xj' }
+    ]);
     request.mockResolvedValueOnce({ id: 'ftype', price: '' });
     request.mockResolvedValueOnce({ id: 'xe' });
     request.mockResolvedValueOnce({ id: 'xj', price: '£40,000' });
