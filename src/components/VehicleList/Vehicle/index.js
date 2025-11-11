@@ -1,4 +1,5 @@
 import React from 'react';
+import './Vehicle.style.scss';
 
 /**
  * @param {vehicleSummaryProps} props

@@ -1,3 +1,18 @@
 .VehicleList {
   width: 100%;
+
+  .Vehicle:last-of-type {
+    --Vehicle--separator-color: transparent;
+  }
+
+  // 512px - 2 repeating columns
+  @media screen and (min-width: 32rem) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  // 1024px - 4 repeating columns
+  @media screen and (min-width: 64rem) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
