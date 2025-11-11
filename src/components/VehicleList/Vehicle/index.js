@@ -2,7 +2,21 @@ import React from 'react';
 import './Vehicle.style.scss';
 
 /**
- * @param {vehicleSummaryProps} props
+ * @typedef VehicleThumbnail
+ * @property {string} name
+ * @property {string} url
+ *
+ * @typedef {object} VehicleProps
+ * @property {string} description
+ * @property {string} id
+ * @property {string} name
+ * @property {string} price
+ * @property {object} thumbnails
+ * @property {VehicleThumbnail} thumbnails.default
+ * @property {VehicleThumbnail} thumbnails.mobile
+ *
+ * @param {VehicleProps} props
+ * @returns {JSX.Element}
  */
 export default function Vehicle(props) {
   const {
