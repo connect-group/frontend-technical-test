@@ -42,8 +42,8 @@ export default function Vehicle(props) {
           <img
             data-testid="vehicle-thumbnail"
             src={mobileThumbnail.url}
-            srcSet={`${mobileThumbnail.url} 235px, ${thumbnail.url} 470px`}
-            sizes="(width <= 768px) 235px, 470px"
+            srcSet={`${mobileThumbnail.url} 235w, ${thumbnail.url} 470w`}
+            sizes="(width <= 512px) 235px, 470px"
             alt=""
           />
         )}
