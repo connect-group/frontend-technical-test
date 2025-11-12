@@ -72,7 +72,7 @@ export default function VehicleDetailsModal({ onClose, vehicle, titleAs: Title =
 
           <button className="Modal__close" type="button" onClick={onClose} data-testid="vehicle-details-modal-close">
             <span className="visually-hidden">Close</span>
-            <span aria-hidden="true">x</span>
+            <span aria-hidden="true">X</span>
           </button>
         </header>
 

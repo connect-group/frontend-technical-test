@@ -30,6 +30,8 @@
       border-width: 2px;
       color: #fff;
       display: flex;
+      font-size: 0.75rem;
+      font-weight: 600;
       inline-size: 2rem;
       justify-content: center;
       line-height: 1;
@@ -104,12 +106,26 @@
       color: #0d1725;
       display: block;
       font-family: LandRoverWeb, sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.05em; // Match 0.8px at 16px from site.
+      line-height: 1;
       text-transform: uppercase;
+
+      // 512px
+      @media screen and (min-width: 32rem) {
+        font-size: 1.125rem; // 18px
+      }
     }
 
     &__price {
       display: block;
-      font-size: 0.875rem; // 14px
+      font-size: 0.75rem; // 12px
+      letter-spacing: 0.05em;
+
+      // 512px
+      @media screen and (min-width: 32rem) {
+        font-size: 0.875rem; // 14px
+      }
     }
 
     &__description {
