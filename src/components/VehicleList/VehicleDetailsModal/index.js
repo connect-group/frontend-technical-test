@@ -17,16 +17,20 @@ export default function VehicleDetailsModal({ onClose, vehicle, titleAs: Title =
     // Listener for an escape key press to close the modal.
     const esc = (e) => e.key === 'Escape' && onClose();
 
+    // Lock the page scroll.
     const lock = () => {
       document.body.style.overflow = 'hidden';
     };
 
+    // Unlock page scrolling.
     const unlock = () => {
       document.body.style.overflow = '';
     };
 
-    // Lock the page scroll whilst the modal is open.
+    // Listen for an Escape key press to close.
     window.addEventListener('keydown', esc);
+
+    // Lock the page scroll whilst the modal is open.
     lock();
 
     return () => {
@@ -36,12 +40,14 @@ export default function VehicleDetailsModal({ onClose, vehicle, titleAs: Title =
     };
   }, [onClose]);
 
+  // Handle a close on a backdrop click.
   const handleBackdropClick = (event) => {
     if (event.target === event.currentTarget) {
       onClose();
     }
   };
 
+  // Quick check to make sure that the portal exists. Probably not required in a full application.
   const modalRoot = document.getElementById('modal-root');
   if (!modalRoot) {
     return null;
@@ -65,17 +71,54 @@ export default function VehicleDetailsModal({ onClose, vehicle, titleAs: Title =
       >
         <header className="Modal__header">
           <Title id="vehicle-modal-title" className="visually-hidden">
-            {`${vehicle.name} `}
+            {vehicle.name}
+            {' '}
             Vehicle Details
           </Title>
 
-          <button type="button" onClick={onClose}>
+          <button className="Modal__close" type="button" onClick={onClose}>
             <span className="visually-hidden">Close</span>
             <span aria-hidden="true">x</span>
           </button>
         </header>
 
-        <p>VehicleDetails {vehicle.id}</p>
+        <div className="VehicleDetails">
+          <div className="VehicleDetails__image">
+            <img src={vehicle.thumbnails.default.url} alt="" />
+          </div>
+
+          <div className="VehicleDetails__content">
+            <p>
+              <strong className="VehicleDetails__name">
+                {vehicle.name}
+                <span className="visually-hidden">.</span>
+              </strong>
+              <span className="VehicleDetails__price">
+                Price from
+                {' '}
+                {vehicle.price}
+              </span>
+            </p>
+            {vehicle.description && <p className="VehicleDetails__description">{vehicle.description}</p>}
+
+            <dl className="VehicleDetails__meta MetaList">
+              <dt className="MetaList__title">Model Year</dt>
+              <dd className="MetaList__item">{vehicle.modelYear.toLocaleUpperCase()}</dd>
+
+              <dt className="MetaList__title">Passengers</dt>
+              <dd className="MetaList__item">{vehicle.meta.passengers}</dd>
+
+              <dt className="MetaList__title">Drivetrain</dt>
+              <dd className="MetaList__item">{vehicle.meta.drivetrain.join(' / ')}</dd>
+
+              <dt className="MetaList__title">Body styles</dt>
+              <dd className="MetaList__item">{vehicle.meta.bodystyles.join(' / ')}</dd>
+
+              <dt className="MetaList__title">Emissions</dt>
+              <dd className="MetaList__item">{vehicle.meta.emissions}</dd>
+            </dl>
+          </div>
+        </div>
       </section>
     </div>),
 
