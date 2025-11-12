@@ -26,13 +26,7 @@ const vehicleStub = {
 
 describe('<Vehicle /> Tests', () => {
   it('Should render a Vehicle', () => {
-    const { queryByTestId } = render(<Vehicle
-      description={vehicleStub.description}
-      id={vehicleStub.id}
-      name={vehicleStub.name}
-      price={vehicleStub.price}
-      thumbnails={vehicleStub.thumbnails}
-    />);
+    const { queryByTestId } = render(<Vehicle vehicle={vehicleStub} />);
 
     const component = queryByTestId('vehicle');
 
@@ -41,25 +35,13 @@ describe('<Vehicle /> Tests', () => {
   });
 
   it('Should contain a thumbnail', () => {
-    const { queryByTestId } = render(<Vehicle
-      description={vehicleStub.description}
-      id={vehicleStub.id}
-      name={vehicleStub.name}
-      price={vehicleStub.price}
-      thumbnails={vehicleStub.thumbnails}
-    />);
+    const { queryByTestId } = render(<Vehicle vehicle={vehicleStub} />);
 
     expect(queryByTestId('vehicle-thumbnail')).not.toBeNull();
   });
 
   it('Should contain a name', () => {
-    const { queryByTestId } = render(<Vehicle
-      description={vehicleStub.description}
-      id={vehicleStub.id}
-      name={vehicleStub.name}
-      price={vehicleStub.price}
-      thumbnails={vehicleStub.thumbnails}
-    />);
+    const { queryByTestId } = render(<Vehicle vehicle={vehicleStub} />);
 
     const title = queryByTestId('vehicle-name');
     expect(title).not.toBeNull();
@@ -68,14 +50,7 @@ describe('<Vehicle /> Tests', () => {
   });
 
   it('Should allow a different heading level', () => {
-    const { queryByTestId } = render(<Vehicle
-      description={vehicleStub.description}
-      id={vehicleStub.id}
-      name={vehicleStub.name}
-      price={vehicleStub.price}
-      thumbnails={vehicleStub.thumbnails}
-      titleAs="h4"
-    />);
+    const { queryByTestId } = render(<Vehicle vehicle={vehicleStub} titleAs="h4" />);
 
     const title = queryByTestId('vehicle-name');
     expect(title).toBeInstanceOf(HTMLHeadingElement);
@@ -83,25 +58,13 @@ describe('<Vehicle /> Tests', () => {
   });
 
   it('Should contain a price', () => {
-    const { queryByTestId } = render(<Vehicle
-      description={vehicleStub.description}
-      id={vehicleStub.id}
-      name={vehicleStub.name}
-      price={vehicleStub.price}
-      thumbnails={vehicleStub.thumbnails}
-    />);
+    const { queryByTestId } = render(<Vehicle vehicle={vehicleStub} />);
 
     expect(queryByTestId('vehicle-price')).not.toBeNull();
   });
 
   it('Should contain a description', () => {
-    const { queryByTestId } = render(<Vehicle
-      description={vehicleStub.description}
-      id={vehicleStub.id}
-      name={vehicleStub.name}
-      price={vehicleStub.price}
-      thumbnails={vehicleStub.thumbnails}
-    />);
+    const { queryByTestId } = render(<Vehicle vehicle={vehicleStub} />);
 
     expect(queryByTestId('vehicle-description')).not.toBeNull();
   });
