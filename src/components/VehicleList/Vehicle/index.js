@@ -25,14 +25,17 @@ export default function Vehicle(props) {
     name,
     price,
     thumbnails,
+
     titleAs: Title = 'h3'
   } = props;
 
   // Both images will probably be there, but use fallbacks just in case.
   const mobileThumbnail = thumbnails.mobile || thumbnails.default;
   const thumbnail = thumbnails.default || thumbnails.mobile;
-
   const hasImage = Boolean(thumbnail && mobileThumbnail);
+
+  // Fallback for content to ensure a screen reader pause from the full-stop.
+  const summary = description.charAt(description.length - 1) !== '.' ? `${description}.` : description;
 
   return (
     <article data-testid="vehicle" data-id={id} className="Vehicle">
@@ -55,8 +58,7 @@ export default function Vehicle(props) {
           <p data-testid="vehicle-price" className="Vehicle__price">{`From ${price}`}</p>
         </header>
 
-        {/* Fallback for content to ensure a screen reader pause from the full-stop. */}
-        <p data-testid="vehicle-description" className="Vehicle__description">{description.charAt(description.length - 1) !== '.' ? `${description}.` : description}</p>
+        <p data-testid="vehicle-description" className="Vehicle__description">{summary}</p>
       </div>
     </article>
   );
