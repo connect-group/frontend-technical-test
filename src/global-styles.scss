@@ -1,93 +1,93 @@
 @layer reset, global, layout, page, components, overrides;
 
 @font-face {
+  font-display: swap;
   font-family: AvenirNext;
-  src: url("/fonts/AvenirNextW1G/AvenirNextW1G-Light.woff2") format("woff2"),
-    url("/fonts/AvenirNextW1G/AvenirNextW1G-Light.woff") format("woff");
   font-style: normal;
   font-weight: 300;
-  font-display: swap;
+  src: url("/fonts/AvenirNextW1G/AvenirNextW1G-Light.woff2") format("woff2"),
+    url("/fonts/AvenirNextW1G/AvenirNextW1G-Light.woff") format("woff");
 }
 
 @font-face {
+  font-display: swap;
   font-family: AvenirNext;
+  font-style: normal;
+  font-weight: 400;
   src: url("/fonts/AvenirNextW1G/AvenirNextW1G-Regular.woff2") format("woff2"),
     url("/fonts/AvenirNextW1G/AvenirNextW1G-Regular.woff") format("woff");
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
 }
 
 @font-face {
+  font-display: swap;
   font-family: AvenirNext;
-  src: url("/fonts/AvenirNextW1G/AvenirNextW1G-Italic.woff2") format("woff2"),
-    url("/fonts/AvenirNextW1G/AvenirNextW1G-Italic.woff") format("woff");
   font-style: italic;
   font-weight: 400;
-  font-display: swap;
+  src: url("/fonts/AvenirNextW1G/AvenirNextW1G-Italic.woff2") format("woff2"),
+    url("/fonts/AvenirNextW1G/AvenirNextW1G-Italic.woff") format("woff");
 }
 
 @font-face {
+  font-display: swap;
   font-family: AvenirNext;
-  src: url("/fonts/AvenirNextW1G/AvenirNextW1G-Medium.woff2") format("woff2"),
-    url("/fonts/AvenirNextW1G/AvenirNextW1G-Medium.woff") format("woff");
   font-style: normal;
   font-weight: 500;
-  font-display: swap;
+  src: url("/fonts/AvenirNextW1G/AvenirNextW1G-Medium.woff2") format("woff2"),
+    url("/fonts/AvenirNextW1G/AvenirNextW1G-Medium.woff") format("woff");
 }
 
 @font-face {
+  font-display: swap;
   font-family: AvenirNext;
-  src: url("/fonts/AvenirNextW1G/AvenirNextW1G-Demi.woff2") format("woff2"),
-    url("/fonts/AvenirNextW1G/AvenirNextW1G-Demi.woff") format("woff");
   font-style: normal;
   font-weight: 600;
-  font-display: swap;
+  src: url("/fonts/AvenirNextW1G/AvenirNextW1G-Demi.woff2") format("woff2"),
+    url("/fonts/AvenirNextW1G/AvenirNextW1G-Demi.woff") format("woff");
 }
 
 @font-face {
+  font-display: swap;
   font-family: AvenirNext;
+  font-style: normal;
+  font-weight: 700;
   src: url("/fonts/AvenirNextW1G/AvenirNextW1G-Bold.woff2") format("woff2"),
     url("/fonts/AvenirNextW1G/AvenirNextW1G-Bold.woff") format("woff");
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
 }
 
 @font-face {
+  font-display: swap;
   font-family: LandRoverWeb;
+  font-style: normal;
+  font-weight: 400;
   src: url("/fonts/LandroverWeb/LandRoverWeb-Medium.woff2") format("woff2"),
     url("/fonts/LandroverWeb/LandRoverWeb-Medium.woff") format("woff");
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
 }
 
 @font-face {
+  font-display: swap;
   font-family: LandRoverWeb;
-  src: url("/fonts/LandroverWeb/LandRoverWeb-Bold.woff2") format("woff2"),
-    url("/fonts/LandroverWeb/LandRoverWeb-Bold.woff") format("woff");
   font-style: normal;
   font-weight: 700;
-  font-display: swap;
+  src: url("/fonts/LandroverWeb/LandRoverWeb-Bold.woff2") format("woff2"),
+    url("/fonts/LandroverWeb/LandRoverWeb-Bold.woff") format("woff");
 }
 
 @font-face {
+  font-display: swap;
   font-family: LandRoverWeb;
+  font-style: normal;
+  font-weight: 400;
   src: url("/fonts/LandroverWeb/LandRoverWeb-Demi.woff2") format("woff2"),
     url("/fonts/LandroverWeb/LandRoverWeb-Demi.woff") format("woff");
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
 }
 
 @font-face {
+  font-display: swap;
   font-family: LandRoverWeb;
-  src: url("/fonts/LandroverWeb/LandRoverWeb-Light.woff2") format("woff2"),
-    url("/fonts/LandroverWeb/LandRoverWeb-Light.woff") format("woff");
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  src: url("/fonts/LandroverWeb/LandRoverWeb-Light.woff2") format("woff2"),
+    url("/fonts/LandroverWeb/LandRoverWeb-Light.woff") format("woff");
 }
 
 @layer reset {

@@ -87,8 +87,8 @@
     }
 
     &__price {
-      font-weight: 500;
       font-size: 0.75rem; // 12px
+      font-weight: 500;
       letter-spacing: 0.05em;
 
       // 512px
@@ -140,10 +140,10 @@
     &:has(&__details:hover) {
       .Vehicle__thumbnail {
         --Vehicle-thumbnail--shade-opacity: 1;
+      }
 
-        img {
-          transform: scale(120%);
-        }
+      .Vehicle__thumbnail img {
+        transform: scale(120%);
       }
     }
 
