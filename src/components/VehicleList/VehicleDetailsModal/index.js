@@ -55,15 +55,7 @@ export default function VehicleDetailsModal({ onClose, vehicle, titleAs: Title =
 
   // Use a portal to contain the modal away from its parent so it's not affected by its changing styles.
   return createPortal(
-    (<div
-      aria-label="Close vehicle details"
-      className="Modal"
-      data-testid="vehicle-details-modal"
-      onClick={handleBackdropClick}
-      onKeyDown={handleBackdropClick}
-      role="button"
-      tabIndex={0}
-    >
+    (<div className="Modal" data-testid="vehicle-details-modal">
       <section
         aria-labelledby="vehicle-modal-title"
         aria-modal="true"
@@ -121,6 +113,10 @@ export default function VehicleDetailsModal({ onClose, vehicle, titleAs: Title =
             </dl>
           </div>
         </div>
+
+        <button className="Modal__backdropTrigger" onClick={handleBackdropClick} type="button">
+          <span className="visually-hidden">Close modal window.</span>
+        </button>
       </section>
     </div>),
 
