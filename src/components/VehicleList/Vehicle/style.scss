@@ -115,17 +115,6 @@
       }
     }
 
-    // Only add a staggered entry animation if the user hasn't selected reduced motion.
-    @media screen and (prefers-reduced-motion: no-preference) {
-      animation-delay: var(--Vehicle--enter-delay, 0ms);
-      animation-duration: 350ms;
-      animation-fill-mode: forwards;
-      animation-name: vehicleEnter;
-      animation-timing-function: ease-out;
-      isolation: isolate;
-      opacity: 0;
-    }
-
     // Stretch a hit area over the card.
     &__details::after {
       content: "";
@@ -144,6 +133,17 @@
           transform: scale(120%);
         }
       }
+    }
+
+    // Only add a staggered entry animation if the user hasn't selected reduced motion.
+    @media screen and (prefers-reduced-motion: no-preference) {
+      animation-delay: var(--Vehicle--enter-delay, 0ms);
+      animation-duration: 350ms;
+      animation-fill-mode: forwards;
+      animation-name: vehicleEnter;
+      animation-timing-function: ease-out;
+      isolation: isolate;
+      opacity: 0;
     }
   }
 

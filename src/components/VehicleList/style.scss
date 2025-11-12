@@ -12,7 +12,7 @@
       // TODO Decide on a suitable upper limit to generate.
       @for $i from 1 through 12 {
         &:nth-child(#{$i}) {
-          --Vehicle--enter-delay: calc((#{$i - 1}) * var(--animation-stagger));
+          --Vehicle--enter-delay: calc(#{$i - 1} * var(--animation-stagger));
         }
       }
     }
