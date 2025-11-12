@@ -29,7 +29,7 @@ export default function Vehicle(props) {
   const showDetailsId = useQueryParam('showDetails');
   const hasOpenModal = showDetailsId === id;
 
-  const handleOpenModal = useCallback(
+  const handleModalOpen = useCallback(
     (e) => {
       e.preventDefault(); // stop normal navigation
       setQueryParam('showDetails', encodeURIComponent(id)); // push new URL
@@ -37,7 +37,7 @@ export default function Vehicle(props) {
     [id]
   );
 
-  const handleCloseModal = useCallback(() => {
+  const handleModalClose = useCallback(() => {
     setQueryParam('showDetails', null, { replace: true }); // remove param
   }, []);
 
@@ -48,20 +48,6 @@ export default function Vehicle(props) {
 
   // Fallback for content to ensure a screen reader pause from the full-stop.
   const summary = description.charAt(description.length - 1) !== '.' ? `${description}.` : description;
-
-  const handleDetailsClick = (event) => {
-    event.preventDefault();
-
-    setQueryParam('showDetails', encodeURIComponent(id));
-
-    console.log({
-      description,
-      id,
-      name,
-      price,
-      thumbnails,
-    });
-  };
 
   return (
     <article data-testid="vehicle" data-id={id} className="Vehicle">
@@ -86,12 +72,12 @@ export default function Vehicle(props) {
 
         <p data-testid="vehicle-description" className="Vehicle__description">{summary}</p>
 
-        <a className="Vehicle__details" href={`./?showDetails=${encodeURIComponent(id)}`} onClick={handleOpenModal}>
+        <a className="Vehicle__details" href={`./?showDetails=${encodeURIComponent(id)}`} onClick={handleModalOpen}>
           <span className="visually-hidden">View Details</span>
         </a>
       </div>
 
-      {hasOpenModal && <VehicleDetailsModal vehicle={vehicle} titleAs={Title} onClose={handleCloseModal} />}
+      {hasOpenModal && <VehicleDetailsModal vehicle={vehicle} titleAs={Title} onClose={handleModalClose} />}
     </article>
   );
 }

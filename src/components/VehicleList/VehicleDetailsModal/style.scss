@@ -1,0 +1,65 @@
+@layer components {
+  // ! These would probably be a shared component in a larger codebase.
+  .Modal {
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.45);
+    display: flex;
+    inset: 0;
+    justify-content: center;
+    position: fixed;
+    z-index: 9999;
+
+    &__content {
+      background-color: #fff;
+      border-radius: 0.5rem;
+      box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.15);
+      max-block-size: 90vh;
+      max-inline-size: 90vw;
+      overflow-y: auto;
+      position: relative;
+    }
+
+    &__header {
+      position: absolute;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      // Fade in the backdrop.
+      animation-duration: 180ms;
+      animation-fill-mode: forwards;
+      animation-name: modalFadeIn;
+      animation-timing-function: ease-out;
+
+      // Slight upwards animation on Modal content on open.
+      &__content {
+        animation-delay: 80ms;
+        animation-duration: 250ms;
+        animation-fill-mode: forwards;
+        animation-name: modalContentEnter;
+        animation-timing-function: ease-out;
+        isolation: isolate;
+        opacity: 0;
+      }
+    }
+  }
+
+  @keyframes modalFadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes modalContentEnter {
+    0% {
+      opacity: 0;
+      transform: translateY(0.75rem);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
