@@ -10,6 +10,8 @@
     // TODO Discuss with designer what determines height - does the image need to be full height if the content wraps?
     grid-template-columns: 6.5rem 1fr;
 
+    position: relative;
+
     // 512px
     @media screen and (min-width: 32rem) {
       display: flex;
@@ -19,6 +21,8 @@
     }
 
     &__thumbnail {
+      --Vehicle-thumbnail--shade-opacity: 0;
+
       aspect-ratio: 1/1;
       background-color: #f5f5f5;
       overflow: hidden;
@@ -29,12 +33,24 @@
         aspect-ratio: 16/9;
       }
 
-      > img {
+      &::before {
+        background-color: rgba(0, 0, 0, 0.25);
+        content: "";
+        display: block;
+        inset: 0;
+        opacity: var(--Vehicle-thumbnail--shade-opacity);
+        position: absolute;
+        transition: opacity 250ms ease;
+        z-index: 10;
+      }
+
+      img {
         height: 100%;
         inset: 0;
         object-fit: cover;
         object-position: center;
         position: absolute;
+        transition: transform 250ms ease;
         width: 100%;
       }
     }
@@ -108,6 +124,26 @@
       animation-timing-function: ease-out;
       isolation: isolate;
       opacity: 0;
+    }
+
+    // Stretch a hit area over the card.
+    &__details::after {
+      content: "";
+      display: block;
+      inset: 0;
+      position: absolute;
+      z-index: 50;
+    }
+
+    // Handle hover effect.
+    &:has(&__details:hover) {
+      .Vehicle__thumbnail {
+        --Vehicle-thumbnail--shade-opacity: 1;
+
+        img {
+          transform: scale(120%);
+        }
+      }
     }
   }
 
