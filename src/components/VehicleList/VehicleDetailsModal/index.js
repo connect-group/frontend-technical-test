@@ -113,11 +113,11 @@ export default function VehicleDetailsModal({ onClose, vehicle, titleAs: Title =
             </dl>
           </div>
         </div>
-
-        <button className="Modal__backdropTrigger" onClick={handleBackdropClick} type="button">
-          <span className="visually-hidden">Close modal window.</span>
-        </button>
       </section>
+
+      <button className="Modal__backdropTrigger" data-testid="vehicle-details-modal-backdrop-button" onClick={handleBackdropClick} type="button">
+        <span className="visually-hidden">Close modal window.</span>
+      </button>
     </div>),
 
     modalRoot

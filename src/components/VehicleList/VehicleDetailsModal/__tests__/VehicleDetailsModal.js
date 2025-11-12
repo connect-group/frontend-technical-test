@@ -24,8 +24,6 @@ const vehicleStub = {
   },
 };
 
-const handleClose = jest.fn();
-
 beforeAll(() => {
   // Set up the Modal's portal target.
   const modalRoot = document.createElement('div');
@@ -36,6 +34,7 @@ beforeAll(() => {
 
 describe('<VehicleDetailsModal /> Tests', () => {
   it('Should render a VehicleDetailsModel', () => {
+    const handleClose = jest.fn();
     const { queryByTestId } = render(<VehicleDetailsModal onClose={handleClose} vehicle={vehicleStub} />);
 
     expect(queryByTestId('vehicle-details-modal')).not.toBeNull();
@@ -45,6 +44,7 @@ describe('<VehicleDetailsModal /> Tests', () => {
   });
 
   it('Should close when the close button is clicked', () => {
+    const handleClose = jest.fn();
     const { queryByTestId } = render(<VehicleDetailsModal onClose={handleClose} vehicle={vehicleStub} />);
 
     const button = queryByTestId('vehicle-details-modal-close');
@@ -54,7 +54,19 @@ describe('<VehicleDetailsModal /> Tests', () => {
     expect(handleClose).toBeCalledTimes(1);
   });
 
+  it('Should close when the backdrop is clicked', () => {
+    const handleClose = jest.fn();
+    const { queryByTestId } = render(<VehicleDetailsModal onClose={handleClose} vehicle={vehicleStub} />);
+
+    const button = queryByTestId('vehicle-details-modal-backdrop-button');
+    expect(button).not.toBeNull();
+
+    button.click();
+    expect(handleClose).toBeCalledTimes(1);
+  });
+
   it('Should display the Vehicle details', () => {
+    const handleClose = jest.fn();
     const { queryByTestId } = render(<VehicleDetailsModal onClose={handleClose} vehicle={vehicleStub} />);
 
     expect(queryByTestId('vehicle-details')).not.toBeNull();
