@@ -1,5 +1,5 @@
 import React from 'react';
-import './Vehicle.style.scss';
+import './style.scss';
 
 /**
  * @typedef VehicleThumbnail

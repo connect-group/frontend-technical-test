@@ -1,18 +1,31 @@
-.VehicleList {
-  width: 100%;
+@layer components {
+  .VehicleList {
+    width: 100%;
 
-  .Vehicle:last-of-type {
-    --Vehicle--separator-color: transparent;
-  }
+    .Vehicle {
+      --animation-stagger: 80ms;
 
-  // 512px - 2 repeating columns
-  @media screen and (min-width: 32rem) {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  }
+      &:last-of-type {
+        --Vehicle--separator-color: transparent;
+      }
 
-  // 1024px - 4 repeating columns
-  @media screen and (min-width: 64rem) {
-    grid-template-columns: repeat(4, 1fr);
+      // TODO Decide on a suitable upper limit to generate.
+      @for $i from 1 through 12 {
+        &:nth-child(#{$i}) {
+          --Vehicle--enter-delay: calc((#{$i - 1}) * var(--animation-stagger));
+        }
+      }
+    }
+
+    // 512px - 2 repeating columns
+    @media screen and (min-width: 32rem) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    // 1024px - 4 repeating columns
+    @media screen and (min-width: 64rem) {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 }
