@@ -22,27 +22,8 @@ export default function VehicleList() {
 
   return (
     <div data-testid="results" className="VehicleList">
-      {vehicles.map(({
-        description,
-        id,
-        meta,
-        modelYear,
-        name,
-        price,
-        thumbnails
-      }) => (
-        <Vehicle
-          key={id}
-          {...{
-            description,
-            id,
-            meta,
-            modelYear,
-            name,
-            price,
-            thumbnails
-          }}
-        />
+      {vehicles.map((vehicle) => (
+        <Vehicle key={vehicle.id} vehicle={vehicle} />
       ))}
     </div>
   );

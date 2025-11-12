@@ -27,11 +27,20 @@ import getData from '../../api';
  */
 
 /**
+ *
+ * @param {string} word
+ * @returns {string}
+ */
+export function capitalize(word) {
+  return `${word.slice(0, 1).toLocaleUpperCase()}${word.slice(1).toLocaleLowerCase()}`;
+}
+
+/**
  * Helper function to find media at different sizes.
  *
- * @param  {Array.vehicleMedia} mediaList [description]
- * @param  {string} size      [description]
- * @return {vehicleMedia | undefined}           [description]
+ * @param  {Array.vehicleMedia} mediaList
+ * @param  {string} size
+ * @return {vehicleMedia | undefined}
  */
 export function findThumbnail(mediaList, size) {
   return mediaList.find(({ name, url }) => name === 'vehicle' && url.includes(size));
@@ -40,7 +49,7 @@ export function findThumbnail(mediaList, size) {
 /**
  * Returns or generates a vehicle name.
  *
- * @param {vehicleSummaryPayload} param0
+ * @param {import('../../api/api_docs').vehicleSummaryPayload} param0
  * @returns {string}
  */
 export function getVehicleName({ id, name }) {
@@ -74,7 +83,8 @@ export function transformToProps({ meta, ...summary }) {
     meta: {
       ...meta,
 
-      emissions: meta.emissions.template.replace('$value', meta.emissions.value)
+      bodystyles: meta.bodystyles.map(capitalize),
+      emissions: meta.emissions.template.replace('$value ', meta.emissions.value)
     },
     name: getVehicleName(summary),
     thumbnails: {
