@@ -1,8 +1,9 @@
 @layer components {
+
   // ! These would probably be a shared component in a larger codebase.
   .Modal {
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.45);
+    background-color: rgba(0, 0, 0, .45);
     display: flex;
     inset: 0;
     justify-content: center;
@@ -11,8 +12,8 @@
 
     &__content {
       background-color: #fff;
-      border-radius: 0.5rem;
-      box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.15);
+      border-radius: .5rem;
+      box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .15);
       max-block-size: 90vh;
       max-inline-size: 90vw;
       overflow-y: auto;
@@ -22,28 +23,28 @@
 
     &__close {
       align-items: center;
-      background-color: rgba(0, 0, 0, 0.125);
+      background-color: rgba(0, 0, 0, .125);
       block-size: 2rem;
-      border-color: rgba(255, 255, 255, 0.125);
+      border-color: rgba(255, 255, 255, .125);
       border-radius: 50%;
       border-style: solid;
       border-width: 2px;
       color: #fff;
       display: flex;
-      font-size: 0.75rem;
+      font-size: .75rem;
       font-weight: 600;
       inline-size: 2rem;
       justify-content: center;
       line-height: 1;
       position: absolute;
-      right: 0.25rem;
-      top: 0.25rem;
+      right: .25rem;
+      top: .25rem;
       transition: background-color 125ms ease, border-color 125ms ease;
 
       &:hover,
       &:focus-visible {
-        background-color: rgba(0, 0, 0, 0.25);
-        border-color: rgba(255, 255, 255, 0.5);
+        background-color: rgba(0, 0, 0, .25);
+        border-color: rgba(255, 255, 255, .5);
       }
     }
 
@@ -74,19 +75,23 @@
   }
 
   @keyframes modalFadeIn {
+
     from {
       opacity: 0;
     }
+
     to {
       opacity: 1;
     }
   }
 
   @keyframes modalContentEnter {
+
     0% {
       opacity: 0;
-      transform: translateY(0.75rem);
+      transform: translateY(.75rem);
     }
+
     100% {
       opacity: 1;
       transform: translateY(0);
@@ -94,6 +99,7 @@
   }
 
   .VehicleDetails {
+
     &__image {
       background-color: #f5f5f5;
     }
@@ -107,7 +113,7 @@
       display: block;
       font-family: LandRoverWeb, sans-serif;
       font-size: 1rem;
-      letter-spacing: 0.05em; // Match 0.8px at 16px from site.
+      letter-spacing: .05em; // Match 0.8px at 16px from site.
       line-height: 1;
       text-transform: uppercase;
 
@@ -119,17 +125,17 @@
 
     &__price {
       display: block;
-      font-size: 0.75rem; // 12px
-      letter-spacing: 0.05em;
+      font-size: .75rem; // 12px
+      letter-spacing: .05em;
 
       // 512px
       @media screen and (min-width: 32rem) {
-        font-size: 0.875rem; // 14px
+        font-size: .875rem; // 14px
       }
     }
 
     &__description {
-      font-size: 0.75rem; // 11px
+      font-size: .75rem; // 11px
       line-height: 1.125;
       margin-block-start: 1.25rem;
     }
@@ -143,9 +149,9 @@
     align-items: baseline;
     column-gap: 1rem;
     display: grid;
-    font-size: 0.75rem;
+    font-size: .75rem;
     grid-template-columns: min-content 1fr;
-    row-gap: 0.25rem;
+    row-gap: .25rem;
 
     &__title {
       white-space: nowrap;

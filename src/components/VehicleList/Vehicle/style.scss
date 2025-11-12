@@ -1,10 +1,11 @@
 @layer components {
+
   .Vehicle {
     --Vehicle--separator-color: #f1f4f4;
 
     color: #5c6267;
     display: grid;
-    font-size: 0.875rem; // 14px
+    font-size: .875rem; // 14px
 
     // ! A little wider on the thumbnail than the design to balance any gap from long content.
     // TODO Discuss with designer what determines height - does the image need to be full height if the content wraps?
@@ -34,7 +35,7 @@
       }
 
       &::before {
-        background-color: rgba(0, 0, 0, 0.25);
+        background-color: rgba(0, 0, 0, .25);
         content: "";
         display: block;
         inset: 0;
@@ -69,7 +70,7 @@
       color: #0d1725;
       font-family: LandRoverWeb, sans-serif;
       font-size: 1rem;
-      letter-spacing: 0.05em; // Match 0.8px at 16px from site.
+      letter-spacing: .05em; // Match 0.8px at 16px from site.
       line-height: 1;
       margin-block: 0;
       text-transform: uppercase;
@@ -81,31 +82,31 @@
         border-width: 1px 0;
         font-size: 1.125rem; // 18px
         margin-inline: auto;
-        padding-block: 0.125rem;
+        padding-block: .125rem;
         width: max-content;
       }
     }
 
     &__price {
-      font-size: 0.75rem; // 12px
+      font-size: .75rem; // 12px
       font-weight: 500;
-      letter-spacing: 0.05em;
+      letter-spacing: .05em;
 
       // 512px
       @media screen and (min-width: 32rem) {
-        font-size: 0.875rem; // 14px
-        margin-block-start: 0.75rem;
+        font-size: .875rem; // 14px
+        margin-block-start: .75rem;
       }
     }
 
     &__description {
-      font-size: 0.6875rem; // 11px
+      font-size: .6875rem; // 11px
       line-height: 1.125;
-      margin-block-start: 0.5rem;
+      margin-block-start: .5rem;
 
       // 512px
       @media screen and (min-width: 32rem) {
-        margin-block-start: 0.25rem;
+        margin-block-start: .25rem;
         margin-inline: auto;
 
         // Stop the reading length getting too wide on larger screens.
@@ -121,6 +122,7 @@
 
     // Stretch a hit area over the card.
     &__details {
+
       &:focus-visible {
         box-shadow: none;
         outline: none;
@@ -138,6 +140,7 @@
     // Handle hover effect.
     &:has(&__details:focus),
     &:has(&__details:hover) {
+
       .Vehicle__thumbnail {
         --Vehicle-thumbnail--shade-opacity: 1;
       }
@@ -166,10 +169,12 @@
   }
 
   @keyframes vehicleEnter {
+
     0% {
       opacity: 0;
-      transform: translateY(0.75rem);
+      transform: translateY(.75rem);
     }
+
     100% {
       opacity: 1;
       transform: translateY(0);

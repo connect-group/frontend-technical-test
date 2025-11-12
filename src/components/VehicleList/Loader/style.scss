@@ -1,11 +1,12 @@
 @layer components {
+
   .Loader {
     min-height: 10rem;
     padding: 1rem;
 
     &__spinner {
-      animation: spin 0.9s linear infinite;
-      border: 0.125rem solid #e0e0e0;
+      animation: spin .9s linear infinite;
+      border: .125rem solid #e0e0e0;
       border-block-start-color: inherit;
       border-radius: 50%;
       height: 1.5rem;
@@ -14,9 +15,11 @@
   }
 
   @keyframes spin {
+
     from {
       transform: rotate(0deg);
     }
+
     to {
       transform: rotate(360deg);
     }
