@@ -58,11 +58,12 @@ describe('<VehicleList /> Tests', () => {
 
   it('Should show results if loading successfully finished', () => {
     useData.mockReturnValue([false, false, [vehicleStub]]);
-    const { queryByTestId } = render(<VehicleList />);
+    const { queryAllByTestId, queryByTestId } = render(<VehicleList />);
 
     expect(queryByTestId('loading')).toBeNull();
     expect(queryByTestId('error')).toBeNull();
     expect(queryByTestId('no-results')).toBeNull();
     expect(queryByTestId('results')).not.toBeNull();
+    expect(queryAllByTestId('vehicle').length).not.toBe(0);
   });
 });

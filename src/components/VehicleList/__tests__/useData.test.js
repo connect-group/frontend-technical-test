@@ -65,6 +65,24 @@ describe('useData Helper Tests', () => {
       expect(transformToProps({ ...responseStub, id: 'fpace' }).name).toBe('Jaguar F-PACE');
     });
 
+    it('Should handle a vehicle name property', () => {
+      const transformed = transformToProps({ ...responseStub, name: 'A New Car' });
+
+      expect(transformed).toHaveProperty('name');
+      expect(typeof transformed.name).toBe('string');
+      expect(transformed.name).toBe('A New Car');
+    });
+
+    it('Should normalise the description', () => {
+      const transformed = transformToProps(responseStub);
+
+      expect(transformed).toHaveProperty('description');
+      expect(typeof transformed.description).toBe('string');
+      expect(transformed.description.charAt(transformed.description.length - 1)).toBe('.');
+
+      expect(transformToProps({ ...responseStub, description: '' }).description).toBe('');
+    });
+
     it('Should format the emissions string', () => {
       const transformed = transformToProps(responseStub);
 
