@@ -58,6 +58,7 @@ export default function VehicleDetailsModal({ onClose, vehicle, titleAs: Title =
     (<div
       aria-label="Close vehicle details"
       className="Modal"
+      data-testid="vehicle-details-modal"
       onClick={handleBackdropClick}
       onKeyDown={handleBackdropClick}
       role="button"
@@ -67,41 +68,42 @@ export default function VehicleDetailsModal({ onClose, vehicle, titleAs: Title =
         aria-labelledby="vehicle-modal-title"
         aria-modal="true"
         className="Modal__content"
+        data-testid="vehicle-details-modal-content"
         role="dialog"
       >
-        <header className="Modal__header">
+        <header className="Modal__header" data-testid="vehicle-details-modal-header">
           <Title id="vehicle-modal-title" className="visually-hidden">
             {vehicle.name}
             {' '}
             Vehicle Details
           </Title>
 
-          <button className="Modal__close" type="button" onClick={onClose}>
+          <button className="Modal__close" type="button" onClick={onClose} data-testid="vehicle-details-modal-close">
             <span className="visually-hidden">Close</span>
             <span aria-hidden="true">x</span>
           </button>
         </header>
 
-        <div className="VehicleDetails">
-          <div className="VehicleDetails__image">
-            <img src={vehicle.thumbnails.default.url} alt="" />
+        <div className="VehicleDetails" data-testid="vehicle-details">
+          <div className="VehicleDetails__image" data-testid="vehicle-details-image">
+            {vehicle.thumbnails.default && <img src={vehicle.thumbnails.default.url} alt="" />}
           </div>
 
           <div className="VehicleDetails__content">
             <p>
-              <strong className="VehicleDetails__name">
+              <strong className="VehicleDetails__name" data-testid="vehicle-details-name">
                 {vehicle.name}
                 <span className="visually-hidden">.</span>
               </strong>
-              <span className="VehicleDetails__price">
+              <span className="VehicleDetails__price" data-testid="vehicle-details-price">
                 Price from
                 {' '}
                 {vehicle.price}
               </span>
             </p>
-            {vehicle.description && <p className="VehicleDetails__description">{vehicle.description}</p>}
+            {vehicle.description && <p className="VehicleDetails__description" data-testid="vehicle-details-description">{vehicle.description}</p>}
 
-            <dl className="VehicleDetails__meta MetaList">
+            <dl className="VehicleDetails__meta MetaList" data-testid="vehicle-details-metadata">
               <dt className="MetaList__title">Model Year</dt>
               <dd className="MetaList__item">{vehicle.modelYear.toLocaleUpperCase()}</dd>
 

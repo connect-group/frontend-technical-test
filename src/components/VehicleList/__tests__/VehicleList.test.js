@@ -15,7 +15,7 @@ const vehicleStub = {
     { name: 'vehicle', url: '/images/1x1/xe_k17.jpg' }
   ],
   meta: {
-    bodyStyles: ['saloon'],
+    bodystyles: ['saloon'],
     drivetrain: ['AWD', 'RWD'],
     passengers: 5,
     emissions: 'CO2 Emissions 99 g/km'
