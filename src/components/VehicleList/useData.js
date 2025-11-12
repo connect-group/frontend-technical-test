@@ -71,6 +71,21 @@ export function getVehicleName({ id, name }) {
 }
 
 /**
+ * Normalises a Vehicle description text.
+ *
+ * @param {string} description
+ * @returns {string}
+ */
+export function normalizeDescription(description) {
+  if (typeof description !== 'string' || !description.trim().length) {
+    return '';
+  }
+
+  const trimmed = description.trim();
+  return trimmed.charAt(trimmed.length - 1) !== '.' ? `${trimmed}.` : trimmed;
+}
+
+/**
  * Transforms an API response into something nicer to work with as props.
  *
  * @param {vehicleSummaryPayload} vehicles
@@ -80,6 +95,7 @@ export function transformToProps({ meta, ...summary }) {
   return {
     ...summary,
 
+    description: normalizeDescription(summary.description),
     meta: {
       ...meta,
 

@@ -46,9 +46,6 @@ export default function Vehicle(props) {
   const thumbnail = thumbnails.default || thumbnails.mobile;
   const hasImage = Boolean(thumbnail && mobileThumbnail);
 
-  // Fallback for content to ensure a screen reader pause from the full-stop.
-  const summary = description.charAt(description.length - 1) !== '.' ? `${description}.` : description;
-
   return (
     <article data-testid="vehicle" data-id={id} className="Vehicle">
       <aside className="Vehicle__thumbnail">
@@ -70,7 +67,7 @@ export default function Vehicle(props) {
           <p data-testid="vehicle-price" className="Vehicle__price">{`From ${price}`}</p>
         </header>
 
-        <p data-testid="vehicle-description" className="Vehicle__description">{summary}</p>
+        <p data-testid="vehicle-description" className="Vehicle__description">{description}</p>
 
         <a className="Vehicle__details" href={`./?showDetails=${encodeURIComponent(id)}`} onClick={handleModalOpen}>
           <span className="visually-hidden">View Details</span>
