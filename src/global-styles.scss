@@ -1,7 +1,96 @@
 @layer reset, global, layout, page, components, overrides;
 
-@layer reset {
+@font-face {
+  font-family: AvenirNext;
+  src: url("/fonts/AvenirNextW1G/AvenirNextW1G-Light.woff2") format("woff2"),
+    url("/fonts/AvenirNextW1G/AvenirNextW1G-Light.woff") format("woff");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
 
+@font-face {
+  font-family: AvenirNext;
+  src: url("/fonts/AvenirNextW1G/AvenirNextW1G-Regular.woff2") format("woff2"),
+    url("/fonts/AvenirNextW1G/AvenirNextW1G-Regular.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: AvenirNext;
+  src: url("/fonts/AvenirNextW1G/AvenirNextW1G-Italic.woff2") format("woff2"),
+    url("/fonts/AvenirNextW1G/AvenirNextW1G-Italic.woff") format("woff");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: AvenirNext;
+  src: url("/fonts/AvenirNextW1G/AvenirNextW1G-Medium.woff2") format("woff2"),
+    url("/fonts/AvenirNextW1G/AvenirNextW1G-Medium.woff") format("woff");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: AvenirNext;
+  src: url("/fonts/AvenirNextW1G/AvenirNextW1G-Demi.woff2") format("woff2"),
+    url("/fonts/AvenirNextW1G/AvenirNextW1G-Demi.woff") format("woff");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: AvenirNext;
+  src: url("/fonts/AvenirNextW1G/AvenirNextW1G-Bold.woff2") format("woff2"),
+    url("/fonts/AvenirNextW1G/AvenirNextW1G-Bold.woff") format("woff");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: LandRoverWeb;
+  src: url("/fonts/LandroverWeb/LandRoverWeb-Medium.woff2") format("woff2"),
+    url("/fonts/LandroverWeb/LandRoverWeb-Medium.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: LandRoverWeb;
+  src: url("/fonts/LandroverWeb/LandRoverWeb-Bold.woff2") format("woff2"),
+    url("/fonts/LandroverWeb/LandRoverWeb-Bold.woff") format("woff");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: LandRoverWeb;
+  src: url("/fonts/LandroverWeb/LandRoverWeb-Demi.woff2") format("woff2"),
+    url("/fonts/LandroverWeb/LandRoverWeb-Demi.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: LandRoverWeb;
+  src: url("/fonts/LandroverWeb/LandRoverWeb-Light.woff2") format("woff2"),
+    url("/fonts/LandroverWeb/LandRoverWeb-Light.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@layer reset {
   *,
   *::before,
   *::after {
@@ -28,7 +117,6 @@
   }
 
   @media (prefers-reduced-motion: no-preference) {
-
     :where(html:focus-within) {
       scroll-behavior: smooth;
     }
@@ -68,7 +156,7 @@
 
   :where(a) {
     color: inherit;
-    text-underline-offset: .2ex;
+    text-underline-offset: 0.2ex;
   }
 
   :where(ul, ol) {
@@ -89,7 +177,7 @@
   }
 
   :where(h1, h2, h3) {
-    line-height: calc(1em + .5rem);
+    line-height: calc(1em + 0.5rem);
     text-wrap: balance;
   }
 
@@ -137,64 +225,9 @@
   }
 }
 
-@font-face {
-  font-display: swap;
-  font-family: ProximaNova;
-  font-style: normal;
-  font-weight: 300;
-  src: url("/fonts/ProximaNova/ProximaNova-Light.woff2") format("woff2"),
-    url("/fonts/ProximaNova/ProximaNova-Light.woff") format("woff");
-}
-
-@font-face {
-  font-display: swap;
-  font-family: ProximaNova;
-  font-style: normal;
-  font-weight: 400;
-  src: url("/fonts/ProximaNova/ProximaNova-Regular.woff2") format("woff2"),
-    url("/fonts/ProximaNova/ProximaNova-Regular.woff") format("woff");
-}
-
-@font-face {
-  font-display: swap;
-  font-family: ProximaNova;
-  font-style: italic;
-  font-weight: 400;
-  src: url("/fonts/ProximaNova/ProximaNova-RegularItalic.woff2") format("woff2"),
-    url("/fonts/ProximaNova/ProximaNova-RegularItalic.woff") format("woff");
-}
-
-@font-face {
-  font-display: swap;
-  font-family: ProximaNova;
-  font-style: normal;
-  font-weight: 500;
-  src: url("/fonts/ProximaNova/ProximaNova-Medium.woff2") format("woff2"),
-    url("/fonts/ProximaNova/ProximaNova-Medium.woff") format("woff");
-}
-
-@font-face {
-  font-display: swap;
-  font-family: ProximaNova;
-  font-style: normal;
-  font-weight: 600;
-  src: url("/fonts/ProximaNova/ProximaNova-Semibold.woff2") format("woff2"),
-    url("/fonts/ProximaNova/ProximaNova-Semibold.woff") format("woff");
-}
-
-@font-face {
-  font-display: swap;
-  font-family: ProximaNova;
-  font-style: normal;
-  font-weight: 700;
-  src: url("/fonts/ProximaNova/ProximaNova-Bold.woff2") format("woff2"),
-    url("/fonts/ProximaNova/ProximaNova-Bold.woff") format("woff");
-}
-
 @layer global {
-
   :where(body) {
-    font-family: ProximaNova, Arial Unicode MS, Arial, Helvetica, sans-serif;
+    font-family: AvenirNext, Arial, Helvetica, sans-serif;
   }
 }
 
