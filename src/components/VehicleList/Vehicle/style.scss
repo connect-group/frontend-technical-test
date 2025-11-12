@@ -9,8 +9,8 @@
     // ! A little wider on the thumbnail than the design to balance any gap from long content.
     // TODO Discuss with designer what determines height - does the image need to be full height if the content wraps?
     grid-template-columns: 6.5rem 1fr;
-
     position: relative;
+    z-index: var(--Vehicle--index, 10);
 
     // 512px
     @media screen and (min-width: 32rem) {
@@ -120,15 +120,23 @@
     }
 
     // Stretch a hit area over the card.
-    &__details::after {
-      content: "";
-      display: block;
-      inset: 0;
-      position: absolute;
-      z-index: 50;
+    &__details {
+      &:focus-visible {
+        box-shadow: none;
+        outline: none;
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        inset: 0;
+        position: absolute;
+        z-index: 50;
+      }
     }
 
     // Handle hover effect.
+    &:has(&__details:focus),
     &:has(&__details:hover) {
       .Vehicle__thumbnail {
         --Vehicle-thumbnail--shade-opacity: 1;
@@ -137,6 +145,12 @@
           transform: scale(120%);
         }
       }
+    }
+
+    &:has(&__details:focus-visible) {
+      box-shadow: 0 0 0 5px Canvas;
+      outline: 3px solid CanvasText;
+      outline-offset: 1px;
     }
 
     // Only add a staggered entry animation if the user hasn't selected reduced motion.

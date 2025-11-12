@@ -13,6 +13,7 @@
       @for $i from 1 through 12 {
         &:nth-child(#{$i}) {
           --Vehicle--enter-delay: calc(#{$i - 1} * var(--animation-stagger));
+          --Vehicle--index: #{(13 - $i) * 10};
         }
       }
     }

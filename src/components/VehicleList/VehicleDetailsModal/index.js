@@ -1,6 +1,6 @@
 import './style.scss';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 
 /**
@@ -13,6 +13,14 @@ import { createPortal } from 'react-dom';
  * @returns {JSX.Element}
  */
 export default function VehicleDetailsModal({ onClose, vehicle, titleAs: Title = 'h3' }) {
+  const closeBtnRef = useRef(null);
+
+  useEffect(() => {
+    if (closeBtnRef.current) {
+      closeBtnRef.current.focus();
+    }
+  }, []);
+
   useEffect(() => {
     // Listener for an escape key press to close the modal.
     const esc = (e) => e.key === 'Escape' && onClose();
@@ -55,7 +63,7 @@ export default function VehicleDetailsModal({ onClose, vehicle, titleAs: Title =
 
   // Use a portal to contain the modal away from its parent so it's not affected by its changing styles.
   return createPortal(
-    (<div className="Modal" data-testid="vehicle-details-modal">
+    (<div className="Modal" data-testid="vehicle-details-modal" role="presentation">
       <section
         aria-labelledby="vehicle-modal-title"
         aria-modal="true"
@@ -70,7 +78,13 @@ export default function VehicleDetailsModal({ onClose, vehicle, titleAs: Title =
             Vehicle Details
           </Title>
 
-          <button className="Modal__close" type="button" onClick={onClose} data-testid="vehicle-details-modal-close">
+          <button
+            className="Modal__close"
+            data-testid="vehicle-details-modal-close"
+            onClick={onClose}
+            ref={closeBtnRef}
+            type="button"
+          >
             <span className="visually-hidden">Close</span>
             <span aria-hidden="true">X</span>
           </button>
