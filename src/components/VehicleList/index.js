@@ -1,13 +1,15 @@
+import './style.scss';
+
 import React from 'react';
 import useData from './useData';
 import Vehicle from './Vehicle';
-import './style.scss';
+import Loader from './Loader';
 
 export default function VehicleList() {
   const [loading, error, vehicles] = useData();
 
   if (loading) {
-    return <div data-testid="loading">Loading</div>;
+    return (<Loader />);
   }
 
   if (error) {
