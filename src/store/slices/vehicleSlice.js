@@ -1,4 +1,3 @@
-// store/vehiclesSlice.js
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { request } from '../../api/helpers';
 
