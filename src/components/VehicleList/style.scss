@@ -1,3 +1,245 @@
-.VehicleList {
+// Variables
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+// Mobile First Styles (default)
+.vehicle-list {
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.vehicle-card {
+  background: #fff;
+  border: 0px solid transparent;
+  display: flex;
+  max-width: 100%;
+  min-height: 8rem;
+  overflow: hidden;
+  padding: 0rem;
+  transition: transform .2s ease, box-shadow .2s ease;
+
+  &:focus {
+    box-shadow: 0 0 0 3px rgba(0, 95, 204, .3);
+    outline: 3px solid #005fcc;
+    outline-offset: 2px;
+    z-index: 1;
+  }
+
+  &:focus-visible {
+    outline: 3px solid #005fcc;
+    outline-offset: 2px;
+    transform: translateY(-2px);
+  }
+
+  &:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, .15);
+    cursor: pointer;
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: scale(.99);
+  }
+
+  &__image {
+    aspect-ratio: 1 / 1;
+    display: block;
+    height: auto;
+    min-width: 8rem;
+    object-fit: cover;
+    overflow: hidden;
+    width: 8rem;
+  }
+
+  &__content {
+    border-bottom: 1px solid #e5e5e5;
+    flex: 1;
+    padding: 1rem;
+    text-align: left;
+  }
+
+  &:first-child &__content {
+    border-top: 1px solid #e5e5e5;
+  }
+
+  &__title {
+    color: #333;
+    font-size: 1.25rem;
+    font-weight: bold;
+    letter-spacing: .1rem;
+    margin: 0 0 .5rem;
+    text-transform: uppercase;
+
+  }
+
+  &__price {
+    color: #666;
+    font-size: 1.125rem;
+    letter-spacing: .075rem;
+    margin: 0 0 1rem;
+  }
+
+  &__description {
+    color: #666;
+    font-size: .875rem;
+    letter-spacing: .05rem;
+    line-height: 1.5;
+    margin: 0;
+
+  }
+}
+
+.loading,
+.error {
+  align-content: center;
+  display: grid;
+  font-size: 1.25rem;
+  height: 100vh;
+  place-items: center;
+
+  &.loading {
+
+    p {
+      background: #edffeb;
+      border: 1px solid #2fd355;
+      color: #2fd355;
+      margin: 0 0 .5rem;
+      padding: 4rem;
+    }
+  }
+
+  &.error {
+
+    p {
+      background: #ffebee;
+      border: 1px solid #d32f2f;
+      color: #d32f2f;
+      margin: 0 0 .5rem;
+      padding: 4rem;
+    }
+  }
+}
+
+
+
+// Tablet styles (min-width: 768px)
+@media (min-width: $breakpoint-tablet) {
+
+  .vehicle-list {
+
+    &__container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .vehicle-card {
+    display: flex;
+    flex-direction: column;
+
+    &__image {
+      aspect-ratio: 16 / 9;
+      display: block;
+      height: auto;
+      object-fit: cover;
+      overflow: hidden;
+      width: auto;
+    }
+
+    &__content {
+      border: 1px solid #e5e5e5;
+      flex: 1;
+      overflow: hidden;
+      text-align: center;
+      width: auto;
+    }
+
+    &__title {
+      border-bottom: 2px solid black;
+      border-top: 2px solid black;
+      display: inline-block;
+      margin: 1rem 0;
+      padding: .2rem 0 .2rem 0;
+    }
+  }
+}
+
+// Desktop styles (min-width: 1024px)
+@media (min-width: $breakpoint-desktop) {
+
+  .vehicle-list {
+
+    &__container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+// Modal
+.vehicle-details-modal-background {
+  align-items: center;
+  animation: fadeIn .2s ease-out;
+  background: rgba(0, 0, 0, .5);
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  padding: 1rem;
+  position: fixed;
+  top: 0;
   width: 100%;
+  z-index: 999;
+}
+
+.vehicle-details-modal {
+  animation: popup .22s ease-out forwards;
+  background: white;
+  border-radius: 16px;
+  max-width: 400px;
+  padding: 1.5rem;
+  position: relative;
+  transform: scale(.9);
+  width: 100%;
+
+  &__detailed-view {
+    margin: 1rem;
+    
+    dl {
+      display: grid;
+      gap: .75rem 1rem;
+      grid-template-columns: 1fr 2fr;
+      margin: 0;
+    }
+  
+    dt {
+      color: #4a5568;
+      font-weight: 600;
+      padding-right: .5rem;
+      text-align: right;
+    }
+  
+    dd {
+      font-weight: 500;
+      margin: 0;
+    }
+  }
+
+  &__button-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__button {
+    border-radius: .5rem;
+    padding: .5rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
 }
