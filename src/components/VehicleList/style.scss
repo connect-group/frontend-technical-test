@@ -1,3 +1,29 @@
-.VehicleList {
-  width: 100%;
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.vehicle-list {
+  @include desktop-up {
+    margin: 0 auto;
+    max-width: 1440px;
+  }
+}
+
+.vehicle-list__title {
+  margin: 1.25rem auto;
+  text-align: center;
+}
+
+.vehicle-list__grid {
+  background-color: $color-border; // background-color for grid gaps
+  display: grid;
+  gap: 1px;
+  grid-template-columns: 1fr;
+
+  @include tablet-up {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include desktop-up {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
