@@ -17,6 +17,7 @@ export default function VehicleList() {
   return (
     <section className="vehicle-list" data-testid="results">
       <h1 className="vehicle-list__title">JLR Vehicles</h1>
+
       <ul className="vehicle-list__grid">
         {vehicles.map((vehicle) => (
           <li key={vehicle.id} className="vehicle-list__item">

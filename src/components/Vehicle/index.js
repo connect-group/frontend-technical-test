@@ -13,12 +13,17 @@ export default function Vehicle({ vehicle }) {
           alt={media[1].name}
         />
       </picture>
+
       <div className="vehicle-card__content">
-        <h2 className="vehicle-card__name" data-testid="vehicle-name">Vehicle Name</h2>
+        <h2 className="vehicle-card__name" data-testid="vehicle-name">
+          Vehicle Name
+        </h2>
         <p className="vehicle-card__price" data-testid="vehicle-price">
           {`From ${price}`}
         </p>
-        <p className="vehicle-card__description" data-testid="vehicle-description">{description}</p>
+        <p className="vehicle-card__description" data-testid="vehicle-description">
+          {description}
+        </p>
       </div>
     </article>
   );
