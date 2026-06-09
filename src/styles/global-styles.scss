@@ -1,0 +1,24 @@
+@use "./mixins" as *;
+
+// reset
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+// fonts 
+html {
+  font-family: helvetica, arial, sans-serif;
+  font-size: 1rem;
+  -webkit-font-smoothing: antialiased;
+}
