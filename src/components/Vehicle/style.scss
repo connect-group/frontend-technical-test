@@ -39,7 +39,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 1em;
+  padding: 1.5em;
 }
 
 .vehicle-card__name {
@@ -51,7 +51,7 @@
   @include tablet-up {
     border-bottom: 1px solid;
     border-top: 1px solid;
-    margin: 1.1rem auto;
+    margin: 0 auto 1.2rem;
     padding: 5px 0;
     width: max-content;
   }
@@ -65,5 +65,4 @@
 
 .vehicle-card__description {
   font-size: .9rem;
-  margin-bottom: .625rem;
 }

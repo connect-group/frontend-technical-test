@@ -15,8 +15,8 @@ export default function VehicleList() {
   }
 
   return (
-    <section className="vehicle-list" data-testid="results">
-      <h1 className="vehicle-list__title">JLR Vehicles</h1>
+    <section className="vehicle-list" aria-labelledby="vehicle-list-title" data-testid="results">
+      <h1 id="vehicle-list-title" className="vehicle-list__title">JLR Vehicles</h1>
 
       <ul className="vehicle-list__grid">
         {vehicles.map((vehicle) => (
