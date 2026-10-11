@@ -41,7 +41,7 @@
     "stylelint-scss": "^3.18.0",
     "webpack": "4.44.2",
     "webpack-cli": "^4.5.0",
-    "webpack-dev-server": "3.11.0"
+    "webpack-dev-server": "6.0.0"
   },
   "dependencies": {
     "react": "^17.0.1",
