@@ -35,10 +35,10 @@
     "sass": "^1.32.5",
     "sass-loader": "^10.1.1",
     "style-loader": "^2.0.0",
-    "stylelint": "^13.9.0",
+    "stylelint": "^17.16.0",
     "stylelint-config-airbnb": "0.0.0",
     "stylelint-order": "^4.1.0",
-    "stylelint-scss": "^3.18.0",
+    "stylelint-scss": "^7.3.0",
     "webpack": "4.44.2",
     "webpack-cli": "^4.5.0",
     "webpack-dev-server": "3.11.0"
